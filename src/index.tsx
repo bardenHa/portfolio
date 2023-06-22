@@ -3,6 +3,7 @@ import { Router } from '@solidjs/router';
 import App from './app';
 import { HopeProvider } from '@hope-ui/solid';
 import { config } from './lib/theme';
+import './index.css';
 
 const root = document.getElementById('root');
 
