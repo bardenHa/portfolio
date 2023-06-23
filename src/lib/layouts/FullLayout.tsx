@@ -1,4 +1,5 @@
-import { Box, Button, Container, Flex, Heading, useColorMode } from '@hope-ui/solid';
+import { Box, Container, Flex, Heading, IconButton, useColorMode } from '@hope-ui/solid';
+import { FiMoon, FiSun } from 'solid-icons/fi';
 import { ParentComponent } from 'solid-js';
 
 export const FullLayout: ParentComponent = props => {
@@ -12,15 +13,11 @@ export const FullLayout: ParentComponent = props => {
       overflow={'hidden'}
       bg={'$contentNeutral'}
     >
-      <Container
-        as={'header'}
-        p={'$5'}
-        borderColor={'$borderNeutral'}
-        borderBottomWidth={'thin'}
-        transition={'max-width ease-in-out 200ms'}
-      >
+      <Container as={'header'} p={'$5'} transition={'max-width ease-in-out 200ms'}>
         <Flex alignItems={'center'} justifyContent={'space-between'}>
-          <Heading as={'h1'}>Header</Heading>
+          <Heading as={'h1'} fontWeight={'$medium'}>
+            Harry Barden
+          </Heading>
           <ColorModeSwitcher />
         </Flex>
       </Container>
@@ -42,5 +39,12 @@ export const FullLayout: ParentComponent = props => {
 
 function ColorModeSwitcher() {
   const { colorMode, toggleColorMode } = useColorMode();
-  return <Button onClick={toggleColorMode}>Toggle {colorMode() === 'light' ? 'dark' : 'light'}</Button>;
+  return (
+    <IconButton
+      aria-label="Theme to toggle dark mode"
+      variant={'ghost'}
+      onClick={toggleColorMode}
+      icon={colorMode() === 'light' ? <FiSun /> : <FiMoon />}
+    />
+  );
 }
