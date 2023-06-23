@@ -18,6 +18,7 @@ export const config: HopeThemeConfig = {
       primary12: 'hsl(226, 62.0%, 17.0%)',
       // Content
       contentNeutral: '$neutral1',
+      contentNeutralSecondary: '$neutral3',
       // Border
       borderNeutral: '$neutral5',
     },
@@ -38,6 +39,7 @@ export const config: HopeThemeConfig = {
       primary12: 'hsl(226, 83.0%, 96.3%)',
       // Content
       contentNeutral: '$neutral1',
+      contentNeutralSecondary: '$neutral3',
       // Border
       borderNeutral: '$neutral5',
     },

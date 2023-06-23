@@ -15,7 +15,7 @@ export const FullLayout: ParentComponent = props => {
     >
       <Container as={'header'} p={'$5'} transition={'max-width ease-in-out 200ms'}>
         <Flex alignItems={'center'} justifyContent={'space-between'}>
-          <Heading as={'h1'} fontWeight={'$medium'}>
+          <Heading level={1} fontWeight={'$medium'}>
             Harry Barden
           </Heading>
           <ColorModeSwitcher />
