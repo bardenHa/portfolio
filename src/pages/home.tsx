@@ -12,7 +12,15 @@ export default function Home() {
         <Heading as={'h2'}>Home</Heading>
         <Text>This is the home page.</Text>
       </div>
-      <Grid templateColumns={'repeat(3, 1fr)'} gap={'$3'} w={'100%'}>
+      <Grid
+        templateColumns={{
+          '@initial': '1fr',
+          '@sm': 'repeat(2, 1fr)',
+          '@md': 'repeat(3, 1fr)',
+        }}
+        gap={'$3'}
+        w={'100%'}
+      >
         <Card>Some card</Card>
         <Card>Some card</Card>
         <Card>Some card</Card>
