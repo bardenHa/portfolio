@@ -10,12 +10,12 @@ export const FullLayout: ParentComponent = props => {
       minH={'$screenH'}
       h={'$screenH'}
       overflow={'hidden'}
-      bg={'$neutral1'}
+      bg={'$contentNeutral'}
     >
       <Container
         as={'header'}
         p={'$5'}
-        borderColor={'$neutral5'}
+        borderColor={'$borderNeutral'}
         borderBottomWidth={'thin'}
         transition={'max-width ease-in-out 200ms'}
       >
@@ -30,7 +30,7 @@ export const FullLayout: ParentComponent = props => {
       <Container
         as={'footer'}
         p={'$5'}
-        borderColor={'$neutral5'}
+        borderColor={'$borderNeutral'}
         borderTopWidth={'thin'}
         transition={'max-width ease-in-out 200ms'}
       >

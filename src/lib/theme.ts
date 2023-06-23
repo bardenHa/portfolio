@@ -16,6 +16,10 @@ export const config: HopeThemeConfig = {
       primary10: 'hsl(226, 58.6%, 51.3%)',
       primary11: 'hsl(226, 55.0%, 45.0%)',
       primary12: 'hsl(226, 62.0%, 17.0%)',
+      // Content
+      contentNeutral: '$neutral1',
+      // Border
+      borderNeutral: '$neutral5',
     },
   },
   darkTheme: {
@@ -32,6 +36,10 @@ export const config: HopeThemeConfig = {
       primary10: 'hsl(227, 75.2%, 61.6%)',
       primary11: 'hsl(228, 100%, 75.9%)',
       primary12: 'hsl(226, 83.0%, 96.3%)',
+      // Content
+      contentNeutral: '$neutral1',
+      // Border
+      borderNeutral: '$neutral5',
     },
   },
 };
