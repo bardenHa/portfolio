@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Heading, IconButton, useColorMode } from '@hope-ui/solid';
+import { Anchor, Box, Container, Flex, Heading, IconButton, useColorMode } from '@hope-ui/solid';
 import { FiMoon, FiSun } from 'solid-icons/fi';
 import { ParentComponent } from 'solid-js';
 
@@ -18,7 +18,20 @@ export const FullLayout: ParentComponent = props => {
           <Heading level={1} fontWeight={'$medium'}>
             Harry Barden
           </Heading>
-          <ColorModeSwitcher />
+          <Flex
+            gap={'$6'}
+            display={{
+              '@initial': 'none',
+              '@md': 'flex',
+            }}
+          >
+            <Flex as={'nav'} alignItems={'center'} gap={'$4'}>
+              <Anchor href={'#about'}>About</Anchor>
+              <Anchor href={'#projects'}>Projects</Anchor>
+              <Anchor href={'#contact'}>Contact</Anchor>
+            </Flex>
+            <ColorModeSwitcher />
+          </Flex>
         </Flex>
       </Container>
       <Container as={'main'} p={'$5'} flex={1} transition={'max-width ease-in-out 200ms'}>
@@ -42,6 +55,7 @@ function ColorModeSwitcher() {
   return (
     <IconButton
       aria-label="Theme to toggle dark mode"
+      size={'sm'}
       variant={'ghost'}
       onClick={toggleColorMode}
       icon={colorMode() === 'light' ? <FiSun /> : <FiMoon />}

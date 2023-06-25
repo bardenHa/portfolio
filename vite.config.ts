@@ -9,7 +9,6 @@ export default defineConfig({
   build: {
     target: 'esnext',
   },
-  base: '.',
   resolve: {
     alias: {
       '@': '/src',
