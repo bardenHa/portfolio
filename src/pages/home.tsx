@@ -9,9 +9,12 @@ export default function Home() {
   return (
     <VStack spacing={'$8'} alignItems={'start'}>
       {['xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall'].map((size: any) => (
-        <Typography.Heading level={1} size={size}>
-          Some display
-        </Typography.Heading>
+        <>
+          <Typography.Heading level={1} size={size}>
+            Some display
+          </Typography.Heading>
+          <Typography.Label size={size}>Some label</Typography.Label>
+        </>
       ))}
       <VStack as={'section'} gap={'$5'} w={'100%'}>
         <Grid
