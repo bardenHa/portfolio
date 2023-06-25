@@ -1,20 +1,20 @@
-import { Heading, HeadingProps } from '@hope-ui/solid';
+import { Text, TextProps } from '@hope-ui/solid';
 
-interface LabelProps extends Omit<HeadingProps, 'size'> {
+interface LabelProps extends Omit<TextProps, 'size'> {
   size?: 'large' | 'medium' | 'small' | 'xsmall';
 }
 
 export const Label = (props: LabelProps) => {
   const { size, ...rest } = props;
   return (
-    <Heading as="p" fontWeight={'$medium'} lineHeight={'$normal'} {...getHeadingProps(props.size)} {...rest}>
+    <Text fontWeight={'$medium'} lineHeight={'$normal'} {...getTextProps(props.size)} {...rest}>
       {props.children}
-    </Heading>
+    </Text>
   );
 };
 
-const getHeadingProps = (size: LabelProps['size']): HeadingProps => {
-  const labelProps: HeadingProps = {};
+const getTextProps = (size: LabelProps['size']): TextProps => {
+  const labelProps: TextProps = {};
 
   switch (size) {
     case 'large': {
