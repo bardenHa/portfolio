@@ -9,9 +9,11 @@ export default function Home() {
 
   return (
     <VStack spacing={'$8'}>
-      <Display level={1} size="xsmall">
-        Some display
-      </Display>
+      {['large', 'medium', 'small', 'xsmall'].map((size: any) => (
+        <Display level={1} size={size}>
+          Some display
+        </Display>
+      ))}
       <VStack as={'section'} gap={'$5'} w={'100%'}>
         <Grid
           templateColumns={{

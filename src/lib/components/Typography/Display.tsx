@@ -1,4 +1,4 @@
-import { HTMLHopeProps, Heading, HeadingProps } from '@hope-ui/solid';
+import { Heading, HeadingProps } from '@hope-ui/solid';
 
 interface DisplayProps extends Omit<HeadingProps, 'size'> {
   size?: 'large' | 'medium' | 'small' | 'xsmall';
@@ -7,30 +7,32 @@ interface DisplayProps extends Omit<HeadingProps, 'size'> {
 export const Display = (props: DisplayProps) => {
   const { size, ...rest } = props;
   return (
-    <Heading {...getDisplayProps(props.size)} {...rest}>
+    <Heading fontWeight={'$bold'} lineHeight={'$normal'} {...getHeadingProps(props.size)} {...rest}>
       {props.children}
     </Heading>
   );
 };
 
-const getDisplayProps = (size: DisplayProps['size']): HeadingProps => {
+const getHeadingProps = (size: DisplayProps['size']): HeadingProps => {
   const displayProps: HeadingProps = {};
+
   switch (size) {
-    case 'large':
-      displayProps.size = '2xl';
-      displayProps.lineHeight = '3xl';
+    case 'large': {
+      displayProps.size = '8xl';
+      break;
+    }
     case 'medium':
-      displayProps.size = 'xl';
-      displayProps.lineHeight = '2xl';
+      displayProps.size = '6xl';
+      break;
     case 'small':
-      displayProps.size = 'lg';
-      displayProps.lineHeight = 'xl';
+      displayProps.size = '5xl';
+      break;
     case 'xsmall':
-      displayProps.size = 'base';
-      displayProps.lineHeight = 'lg';
-    default:
-      displayProps.size = 'base';
-      displayProps.lineHeight = 'lg';
+      displayProps.size = '4xl';
+      break;
+    default: {
+      displayProps.size = '6xl';
+    }
   }
 
   return displayProps;
