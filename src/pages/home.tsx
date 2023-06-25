@@ -1,5 +1,5 @@
 import { createSignal } from 'solid-js';
-import { Button, HStack, Heading, VStack, Text, Grid } from '@hope-ui/solid';
+import { Button, HStack, Heading, VStack, Text, Grid, Box } from '@hope-ui/solid';
 import { FiPlus, FiMinus } from 'solid-icons/fi';
 import { Card } from '@/lib/components';
 
@@ -8,23 +8,35 @@ export default function Home() {
 
   return (
     <VStack spacing={'$8'}>
-      <div>
-        <Heading as={'h2'}>Home</Heading>
-        <Text>This is the home page.</Text>
-      </div>
-      <Grid
-        templateColumns={{
-          '@initial': '1fr',
-          '@sm': 'repeat(2, 1fr)',
-          '@md': 'repeat(3, 1fr)',
-        }}
-        gap={'$3'}
-        w={'100%'}
-      >
-        <Card>Some card</Card>
-        <Card>Some card</Card>
-        <Card>Some card</Card>
-      </Grid>
+      <VStack as={'section'} gap={'$5'} w={'100%'}>
+        <Grid
+          templateColumns={{
+            '@initial': '1fr',
+            '@sm': '2fr 1fr',
+          }}
+          gap={'$5'}
+          w={'100%'}
+          templateRows={'350px'}
+        >
+          <Card>Some card</Card>
+          <Card>Some card</Card>
+        </Grid>
+        <Grid
+          templateColumns={{
+            '@initial': '1fr',
+            '@sm': 'repeat(2, 1fr)',
+          }}
+          gap={'$5'}
+          w={'100%'}
+          gridAutoRows={'350px'}
+        >
+          <Card>Some card</Card>
+          <Card>Some card</Card>
+          <Card>Some card</Card>
+          <Card>Some card</Card>
+          <Card gridColumn={'1 / 3'}>Some card</Card>
+        </Grid>
+      </VStack>
       <HStack spacing={'$3'}>
         <Button variant={'subtle'} onClick={() => setCount(count() - 1)} rightIcon={<FiMinus />}>
           Decrement

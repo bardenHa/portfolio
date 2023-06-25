@@ -10,7 +10,7 @@ export const FullLayout: ParentComponent = props => {
       flexDirection={'column'}
       minH={'$screenH'}
       h={'$screenH'}
-      overflow={'hidden'}
+      overflowX={'hidden'}
       bg={'$contentNeutral'}
     >
       <Container as={'header'} p={'$5'} transition={'max-width ease-in-out 200ms'}>

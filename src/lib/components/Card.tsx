@@ -6,7 +6,7 @@ interface CardProps {
 
 export const Card = (props: HTMLHopeProps<'div', CardProps>) => {
   return (
-    <Box as={'section'} p={'$8'} borderRadius={'$lg'} bg={'$contentNeutralSecondary'} {...props}>
+    <Box as={'section'} p={'$8'} borderRadius={'$xl'} bg={'$contentNeutralSecondary'} {...props}>
       {props.children}
     </Box>
   );
