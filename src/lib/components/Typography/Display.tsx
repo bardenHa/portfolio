@@ -21,15 +21,18 @@ const getHeadingProps = (size: DisplayProps['size']): HeadingProps => {
       displayProps.size = '8xl';
       break;
     }
-    case 'medium':
+    case 'medium': {
       displayProps.size = '6xl';
       break;
-    case 'small':
+    }
+    case 'small': {
       displayProps.size = '5xl';
       break;
-    case 'xsmall':
+    }
+    case 'xsmall': {
       displayProps.size = '4xl';
       break;
+    }
     default: {
       displayProps.size = '6xl';
     }

@@ -1,18 +1,17 @@
 import { createSignal } from 'solid-js';
-import { Button, HStack, Heading, VStack, Text, Grid, Box } from '@hope-ui/solid';
+import { Button, HStack, VStack, Grid } from '@hope-ui/solid';
 import { FiPlus, FiMinus } from 'solid-icons/fi';
-import { Card } from '@/lib/components';
-import { Display } from '@/lib/components/Typography';
+import { Card, Typography } from '@/lib/components';
 
 export default function Home() {
   const [count, setCount] = createSignal(0);
 
   return (
-    <VStack spacing={'$8'}>
-      {['large', 'medium', 'small', 'xsmall'].map((size: any) => (
-        <Display level={1} size={size}>
+    <VStack spacing={'$8'} alignItems={'start'}>
+      {['xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall'].map((size: any) => (
+        <Typography.Heading level={1} size={size}>
           Some display
-        </Display>
+        </Typography.Heading>
       ))}
       <VStack as={'section'} gap={'$5'} w={'100%'}>
         <Grid

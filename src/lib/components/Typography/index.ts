@@ -1,1 +1,7 @@
-export { Display } from './Display';
+import { Display } from './Display';
+import { Heading } from './Heading';
+
+export const Typography = {
+  Display,
+  Heading,
+};
