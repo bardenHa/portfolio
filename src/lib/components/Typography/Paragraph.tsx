@@ -7,7 +7,7 @@ interface ParagraphProps extends Omit<TextProps, 'size'> {
 export const Paragraph = (props: ParagraphProps) => {
   const { size, ...rest } = props;
   return (
-    <Text lineHeight={'$base'} fontWeight={'$normal'} {...getTextProps(props.size)} {...rest}>
+    <Text lineHeight={'$base'} fontWeight={'$normal'} {...getTextProps(size)} {...rest}>
       {props.children}
     </Text>
   );

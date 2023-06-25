@@ -7,7 +7,7 @@ interface DisplayProps extends Omit<HeadingProps, 'size'> {
 export const Display = (props: DisplayProps) => {
   const { size, ...rest } = props;
   return (
-    <Heading fontWeight={'$bold'} lineHeight={'$normal'} {...getHeadingProps(props.size)} {...rest}>
+    <Heading fontWeight={'$bold'} lineHeight={'$normal'} {...getHeadingProps(size)} {...rest}>
       {props.children}
     </Heading>
   );

@@ -7,7 +7,13 @@ interface LabelProps extends Omit<TextProps, 'size'> {
 export const Label = (props: LabelProps) => {
   const { size, ...rest } = props;
   return (
-    <Text fontWeight={'$medium'} lineHeight={'$normal'} {...getTextProps(props.size)} {...rest}>
+    <Text
+      aria-roledescription="A subtitle, short phrase or sentence that provides context or information about a specific block of text."
+      fontWeight={'$medium'}
+      lineHeight={'$normal'}
+      {...getTextProps(size)}
+      {...rest}
+    >
       {props.children}
     </Text>
   );
