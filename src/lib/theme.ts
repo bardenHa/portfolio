@@ -21,6 +21,8 @@ export const config: HopeThemeConfig = {
       contentNeutralSecondary: '$neutral3',
       // Border
       borderNeutral: '$neutral5',
+      // Typography
+      textSecondary: '$neutral10',
     },
   },
   darkTheme: {
@@ -42,6 +44,8 @@ export const config: HopeThemeConfig = {
       contentNeutralSecondary: '$neutral3',
       // Border
       borderNeutral: '$neutral5',
+      // Typography
+      textSecondary: '$neutral10',
     },
   },
 };

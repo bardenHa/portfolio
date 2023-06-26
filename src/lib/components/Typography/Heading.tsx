@@ -1,4 +1,5 @@
 import { Heading as SHeading, HeadingProps as SHeadingProps, css } from '@hope-ui/solid';
+import { splitProps } from 'solid-js';
 
 const headingStyles = css({
   variants: {
@@ -7,7 +8,7 @@ const headingStyles = css({
         color: 'inherit',
       },
       secondary: {
-        color: '$neutral11',
+        color: '$textSecondary',
       },
     },
   },
@@ -19,7 +20,8 @@ interface HeadingProps extends Omit<SHeadingProps, 'size'> {
 }
 
 export const Heading = (props: HeadingProps) => {
-  const { size, variant, ...rest } = props;
+  const [{ variant, size }, rest] = splitProps(props, ['size', 'variant']);
+
   return (
     <SHeading
       class={headingStyles({ variant })}
