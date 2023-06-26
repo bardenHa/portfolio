@@ -11,7 +11,9 @@ export default function Home() {
       <For each={['xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall']}>
         {(size: any) => (
           <header>
-            <Typography.Heading size={size}>{size}</Typography.Heading>
+            <Typography.Heading size={size} variant="secondary">
+              {size}
+            </Typography.Heading>
             <Typography.Label size={size}>Some label</Typography.Label>
             <Typography.Paragraph size={size}>Some paragraph</Typography.Paragraph>
           </header>

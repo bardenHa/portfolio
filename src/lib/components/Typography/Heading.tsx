@@ -1,13 +1,33 @@
-import { Heading as SHeading, HeadingProps as SHeadingProps } from '@hope-ui/solid';
+import { Heading as SHeading, HeadingProps as SHeadingProps, css } from '@hope-ui/solid';
+
+const headingStyles = css({
+  variants: {
+    variant: {
+      primary: {
+        color: 'inherit',
+      },
+      secondary: {
+        color: '$neutral11',
+      },
+    },
+  },
+});
 
 interface HeadingProps extends Omit<SHeadingProps, 'size'> {
   size?: 'xxlarge' | 'xlarge' | 'large' | 'medium' | 'small' | 'xsmall';
+  variant?: 'primary' | 'secondary';
 }
 
 export const Heading = (props: HeadingProps) => {
-  const { size, ...rest } = props;
+  const { size, variant, ...rest } = props;
   return (
-    <SHeading fontWeight={'$bold'} lineHeight={'$normal'} {...getHeadingProps(size)} {...rest}>
+    <SHeading
+      class={headingStyles({ variant })}
+      fontWeight={'$bold'}
+      lineHeight={'$normal'}
+      {...getHeadingProps(size)}
+      {...rest}
+    >
       {props.children}
     </SHeading>
   );
