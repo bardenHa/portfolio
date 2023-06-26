@@ -1,5 +1,5 @@
 import { createSignal, For } from 'solid-js';
-import { Button, HStack, VStack, Grid } from '@hope-ui/solid';
+import { Button, HStack, VStack, Grid, Divider, Anchor } from '@hope-ui/solid';
 import { FiPlus, FiMinus } from 'solid-icons/fi';
 import { Card, Typography } from '@/lib/components';
 
@@ -27,9 +27,44 @@ export default function Home() {
           }}
           gap={'$5'}
           w={'100%'}
-          templateRows={'350px'}
+          templateRows={'minmax(350px, 1fr)'}
         >
-          <Card>Some card</Card>
+          <Card>
+            <Typography.Heading size={'large'}>A little bit about me.</Typography.Heading>
+            <Divider margin={'$4 0'} />
+            <Typography.Label size="xsmall" mb={'$2'} variant="secondary">
+              WHERE I'M FROM
+            </Typography.Label>
+            <Typography.Paragraph variant="secondary" size="large">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas explicabo, expedita sed pariatur aliquam
+              inventore voluptas facilis quam quia tempora ut, minima corrupti! Tenetur doloribus reiciendis dicta,
+              quasi sunt temporibus neque explicabo quis quia cum impedit perferendis voluptas debitis maxime dolor?
+            </Typography.Paragraph>
+            <Typography.Label size="xsmall" mt={'$5'} mb={'$2'} variant="secondary">
+              WHAT I USED TO DO
+            </Typography.Label>
+            <Typography.Paragraph variant="secondary" size="large">
+              I'm a software engineer with a passion for building beautiful, functional, and accessible user interfaces.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            </Typography.Paragraph>
+            <Typography.Label size="xsmall" mt={'$5'} mb={'$2'} variant="secondary">
+              WHAT I DO NOW
+            </Typography.Label>
+            <Typography.Paragraph variant="secondary" size="large">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium, aspernatur{' '}
+              <Anchor href="https://example.com" external color={'$neutral12'} fontWeight={'$medium'}>
+                Pledge
+              </Anchor>
+              .
+            </Typography.Paragraph>
+            <Typography.Label size="xsmall" mt={'$5'} mb={'$2'} variant="secondary">
+              WHAT'S NEXT
+            </Typography.Label>
+            <Typography.Paragraph variant="secondary" size="large">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias rerum possimus, illum non cum
+              voluptatum distinctio accusamus iste aliquam consequuntur assumenda doloremque ad quas.
+            </Typography.Paragraph>
+          </Card>
           <Card>Some card</Card>
         </Grid>
         <Grid
