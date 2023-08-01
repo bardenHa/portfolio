@@ -1,4 +1,4 @@
-import { createSignal, For } from 'solid-js';
+import { createSignal } from 'solid-js';
 import { Button, HStack, VStack, Grid, Divider, Anchor } from '@hope-ui/solid';
 import { FiPlus, FiMinus } from 'solid-icons/fi';
 import { Card, Typography } from '@/lib/components';
@@ -8,17 +8,9 @@ export default function Home() {
 
   return (
     <VStack spacing={'$8'} alignItems={'start'}>
-      <For each={['xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall']}>
-        {(size: any) => (
-          <header>
-            <Typography.Heading size={size} variant="secondary">
-              {size}
-            </Typography.Heading>
-            <Typography.Label size={size}>Some label</Typography.Label>
-            <Typography.Paragraph size={size}>Some paragraph</Typography.Paragraph>
-          </header>
-        )}
-      </For>
+      <section>
+        <Typography.Display size="medium">Designer, Developer & 3D illustrator 🤟🏼</Typography.Display>
+      </section>
       <VStack as={'section'} gap={'$5'} w={'100%'}>
         <Grid
           templateColumns={{
