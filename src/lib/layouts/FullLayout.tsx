@@ -1,7 +1,6 @@
-import { Anchor, Box, Container, Flex, IconButton, useColorMode } from '@hope-ui/solid';
+import { Anchor, Box, Container, Flex, IconButton, Image, useColorMode } from '@hope-ui/solid';
 import { FiMoon, FiSun } from 'solid-icons/fi';
 import { ParentComponent } from 'solid-js';
-import { Typography } from '../components';
 
 export const FullLayout: ParentComponent = props => {
   return (
@@ -16,9 +15,7 @@ export const FullLayout: ParentComponent = props => {
     >
       <Container as={'header'} p={'$5'} transition={'max-width ease-in-out 200ms'}>
         <Flex alignItems={'center'} justifyContent={'space-between'}>
-          <Typography.Heading level={1} size="xsmall">
-            HC
-          </Typography.Heading>
+          <Image src="/h_avatar.svg" w={32} h={32} alt="Harry's avatar" />
           <Flex
             gap={'$6'}
             display={{
