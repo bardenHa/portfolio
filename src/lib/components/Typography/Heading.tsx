@@ -36,31 +36,47 @@ export const Heading = (props: HeadingProps) => {
 };
 
 const getHeadingProps = (size: HeadingProps['size']): SHeadingProps => {
-  const headingProps: SHeadingProps = {};
+  const headingProps: SHeadingProps = {
+    size: {
+      '@initial': 'xl',
+      '@sm': '2xl',
+    },
+    level: 4,
+  };
 
   switch (size) {
     case 'xxlarge': {
-      headingProps.size = '5xl';
+      headingProps.size = {
+        '@initial': '4xl',
+        '@sm': '5xl',
+      };
       headingProps.level = 1;
       break;
     }
     case 'xlarge': {
-      headingProps.size = '4xl';
+      headingProps.size = {
+        '@initial': '3xl',
+        '@sm': '4xl',
+      };
       headingProps.level = 2;
       break;
     }
     case 'large': {
-      headingProps.size = '3xl';
+      headingProps.size = {
+        '@initial': '2xl',
+        '@sm': '3xl',
+      };
       headingProps.level = 3;
       break;
     }
     case 'medium': {
-      headingProps.size = '2xl';
-      headingProps.level = 4;
       break;
     }
     case 'small': {
-      headingProps.size = 'xl';
+      headingProps.size = {
+        '@initial': 'lg',
+        '@sm': 'xl',
+      };
       headingProps.level = 5;
       break;
     }
@@ -70,7 +86,7 @@ const getHeadingProps = (size: HeadingProps['size']): SHeadingProps => {
       break;
     }
     default: {
-      headingProps.size = '2xl';
+      break;
     }
   }
 
