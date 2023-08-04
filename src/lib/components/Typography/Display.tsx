@@ -16,27 +16,31 @@ export const Display = (props: DisplayProps) => {
 };
 
 const getHeadingProps = (size: DisplayProps['size']): HeadingProps => {
-  const displayProps: HeadingProps = {};
+  const displayProps: HeadingProps = {
+    size: {
+      '@initial': '4xl',
+      '@sm': '6xl',
+    },
+  };
 
   switch (size) {
     case 'large': {
-      displayProps.size = '8xl';
+      displayProps.size = { '@initial': '6xl', '@sm': '8xl' };
       break;
     }
     case 'medium': {
-      displayProps.size = '6xl';
       break;
     }
     case 'small': {
-      displayProps.size = '5xl';
+      displayProps.size = { '@initial': '3xl', '@sm': '5xl' };
       break;
     }
     case 'xsmall': {
-      displayProps.size = '4xl';
+      displayProps.size = { '@initial': '2xl', '@sm': '4xl' };
       break;
     }
     default: {
-      displayProps.size = '6xl';
+      break;
     }
   }
 

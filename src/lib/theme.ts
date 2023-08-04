@@ -1,5 +1,7 @@
 import { HopeThemeConfig } from '@hope-ui/solid';
 
+// TODO: configure typography sizes
+
 export const config: HopeThemeConfig = {
   initialColorMode: 'system',
   lightTheme: {
