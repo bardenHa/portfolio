@@ -2,6 +2,7 @@ import { Box, Container, Flex, IconButton, Image, useColorMode } from '@hope-ui/
 import { FiMoon, FiSun } from 'solid-icons/fi';
 import { ParentComponent } from 'solid-js';
 import { NavAnchor } from '../components';
+import { Link } from '@solidjs/router';
 
 export const FullLayout: ParentComponent = props => {
   return (
@@ -16,7 +17,9 @@ export const FullLayout: ParentComponent = props => {
     >
       <Container as={'header'} p={'$5'} transition={'max-width ease-in-out 200ms'}>
         <Flex alignItems={'center'} justifyContent={'space-between'}>
-          <Image src="/h_avatar.svg" w={32} h={32} alt="Harry's avatar" />
+          <Link href="/">
+            <Image src="/h_avatar.svg" w={32} h={32} alt="Harry's avatar" />
+          </Link>
           <Flex
             gap={'$6'}
             display={{

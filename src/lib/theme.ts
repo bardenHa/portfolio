@@ -25,6 +25,8 @@ export const config: HopeThemeConfig = {
       borderNeutral: '$neutral5',
       // Typography
       textSecondary: '$neutral10',
+      // Focus
+      focusRing: '#24FF6F', // TODO: update
     },
   },
   darkTheme: {
@@ -48,6 +50,8 @@ export const config: HopeThemeConfig = {
       borderNeutral: '$neutral5',
       // Typography
       textSecondary: '$neutral10',
+      // Focus
+      focusRing: '#24FF6F',
     },
   },
   components: {
