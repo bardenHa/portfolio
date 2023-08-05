@@ -50,4 +50,12 @@ export const config: HopeThemeConfig = {
       textSecondary: '$neutral10',
     },
   },
+  components: {
+    Anchor: {
+      baseStyle: {
+        borderRadius: '$sm',
+        transition: 'color 0.25s ease-in-out, background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out',
+      },
+    },
+  },
 };
