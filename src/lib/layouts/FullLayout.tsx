@@ -1,6 +1,7 @@
-import { Anchor, Box, Container, Flex, IconButton, Image, useColorMode } from '@hope-ui/solid';
+import { Box, Container, Flex, IconButton, Image, useColorMode } from '@hope-ui/solid';
 import { FiMoon, FiSun } from 'solid-icons/fi';
 import { ParentComponent } from 'solid-js';
+import { NavAnchor } from '../components';
 
 export const FullLayout: ParentComponent = props => {
   return (
@@ -24,9 +25,12 @@ export const FullLayout: ParentComponent = props => {
             }}
           >
             <Flex as={'nav'} alignItems={'center'} gap={'$4'}>
-              <Anchor href={'#about'}>About</Anchor>
-              <Anchor href={'#projects'}>Projects</Anchor>
-              <Anchor href={'#contact'}>Contact</Anchor>
+              <NavAnchor active href={'#about'}>
+                About
+              </NavAnchor>
+              <NavAnchor href={'#projects'}>Projects</NavAnchor>
+              <NavAnchor href={'#blog'}>Blog</NavAnchor>
+              <NavAnchor href={'#contact'}>Contact</NavAnchor>
             </Flex>
             <ColorModeSwitcher />
           </Flex>
