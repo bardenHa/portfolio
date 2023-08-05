@@ -1,14 +1,14 @@
 import { createSignal } from 'solid-js';
-import { Button, HStack, VStack, Grid, Divider, Anchor, Box, Image, IconButton } from '@hope-ui/solid';
+import { Button, HStack, VStack, Grid, Anchor, Box, Image, IconButton } from '@hope-ui/solid';
 import { FiPlus, FiMinus, FiTwitter, FiInstagram, FiGithub } from 'solid-icons/fi';
-import { Card, Typography } from '@/lib/components';
+import { Card, Divider, Typography } from '@/lib/components';
 
 export default function Home() {
   const [count, setCount] = createSignal(0);
 
   return (
     <VStack spacing={'$8'} alignItems={'start'}>
-      <Box as="section" mt={'$12'}>
+      <Box as="section" mt={'$12'} id="intro">
         <Typography.Display size="medium">
           Software Engineer creating thoughtful, accessible & intuitive interfaces 🤟🏼
         </Typography.Display>
@@ -48,8 +48,9 @@ export default function Home() {
           </Button>
         </HStack>
       </Box>
-      <Divider margin={'$12 0'} />
-      <VStack as={'section'} gap={'$5'} w={'100%'}>
+      <Divider size="lg" />
+      <VStack as={'section'} gap={'$5'} w={'100%'} alignItems={'start'} id="about">
+        <Typography.Heading size={'large'}>A little bit about me.</Typography.Heading>
         <Grid
           templateColumns={{
             '@initial': '1fr',
@@ -60,8 +61,6 @@ export default function Home() {
           templateRows={'minmax(350px, 1fr)'}
         >
           <Card>
-            <Typography.Heading size={'large'}>A little bit about me.</Typography.Heading>
-            <Divider margin={'$4 0'} />
             <Typography.Label size="xsmall" mb={'$2'} variant="secondary">
               WHERE I'M FROM
             </Typography.Label>
@@ -98,6 +97,13 @@ export default function Home() {
             overflow={'hidden'}
           />
         </Grid>
+      </VStack>
+      <Divider size="lg" />
+      <Box as="section" w={'100%'} id="featured-projects">
+        <Typography.Heading size={'large'}>Featured projects</Typography.Heading>
+        <Typography.Paragraph variant="secondary">
+          A collection of some side projects that have shipped recently.
+        </Typography.Paragraph>
         <Grid
           templateColumns={{
             '@initial': '1fr',
@@ -105,15 +111,16 @@ export default function Home() {
           }}
           gap={'$5'}
           w={'100%'}
-          gridAutoRows={'350px'}
+          gridAutoRows={'200px'}
+          mt={'$8'}
         >
-          <Card>Some card</Card>
-          <Card>Some card</Card>
-          <Card>Some card</Card>
-          <Card>Some card</Card>
           <Card gridColumn={'1 / 3'}>Some card</Card>
+          <Card>Some card</Card>
+          <Card>Some card</Card>
+          <Card>Some card</Card>
+          <Card>Some card</Card>
         </Grid>
-      </VStack>
+      </Box>
       <HStack spacing={'$3'}>
         <Button variant={'subtle'} onClick={() => setCount(count() - 1)} rightIcon={<FiMinus />}>
           Decrement

@@ -1,7 +1,7 @@
-import { Box, Container, Flex, IconButton, Image, useColorMode } from '@hope-ui/solid';
+import { Anchor, Box, Container, Flex, IconButton, Image, useColorMode } from '@hope-ui/solid';
 import { FiMoon, FiSun } from 'solid-icons/fi';
 import { ParentComponent } from 'solid-js';
-import { NavAnchor } from '../components';
+import { Divider, NavAnchor, Typography } from '../components';
 import { Link } from '@solidjs/router';
 
 export const FullLayout: ParentComponent = props => {
@@ -15,7 +15,7 @@ export const FullLayout: ParentComponent = props => {
       overflowX={'hidden'}
       bg={'$contentNeutral'}
     >
-      <Container as={'header'} p={'$5'} transition={'max-width ease-in-out 200ms'}>
+      <Container as={'header'} p={'$5'} transition={'max-width ease-in-out 200ms'} id="top">
         <Flex alignItems={'center'} justifyContent={'space-between'}>
           <Link href="/">
             <Image src="/h_avatar.svg" w={32} h={32} alt="Harry's avatar" />
@@ -42,14 +42,14 @@ export const FullLayout: ParentComponent = props => {
       <Container as={'main'} p={'$5'} flex={1} transition={'max-width ease-in-out 200ms'}>
         {props.children}
       </Container>
-      <Container
-        as={'footer'}
-        p={'$5'}
-        borderColor={'$borderNeutral'}
-        borderTopWidth={'thin'}
-        transition={'max-width ease-in-out 200ms'}
-      >
-        <p>Footer</p>
+      <Container as={'footer'} p={'$5'} transition={'max-width ease-in-out 200ms'}>
+        <Divider size="lg" />
+        <Flex justifyContent={'space-between'} alignItems={'center'}>
+          <Typography.Paragraph size="small" variant="secondary">
+            © 2023 Harry Barden
+          </Typography.Paragraph>
+          <Anchor href={'#top'}>Back to top</Anchor>
+        </Flex>
       </Container>
     </Box>
   );
