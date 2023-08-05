@@ -17,6 +17,7 @@
     "@typescript-eslint/parser": "^5.60.0",
     "eslint": "^8.43.0",
     "eslint-plugin-solid": "^0.12.1",
+    "eslint-plugin-unused-imports": "^3.0.0",
     "prettier": "^2.8.8",
     "vite": "^4.3.9",
     "vite-plugin-solid": "^2.7.0"
@@ -25,7 +26,6 @@
     "@hope-ui/solid": "^0.6.7",
     "@solidjs/router": "^0.8.2",
     "@stitches/core": "^1.2.8",
-    "eslint-plugin-unused-imports": "^2.0.0",
     "solid-icons": "^1.0.8",
     "solid-js": "^1.7.6",
     "solid-transition-group": "^0.2.2"
