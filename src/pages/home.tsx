@@ -1,13 +1,10 @@
-import { createSignal } from 'solid-js';
 import { Button, HStack, VStack, Grid, Anchor, Box, Image, IconButton } from '@hope-ui/solid';
-import { FiPlus, FiMinus, FiTwitter, FiInstagram, FiGithub } from 'solid-icons/fi';
+import { FiTwitter, FiInstagram, FiGithub } from 'solid-icons/fi';
 import { Card, Divider, Typography } from '@/lib/components';
 
 export default function Home() {
-  const [count, setCount] = createSignal(0);
-
   return (
-    <VStack spacing={'$8'} alignItems={'start'}>
+    <VStack alignItems={'start'}>
       <Box as="section" mt={'$12'} id="intro">
         <Typography.Display size="medium">
           Software Engineer creating thoughtful, accessible & intuitive interfaces 🤟🏼
@@ -50,7 +47,7 @@ export default function Home() {
       </Box>
       <Divider size="lg" />
       <VStack as={'section'} gap={'$5'} w={'100%'} alignItems={'start'} id="about">
-        <Typography.Heading size={'large'}>A little bit about me.</Typography.Heading>
+        <Typography.Heading size={'large'}>A little bit about me</Typography.Heading>
         <Grid
           templateColumns={{
             '@initial': '1fr',
@@ -93,7 +90,7 @@ export default function Home() {
             h={'100%'}
             objectFit={'cover'}
             flexShrink={0}
-            borderRadius={'$2xl'}
+            borderRadius={'$xl'}
             overflow={'hidden'}
           />
         </Grid>
@@ -121,15 +118,6 @@ export default function Home() {
           <Card>Some card</Card>
         </Grid>
       </Box>
-      <HStack spacing={'$3'}>
-        <Button variant={'subtle'} onClick={() => setCount(count() - 1)} rightIcon={<FiMinus />}>
-          Decrement
-        </Button>
-        <output>Count: {count()}</output>
-        <Button onClick={() => setCount(count() + 1)} rightIcon={<FiPlus />}>
-          Increment
-        </Button>
-      </HStack>
     </VStack>
   );
 }

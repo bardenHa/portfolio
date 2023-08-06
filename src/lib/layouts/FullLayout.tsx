@@ -1,8 +1,27 @@
 import { Anchor, Box, Container, Flex, IconButton, Image, useColorMode } from '@hope-ui/solid';
 import { FiMoon, FiSun } from 'solid-icons/fi';
-import { ParentComponent } from 'solid-js';
+import { For, ParentComponent } from 'solid-js';
 import { Divider, NavAnchor, Typography } from '../components';
 import { Link } from '@solidjs/router';
+
+const NAVIGATION_LINKS = [
+  {
+    title: 'About',
+    href: '#about',
+  },
+  {
+    title: 'Projects',
+    href: '#projects',
+  },
+  {
+    title: 'Blog',
+    href: '#blog',
+  },
+  {
+    title: 'Contact',
+    href: '#contact',
+  },
+];
 
 export const FullLayout: ParentComponent = props => {
   return (
@@ -28,12 +47,13 @@ export const FullLayout: ParentComponent = props => {
             }}
           >
             <Flex as={'nav'} alignItems={'center'} gap={'$4'}>
-              <NavAnchor active href={'#about'}>
-                About
-              </NavAnchor>
-              <NavAnchor href={'#projects'}>Projects</NavAnchor>
-              <NavAnchor href={'#blog'}>Blog</NavAnchor>
-              <NavAnchor href={'#contact'}>Contact</NavAnchor>
+              <For each={NAVIGATION_LINKS}>
+                {link => (
+                  <NavAnchor href={link.href} variant="subtle">
+                    {link.title}
+                  </NavAnchor>
+                )}
+              </For>
             </Flex>
             <ColorModeSwitcher />
           </Flex>
@@ -42,7 +62,7 @@ export const FullLayout: ParentComponent = props => {
       <Container as={'main'} p={'$5'} flex={1} transition={'max-width ease-in-out 200ms'}>
         {props.children}
       </Container>
-      <Container as={'footer'} p={'$5'} transition={'max-width ease-in-out 200ms'}>
+      <Container as={'footer'} p={'$5'} pt={0} transition={'max-width ease-in-out 200ms'}>
         <Divider size="lg" />
         <Flex justifyContent={'space-between'} alignItems={'center'}>
           <Typography.Paragraph size="small" variant="secondary">
