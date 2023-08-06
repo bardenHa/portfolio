@@ -1,4 +1,4 @@
-import { Anchor, Box, Container, Flex, IconButton, Image, useColorMode } from '@hope-ui/solid';
+import { Box, Container, Flex, IconButton, Image, useColorMode } from '@hope-ui/solid';
 import { FiMoon, FiSun } from 'solid-icons/fi';
 import { For, ParentComponent } from 'solid-js';
 import { Divider, NavAnchor, Typography } from '../components';
@@ -23,6 +23,7 @@ const NAVIGATION_LINKS = [
   },
 ];
 
+// TODO: Make props for links/children and use as a view
 export const FullLayout: ParentComponent = props => {
   return (
     <Box
@@ -65,10 +66,10 @@ export const FullLayout: ParentComponent = props => {
       <Container as={'footer'} p={'$5'} pt={0} transition={'max-width ease-in-out 200ms'}>
         <Divider size="lg" />
         <Flex justifyContent={'space-between'} alignItems={'center'}>
-          <Typography.Paragraph size="small" variant="secondary">
-            © 2023 Harry Barden
-          </Typography.Paragraph>
-          <Anchor href={'#top'}>Back to top</Anchor>
+          <Typography.Paragraph>All Rights Reserved © 2023</Typography.Paragraph>
+          <NavAnchor href={'#top'} variant="distinguished" colorScheme="primary">
+            Back to top
+          </NavAnchor>
         </Flex>
       </Container>
     </Box>
