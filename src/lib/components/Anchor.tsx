@@ -1,16 +1,21 @@
-import { Anchor, AnchorProps, css } from '@hope-ui/solid';
+import { Anchor as SAnchor, AnchorProps as SAnchorProps, css } from '@hope-ui/solid';
 import { splitProps } from 'solid-js';
 
-interface NavAnchorProps extends AnchorProps {
-  variant?: 'subtle' | 'distinguished';
+interface NavAnchorProps extends SAnchorProps {
+  variant?: 'subtle' | 'distinguished' | 'natural';
   colorScheme?: 'neutral' | 'primary';
 }
 
 const anchorStyles = css({
   transition: 'color 0.25s ease-in-out',
   fontWeight: '$medium',
+  defaultVariants: {
+    variant: 'natural',
+    colorScheme: 'primary',
+  },
   variants: {
     variant: {
+      natural: {},
       subtle: {
         color: '$neutral10',
         textDecoration: 'none',
@@ -43,13 +48,28 @@ const anchorStyles = css({
     },
   },
   compoundVariants: [
+    // Natural
+    {
+      variant: 'natural',
+      colorScheme: 'neutral',
+      css: {
+        color: '$neutral12',
+      },
+    },
+    {
+      variant: 'natural',
+      colorScheme: 'primary',
+      css: {
+        color: '$primary10',
+      },
+    },
     // Subtle
     {
       variant: 'subtle',
       colorScheme: 'primary',
       css: {
         _hover: {
-          color: '$primary12',
+          color: '$primary10',
         },
       },
     },
@@ -66,12 +86,12 @@ const anchorStyles = css({
   ],
 });
 
-export const NavAnchor = (props: NavAnchorProps) => {
+export const Anchor = (props: NavAnchorProps) => {
   const [{ variant, colorScheme }, rest] = splitProps(props, ['variant', 'colorScheme']);
 
   return (
-    <Anchor class={anchorStyles({ variant, colorScheme })} {...rest}>
+    <SAnchor class={anchorStyles({ variant, colorScheme })} {...rest}>
       {props.children}
-    </Anchor>
+    </SAnchor>
   );
 };

@@ -1,7 +1,7 @@
 import { Box, Container, Flex, IconButton, Image, useColorMode } from '@hope-ui/solid';
 import { FiMoon, FiSun } from 'solid-icons/fi';
 import { For, ParentComponent } from 'solid-js';
-import { Divider, NavAnchor, Typography } from '../components';
+import { Divider, Anchor, Typography } from '../components';
 import { Link } from '@solidjs/router';
 
 const NAVIGATION_LINKS = [
@@ -50,9 +50,9 @@ export const FullLayout: ParentComponent = props => {
             <Flex as={'nav'} alignItems={'center'} gap={'$4'}>
               <For each={NAVIGATION_LINKS}>
                 {link => (
-                  <NavAnchor href={link.href} variant="subtle">
+                  <Anchor href={link.href} variant="subtle">
                     {link.title}
-                  </NavAnchor>
+                  </Anchor>
                 )}
               </For>
             </Flex>
@@ -67,9 +67,9 @@ export const FullLayout: ParentComponent = props => {
         <Divider size="lg" />
         <Flex justifyContent={'space-between'} alignItems={'center'}>
           <Typography.Paragraph>All Rights Reserved © 2023</Typography.Paragraph>
-          <NavAnchor href={'#top'} variant="distinguished" colorScheme="primary">
+          <Anchor href={'#top'} variant="distinguished" colorScheme="primary">
             Back to top
-          </NavAnchor>
+          </Anchor>
         </Flex>
       </Container>
     </Box>

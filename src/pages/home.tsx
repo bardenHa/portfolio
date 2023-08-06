@@ -1,6 +1,6 @@
-import { Button, HStack, VStack, Grid, Anchor, Box, Image, IconButton } from '@hope-ui/solid';
+import { Button, HStack, VStack, Grid, Box, Image, IconButton } from '@hope-ui/solid';
 import { FiTwitter, FiInstagram, FiGithub } from 'solid-icons/fi';
-import { Card, Divider, Typography } from '@/lib/components';
+import { Anchor, Card, Divider, Typography } from '@/lib/components';
 
 export default function Home() {
   return (
@@ -55,7 +55,6 @@ export default function Home() {
           }}
           gap={'$5'}
           w={'100%'}
-          templateRows={'minmax(350px, 1fr)'}
         >
           <Card>
             <Typography.Label size="xsmall" mb={'$2'} variant="secondary">
@@ -78,10 +77,10 @@ export default function Home() {
             </Typography.Label>
             <Typography.Paragraph variant="secondary" size="large">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium, aspernatur{' '}
-              <Anchor href="https://example.com" external color={'$neutral12'} fontWeight={'$medium'}>
+              <Anchor href="https://example.com" external>
                 Pledge
               </Anchor>
-              .
+              . Ipsum facilis quam quia tempor temporibus.
             </Typography.Paragraph>
           </Card>
           <Image
@@ -89,7 +88,6 @@ export default function Home() {
             alt="Harry Barden portrait"
             h={'100%'}
             objectFit={'cover'}
-            flexShrink={0}
             borderRadius={'$xl'}
             overflow={'hidden'}
           />
