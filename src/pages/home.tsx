@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <VStack alignItems={'start'}>
       <Box as="section" mt={'$12'} id="intro">
-        <Typography.Display size="medium">
+        <Typography.Display size="medium" level={1}>
           Software Engineer creating thoughtful, accessible & intuitive interfaces 🤟🏼
         </Typography.Display>
         <Typography.Paragraph size="large" variant="secondary" mt={'$16'}>

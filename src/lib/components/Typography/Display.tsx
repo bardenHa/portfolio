@@ -9,7 +9,7 @@ export const Display = (props: DisplayProps) => {
   const [{ size }, rest] = splitProps(props, ['size']);
 
   return (
-    <Heading fontWeight={'$bold'} lineHeight={'$normal'} {...getHeadingProps(size)} {...rest}>
+    <Heading fontWeight={'$bold'} lineHeight={'$shorter'} letterSpacing={'$tight'} {...getHeadingProps(size)} {...rest}>
       {props.children}
     </Heading>
   );
