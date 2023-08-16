@@ -1,6 +1,6 @@
 import { HopeThemeConfig } from '@hope-ui/solid';
 
-// TODO: configure typography sizes
+// TODO: update primary colors to closer align with #24FF6F
 
 export const config: HopeThemeConfig = {
   initialColorMode: 'system',

@@ -7,7 +7,7 @@ import { Link } from '@solidjs/router';
 const NAVIGATION_LINKS = [
   {
     title: 'Home',
-    href: '#home',
+    href: '/',
   },
   {
     title: 'Projects',
@@ -15,7 +15,7 @@ const NAVIGATION_LINKS = [
   },
   {
     title: 'Blog',
-    href: '#blog',
+    href: '/blog',
   },
   {
     title: 'Contact',
