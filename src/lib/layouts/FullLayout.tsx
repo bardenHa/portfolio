@@ -50,9 +50,11 @@ export const FullLayout: ParentComponent = props => {
             <Flex as={'nav'} alignItems={'center'} gap={'$4'}>
               <For each={NAVIGATION_LINKS}>
                 {link => (
-                  <Anchor href={link.href} variant="subtle">
-                    {link.title}
-                  </Anchor>
+                  <Typography.Label size="small">
+                    <Anchor href={link.href} variant="subtle">
+                      {link.title}
+                    </Anchor>
+                  </Typography.Label>
                 )}
               </For>
             </Flex>
