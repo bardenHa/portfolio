@@ -3,7 +3,7 @@ import { Box, VStack } from '@hope-ui/solid';
 
 import { Divider, Typography } from '@/lib/components';
 
-export default function Home(): JSX.Element {
+export default function Blog(): JSX.Element {
   return (
     <VStack alignItems={'start'}>
       <Box as="section" mt={'$12'} id="intro">
@@ -18,3 +18,18 @@ export default function Home(): JSX.Element {
     </VStack>
   );
 }
+
+export function BlogPost(): JSX.Element {
+  return (
+    <Box as="article" mt={'$12'}>
+      <Typography.Display size="medium" level={2}>
+        {sodm}
+      </Typography.Display>
+      <Typography.Paragraph size="large" variant="secondary" mt={'$16'}>
+        Writing about web development, tooling, linux and developer productivity.
+      </Typography.Paragraph>
+    </Box>
+  );
+}
+
+const sodm = 10;

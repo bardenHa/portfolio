@@ -86,12 +86,12 @@ const anchorStyles = css({
   ],
 });
 
-export const Anchor = (props: NavAnchorProps): JSX.Element => {
+export function Anchor(props: NavAnchorProps): JSX.Element {
   const [{ variant, colorScheme }, rest] = splitProps(props, ['variant', 'colorScheme']);
 
   return (
-    <SAnchor class={anchorStyles({ variant, colorScheme })} {...rest}>
+    <SAnchor class={anchorStyles({ variant: variant ?? 'natural', colorScheme: colorScheme ?? 'primary' })} {...rest}>
       {props.children}
     </SAnchor>
   );
-};
+}
