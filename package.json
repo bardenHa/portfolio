@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
+    "check": "pnpm run typecheck && pnpm run lint && pnpm run format && pnpm run build",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src",
     "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx ./src",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
@@ -37,6 +38,7 @@
     "@hope-ui/solid": "^0.6.7",
     "@solidjs/router": "^0.8.2",
     "@stitches/core": "^1.2.8",
+    "rambda": "^8.3.0",
     "solid-icons": "^1.0.8",
     "solid-js": "^1.7.6",
     "solid-transition-group": "^0.0.10"
