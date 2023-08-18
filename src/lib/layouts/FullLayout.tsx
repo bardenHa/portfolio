@@ -1,6 +1,6 @@
 import { Box, Container, Flex, IconButton, Image, useColorMode } from '@hope-ui/solid';
 import { FiMoon, FiSun } from 'solid-icons/fi';
-import { For, ParentComponent } from 'solid-js';
+import { For, JSX, ParentComponent } from 'solid-js';
 import { Divider, Anchor, Typography } from '../components';
 import { Link } from '@solidjs/router';
 
@@ -78,7 +78,7 @@ export const FullLayout: ParentComponent = props => {
   );
 };
 
-function ColorModeSwitcher() {
+function ColorModeSwitcher(): JSX.Element {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <IconButton

@@ -1,11 +1,11 @@
 import { Heading, HeadingProps } from '@hope-ui/solid';
-import { splitProps } from 'solid-js';
+import { JSX, splitProps } from 'solid-js';
 
 interface DisplayProps extends Omit<HeadingProps, 'size'> {
   size?: 'large' | 'medium' | 'small' | 'xsmall';
 }
 
-export const Display = (props: DisplayProps) => {
+export const Display = (props: DisplayProps): JSX.Element => {
   const [{ size }, rest] = splitProps(props, ['size']);
 
   return (

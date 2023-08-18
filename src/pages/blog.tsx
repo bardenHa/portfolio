@@ -1,7 +1,8 @@
 import { VStack, Box } from '@hope-ui/solid';
 import { Divider, Typography } from '@/lib/components';
+import { JSX } from 'solid-js';
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <VStack alignItems={'start'}>
       <Box as="section" mt={'$12'} id="intro">

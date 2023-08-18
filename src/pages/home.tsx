@@ -1,8 +1,9 @@
 import { Button, HStack, VStack, Grid, Box, Image, IconButton } from '@hope-ui/solid';
 import { FiTwitter, FiInstagram, FiGithub } from 'solid-icons/fi';
 import { Anchor, Card, Divider, Typography } from '@/lib/components';
+import { JSX } from 'solid-js';
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <VStack alignItems={'start'}>
       <Box as="section" mt={'$12'} id="intro">

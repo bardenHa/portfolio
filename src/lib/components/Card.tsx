@@ -1,10 +1,11 @@
 import { Box, HTMLHopeProps } from '@hope-ui/solid';
+import { JSX } from 'solid-js';
 
 interface CardProps {
   test?: string;
 }
 
-export const Card = (props: HTMLHopeProps<'section', CardProps>) => {
+export const Card = (props: HTMLHopeProps<'section', CardProps>): JSX.Element => {
   return (
     <Box as={'section'} p={'$8'} borderRadius={'$xl'} bg={'$contentNeutralSecondary'} {...props}>
       {props.children}

@@ -1,5 +1,5 @@
 import { Anchor as SAnchor, AnchorProps as SAnchorProps, css } from '@hope-ui/solid';
-import { splitProps } from 'solid-js';
+import { JSX, splitProps } from 'solid-js';
 
 interface NavAnchorProps extends SAnchorProps {
   variant?: 'subtle' | 'distinguished' | 'natural';
@@ -86,7 +86,7 @@ const anchorStyles = css({
   ],
 });
 
-export const Anchor = (props: NavAnchorProps) => {
+export const Anchor = (props: NavAnchorProps): JSX.Element => {
   const [{ variant, colorScheme }, rest] = splitProps(props, ['variant', 'colorScheme']);
 
   return (

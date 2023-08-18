@@ -1,11 +1,11 @@
 import { Divider as SDivider, DividerProps as SDividerProps } from '@hope-ui/solid';
-import { splitProps } from 'solid-js';
+import { JSX, splitProps } from 'solid-js';
 
 interface DividerProps extends SDividerProps {
   size?: 'sm' | 'md' | 'lg';
 }
 
-export const Divider = (props: DividerProps) => {
+export const Divider = (props: DividerProps): JSX.Element => {
   const [{ size }, rest] = splitProps(props, ['size']);
 
   let margin: SDividerProps['margin'];

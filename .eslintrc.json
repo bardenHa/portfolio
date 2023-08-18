@@ -15,6 +15,12 @@
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
     "no-unused-vars": "warn",
-    "unused-imports/no-unused-imports-ts": "warn"
+    "unused-imports/no-unused-imports-ts": "warn",
+    "@typescript-eslint/explicit-function-return-type": [
+      "error",
+      {
+        "allowExpressions": true
+      }
+    ]
   }
 }

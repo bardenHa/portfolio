@@ -1,5 +1,5 @@
 import { Text, TextProps, css } from '@hope-ui/solid';
-import { splitProps } from 'solid-js';
+import { JSX, splitProps } from 'solid-js';
 
 const paragraphtStyles = css({
   variants: {
@@ -19,7 +19,7 @@ interface ParagraphProps extends Omit<TextProps, 'size'> {
   variant?: 'primary' | 'secondary';
 }
 
-export const Paragraph = (props: ParagraphProps) => {
+export const Paragraph = (props: ParagraphProps): JSX.Element => {
   const [{ variant, size }, rest] = splitProps(props, ['size', 'variant']);
   return (
     <Text
