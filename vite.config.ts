@@ -1,7 +1,7 @@
 import { defineConfig, loadEnv } from 'vite';
+import viteCompression from 'vite-plugin-compression';
 import solidPlugin from 'vite-plugin-solid';
 import { visualizer } from 'rollup-plugin-visualizer';
-import viteCompression from 'vite-plugin-compression';
 
 export default defineConfig(() => {
   const env = loadEnv('all', process.cwd(), '');
@@ -17,7 +17,7 @@ export default defineConfig(() => {
         ext: '.gz',
       }),
       visualizer({
-        open: env.VITE_OPEN_VISUALIZER === 'true',
+        open: env['VITE_OPEN_VISUALIZER'] === 'true',
       }),
     ],
     server: {
