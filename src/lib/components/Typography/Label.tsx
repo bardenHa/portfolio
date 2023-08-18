@@ -1,5 +1,5 @@
-import { Text, TextProps, css } from '@hope-ui/solid';
 import { JSX, splitProps } from 'solid-js';
+import { css, Text, TextProps } from '@hope-ui/solid';
 
 const labelStyles = css({
   variants: {

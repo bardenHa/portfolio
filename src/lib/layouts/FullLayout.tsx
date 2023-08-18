@@ -1,8 +1,9 @@
-import { Box, Container, Flex, IconButton, Image, useColorMode } from '@hope-ui/solid';
 import { FiMoon, FiSun } from 'solid-icons/fi';
 import { For, JSX, ParentComponent } from 'solid-js';
-import { Divider, Anchor, Typography } from '../components';
+import { Box, Container, Flex, IconButton, Image, useColorMode } from '@hope-ui/solid';
 import { Link } from '@solidjs/router';
+
+import { Anchor, Divider, Typography } from '../components';
 
 const NAVIGATION_LINKS = [
   {

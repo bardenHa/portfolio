@@ -1,6 +1,7 @@
-import { VStack, Box } from '@hope-ui/solid';
-import { Divider, Typography } from '@/lib/components';
 import { JSX } from 'solid-js';
+import { Box, VStack } from '@hope-ui/solid';
+
+import { Divider, Typography } from '@/lib/components';
 
 export default function Home(): JSX.Element {
   return (

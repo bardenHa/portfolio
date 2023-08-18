@@ -1,7 +1,8 @@
-import { Button, HStack, VStack, Grid, Box, Image, IconButton } from '@hope-ui/solid';
-import { FiTwitter, FiInstagram, FiGithub } from 'solid-icons/fi';
-import { Anchor, Card, Divider, Typography } from '@/lib/components';
+import { FiGithub, FiInstagram, FiTwitter } from 'solid-icons/fi';
 import { JSX } from 'solid-js';
+import { Box, Button, Grid, HStack, IconButton, Image, VStack } from '@hope-ui/solid';
+
+import { Anchor, Card, Divider, Typography } from '@/lib/components';
 
 export default function Home(): JSX.Element {
   return (

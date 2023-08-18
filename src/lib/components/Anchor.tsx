@@ -1,5 +1,5 @@
-import { Anchor as SAnchor, AnchorProps as SAnchorProps, css } from '@hope-ui/solid';
 import { JSX, splitProps } from 'solid-js';
+import { Anchor as SAnchor, AnchorProps as SAnchorProps, css } from '@hope-ui/solid';
 
 interface NavAnchorProps extends SAnchorProps {
   variant?: 'subtle' | 'distinguished' | 'natural';

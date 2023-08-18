@@ -1,5 +1,5 @@
-import { Divider as SDivider, DividerProps as SDividerProps } from '@hope-ui/solid';
 import { JSX, splitProps } from 'solid-js';
+import { Divider as SDivider, DividerProps as SDividerProps } from '@hope-ui/solid';
 
 interface DividerProps extends SDividerProps {
   size?: 'sm' | 'md' | 'lg';

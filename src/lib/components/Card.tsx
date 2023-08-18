@@ -1,5 +1,5 @@
-import { Box, HTMLHopeProps } from '@hope-ui/solid';
 import { JSX } from 'solid-js';
+import { Box, HTMLHopeProps } from '@hope-ui/solid';
 
 interface CardProps {
   test?: string;

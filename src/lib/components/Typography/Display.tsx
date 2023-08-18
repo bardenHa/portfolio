@@ -1,5 +1,5 @@
-import { Heading, HeadingProps } from '@hope-ui/solid';
 import { JSX, splitProps } from 'solid-js';
+import { Heading, HeadingProps } from '@hope-ui/solid';
 
 interface DisplayProps extends Omit<HeadingProps, 'size'> {
   size?: 'large' | 'medium' | 'small' | 'xsmall';

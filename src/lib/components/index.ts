@@ -1,4 +1,4 @@
-export { Card } from './Card';
-export { Typography } from './Typography';
 export { Anchor } from './Anchor';
+export { Card } from './Card';
 export { Divider } from './Divider';
+export { Typography } from './Typography';

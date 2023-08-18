@@ -1,9 +1,11 @@
-import { render } from 'solid-js/web';
-import { Router } from '@solidjs/router';
-import App from './app';
-import { HopeProvider } from '@hope-ui/solid';
-import { config } from './lib/theme';
 import './index.css';
+
+import { render } from 'solid-js/web';
+import { HopeProvider } from '@hope-ui/solid';
+import { Router } from '@solidjs/router';
+
+import App from './app';
+import { config } from './lib/theme';
 
 const root = document.getElementById('root');
 

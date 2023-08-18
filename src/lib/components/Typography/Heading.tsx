@@ -1,5 +1,5 @@
-import { Heading as SHeading, HeadingProps as SHeadingProps, css } from '@hope-ui/solid';
 import { JSX, splitProps } from 'solid-js';
+import { css, Heading as SHeading, HeadingProps as SHeadingProps } from '@hope-ui/solid';
 
 const headingStyles = css({
   variants: {
