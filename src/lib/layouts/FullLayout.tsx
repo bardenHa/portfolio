@@ -66,7 +66,7 @@ export const FullLayout: ParentComponent = props => {
       <Container as={'main'} p={'$5'} flex={1} transition={'max-width ease-in-out 200ms'}>
         {props.children}
       </Container>
-      <Container as={'footer'} p={'$5'} pt={0} transition={'max-width ease-in-out 200ms'}>
+      <Container as={'footer'} p={'$5'} pt={0} pb={'$12'} transition={'max-width ease-in-out 200ms'}>
         <Divider size="lg" />
         <Flex justifyContent={'space-between'} alignItems={'center'}>
           <Typography.Paragraph>All Rights Reserved © 2023</Typography.Paragraph>
