@@ -1,5 +1,6 @@
 import { JSX, splitProps } from 'solid-js';
 import { css, Heading as SHeading, HeadingProps as SHeadingProps } from '@hope-ui/solid';
+import { defaultTo } from 'rambda';
 
 const headingStyles = css({
   variants: {
@@ -24,7 +25,7 @@ export const Heading = (props: HeadingProps): JSX.Element => {
 
   return (
     <SHeading
-      class={headingStyles({ variant })}
+      class={headingStyles({ variant: defaultTo('primary', variant) })}
       fontWeight={'$bold'}
       lineHeight={'$normal'}
       {...getHeadingProps(size)}
