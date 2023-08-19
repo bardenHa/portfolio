@@ -1,5 +1,6 @@
 import { JSX, splitProps } from 'solid-js';
 import { css, Text, TextProps } from '@hope-ui/solid';
+import { defaultTo } from 'rambda';
 
 const paragraphtStyles = css({
   variants: {
@@ -19,12 +20,12 @@ interface ParagraphProps extends Omit<TextProps, 'size'> {
   variant?: 'primary' | 'secondary';
 }
 
-export const Paragraph = (props: ParagraphProps): JSX.Element => {
+export function Paragraph(props: ParagraphProps): JSX.Element {
   const [{ variant, size }, rest] = splitProps(props, ['size', 'variant']);
   return (
     <Text
       class={paragraphtStyles({
-        variant,
+        variant: defaultTo('primary', variant),
       })}
       lineHeight={'$base'}
       fontWeight={'$normal'}
@@ -34,9 +35,9 @@ export const Paragraph = (props: ParagraphProps): JSX.Element => {
       {props.children}
     </Text>
   );
-};
+}
 
-const getTextProps = (size: ParagraphProps['size']): TextProps => {
+function getTextProps(size: ParagraphProps['size']): TextProps {
   const paragraphProps: TextProps = {};
 
   switch (size) {
@@ -62,4 +63,4 @@ const getTextProps = (size: ParagraphProps['size']): TextProps => {
   }
 
   return paragraphProps;
-};
+}

@@ -5,10 +5,10 @@ interface DividerProps extends SDividerProps {
   size?: 'sm' | 'md' | 'lg';
 }
 
-export const Divider = (props: DividerProps): JSX.Element => {
+export function Divider(props: DividerProps): JSX.Element {
   const [{ size }, rest] = splitProps(props, ['size']);
 
-  let margin: SDividerProps['margin'];
+  let margin: SDividerProps['margin'] = '$8 0';
 
   switch (size) {
     case 'sm':
@@ -28,4 +28,4 @@ export const Divider = (props: DividerProps): JSX.Element => {
       {props.children}
     </SDivider>
   );
-};
+}

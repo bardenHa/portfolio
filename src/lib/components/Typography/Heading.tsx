@@ -20,7 +20,7 @@ interface HeadingProps extends Omit<SHeadingProps, 'size'> {
   variant?: 'primary' | 'secondary';
 }
 
-export const Heading = (props: HeadingProps): JSX.Element => {
+export function Heading(props: HeadingProps): JSX.Element {
   const [{ variant, size }, rest] = splitProps(props, ['size', 'variant']);
 
   return (
@@ -34,9 +34,9 @@ export const Heading = (props: HeadingProps): JSX.Element => {
       {props.children}
     </SHeading>
   );
-};
+}
 
-const getHeadingProps = (size: HeadingProps['size']): SHeadingProps => {
+function getHeadingProps(size: HeadingProps['size']): SHeadingProps {
   const headingProps: SHeadingProps = {
     size: {
       '@initial': 'xl',
@@ -92,4 +92,4 @@ const getHeadingProps = (size: HeadingProps['size']): SHeadingProps => {
   }
 
   return headingProps;
-};
+}

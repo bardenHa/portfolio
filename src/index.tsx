@@ -15,6 +15,10 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
   );
 }
 
+if (!root) {
+  throw new Error('Root element not found. Did you forget to add it to your index.html?');
+}
+
 render(
   () => (
     <Router>

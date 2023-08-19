@@ -8,4 +8,4 @@ export const Typography = {
   Heading,
   Label,
   Paragraph,
-};
+} as const;

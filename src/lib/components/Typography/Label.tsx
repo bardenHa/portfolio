@@ -1,5 +1,6 @@
 import { JSX, splitProps } from 'solid-js';
 import { css, Text, TextProps } from '@hope-ui/solid';
+import { defaultTo } from 'rambda';
 
 const labelStyles = css({
   variants: {
@@ -19,12 +20,12 @@ interface LabelProps extends Omit<TextProps, 'size'> {
   variant?: 'primary' | 'secondary';
 }
 
-export const Label = (props: LabelProps): JSX.Element => {
+export function Label(props: LabelProps): JSX.Element {
   const [{ variant, size }, rest] = splitProps(props, ['size', 'variant']);
 
   return (
     <Text
-      class={labelStyles({ variant })}
+      class={labelStyles({ variant: defaultTo('primary', variant) })}
       aria-roledescription="A subtitle, short phrase or sentence that provides context or information about a specific block of text."
       fontWeight={'$medium'}
       lineHeight={'$normal'}
@@ -34,9 +35,9 @@ export const Label = (props: LabelProps): JSX.Element => {
       {props.children}
     </Text>
   );
-};
+}
 
-const getTextProps = (size: LabelProps['size']): TextProps => {
+function getTextProps(size: LabelProps['size']): TextProps {
   const labelProps: TextProps = {};
 
   switch (size) {
@@ -62,4 +63,4 @@ const getTextProps = (size: LabelProps['size']): TextProps => {
   }
 
   return labelProps;
-};
+}

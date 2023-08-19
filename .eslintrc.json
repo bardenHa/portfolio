@@ -39,8 +39,50 @@
     "@typescript-eslint/naming-convention": [
       "error",
       {
-        "selector": "function",
+        "selector": ["function", "property"],
         "format": ["camelCase", "PascalCase"]
+      },
+      {
+        "selector": "variable",
+        "format": ["camelCase", "UPPER_CASE"]
+      },
+      {
+        "selector": "variable",
+        "modifiers": ["const", "global"],
+        "format": ["camelCase", "UPPER_CASE", "PascalCase"]
+      },
+      {
+        "selector": ["parameter", "property", "objectLiteralProperty", "objectLiteralMethod"],
+        "format": ["camelCase", "PascalCase"],
+        "leadingUnderscore": "allow"
+      },
+      {
+        "selector": "method",
+        "format": ["camelCase"],
+        "leadingUnderscore": "allow"
+      },
+      {
+        "selector": "memberLike",
+        "format": ["camelCase"]
+      },
+      {
+        "selector": "typeLike",
+        "format": ["PascalCase"]
+      },
+      {
+        "selector": "property",
+        "modifiers": ["requiresQuotes"],
+        "format": null
+      },
+      {
+        "selector": "objectLiteralProperty",
+        "prefix": ["@"],
+        "modifiers": ["requiresQuotes"],
+        "format": null
+      },
+      {
+        "selector": "enumMember",
+        "format": ["UPPER_CASE"]
       }
     ],
     "func-style": ["error", "declaration", { "allowArrowFunctions": false }]

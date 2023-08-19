@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import { HopeThemeConfig } from '@hope-ui/solid';
 
 // TODO: update primary colors to closer align with #24FF6F

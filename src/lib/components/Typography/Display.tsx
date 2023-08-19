@@ -5,7 +5,7 @@ interface DisplayProps extends Omit<HeadingProps, 'size'> {
   size?: 'large' | 'medium' | 'small' | 'xsmall';
 }
 
-export const Display = (props: DisplayProps): JSX.Element => {
+export function Display(props: DisplayProps): JSX.Element {
   const [{ size }, rest] = splitProps(props, ['size']);
 
   return (
@@ -13,9 +13,9 @@ export const Display = (props: DisplayProps): JSX.Element => {
       {props.children}
     </Heading>
   );
-};
+}
 
-const getHeadingProps = (size: DisplayProps['size']): HeadingProps => {
+function getHeadingProps(size: DisplayProps['size']): HeadingProps {
   const displayProps: HeadingProps = {
     size: {
       '@initial': '4xl',
@@ -45,4 +45,4 @@ const getHeadingProps = (size: DisplayProps['size']): HeadingProps => {
   }
 
   return displayProps;
-};
+}

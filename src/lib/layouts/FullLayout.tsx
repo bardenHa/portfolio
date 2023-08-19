@@ -1,5 +1,5 @@
 import { FiMoon, FiSun } from 'solid-icons/fi';
-import { For, JSX, ParentComponent } from 'solid-js';
+import { For, JSX, ParentProps } from 'solid-js';
 import { Box, Container, Flex, IconButton, Image, useColorMode } from '@hope-ui/solid';
 import { Link } from '@solidjs/router';
 
@@ -25,7 +25,7 @@ const NAVIGATION_LINKS = [
 ];
 
 // TODO: Make props for links/children and use as a view
-export const FullLayout: ParentComponent = props => {
+export function FullLayout(props: ParentProps): JSX.Element {
   return (
     <Box
       as="section"
@@ -77,7 +77,7 @@ export const FullLayout: ParentComponent = props => {
       </Container>
     </Box>
   );
-};
+}
 
 function ColorModeSwitcher(): JSX.Element {
   const { colorMode, toggleColorMode } = useColorMode();
