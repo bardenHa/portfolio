@@ -14,6 +14,7 @@
     "typecheck": "tsc --noEmit",
     "analyse:bundle": "VITE_OPEN_VISUALIZER=true vite build"
   },
+  "type": "module",
   "license": "MIT",
   "devDependencies": {
     "@total-typescript/ts-reset": "^0.5.1",
