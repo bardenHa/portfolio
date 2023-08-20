@@ -1,0 +1,18 @@
+---
+// import { getCollection } from 'astro:content'
+
+// import { H1, H2, Link, List, ListItem, Text } from '@/components'
+// import Page from '@/layouts/page.astro'
+
+// const posts = (await getCollection('posts')).sort((a, z) => +new Date(z.data.date) - +new Date(a.data.date))
+// const tags = [...new Set(posts.flatMap((post) => post.data.tags))].sort()
+import { Typography } from "@/lib/components";
+---
+<main>
+    <h1>
+        Blog test 
+    </h1>
+    <Typography.Paragraph>
+        This is a test
+    </Typography.Paragraph>
+</main>

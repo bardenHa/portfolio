@@ -1,8 +1,15 @@
 {
   "name": "bardenha-portfolio",
   "version": "0.0.0",
-  "description": "My personal portfolio",
+  "description": "My personal portfolio and blog",
+  "repository": {
+    "url": "https://github.com/bardenha/portfolio"
+  },
   "scripts": {
+    "a:dev": "astro dev",
+    "a:build": "astro build",
+    "a:preview": "astro preview",
+    "a:check": "astro check && pnpm run typecheck",
     "start": "vite",
     "dev": "vite",
     "build": "vite build",
@@ -17,10 +24,15 @@
   "type": "module",
   "license": "MIT",
   "devDependencies": {
+    "@astrojs/mdx": "^0.19.7",
+    "@astrojs/prefetch": "^0.3.0",
+    "@astrojs/sitemap": "^2.0.2",
+    "@astrojs/solid-js": "^2.2.1",
     "@total-typescript/ts-reset": "^0.5.1",
     "@types/node": "^20.4.7",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "@typescript-eslint/parser": "^6.4.0",
+    "astro": "^2.10.12",
     "eslint": "^8.43.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-functional": "^6.0.0",
@@ -30,6 +42,7 @@
     "eslint-plugin-solid": "^0.12.1",
     "eslint-plugin-unused-imports": "^3.0.0",
     "prettier": "^3.0.2",
+    "rehype-prism-plus": "^1.6.3",
     "rollup-plugin-visualizer": "^5.9.2",
     "typescript": "^5.1.6",
     "vite": "^4.3.9",
