@@ -1,45 +1,60 @@
-import { JSX, splitProps } from 'solid-js';
-import { css, Text, TextProps } from '@hope-ui/solid';
-import { defaultTo } from 'rambda';
+import { JSX } from 'solid-js';
+// import type { VariantProps } from 'class-variance-authority';
+// import { As } from '@kobalte/core';
+// import { defaultTo } from 'rambda';
 
-const paragraphtStyles = css({
-  variants: {
-    variant: {
-      primary: {
-        color: 'inherit',
-      },
-      secondary: {
-        color: '$neutral10',
-      },
-    },
-  },
-});
+interface ParagraphBaseProps {
+  test?: string;
+  children?: JSX.Element;
+}
+// type ParagraphBaseProps = VariantProps<typeof paragraphtStyles>;
+// const paragraphtStyles = cva('paragraph font-medium lineheight-todo', {
+//   variants: {
+//     size: {
+//       large: {
+//         fontSize: 'lg',
+//         lineHeight: 'shorter',
+//       },
+//       medium: {
+//         fontSize: 'base',
+//         lineHeight: 'shorter',
+//       },
+//       small: {
+//         fontSize: 'sm',
+//         lineHeight: 'shorter',
+//       },
+//       xsmall: {
+//         fontSize: 'xs',
+//         lineHeight: 'shorter',
+//       },
+//     },
+//     variant: {
+//       default: {
+//         color: 'contentPrimary',
+//       },
+//       subdued: {
+//         color: 'contentSecondary',
+//       },
+//     },
+//   },
+// });
 
-const PARAGRAPH_SIZE = {
-  large: 'lg',
-  medium: 'base',
-  small: 'sm',
-  xsmall: 'xs',
-} as const;
+type SupportedIntrinsicElements = keyof JSX.IntrinsicElements;
 
-interface ParagraphProps extends Omit<TextProps, 'size'> {
-  size?: 'large' | 'medium' | 'small' | 'xsmall';
-  variant?: 'primary' | 'secondary';
+interface ParagraphProps extends JSX.HTMLAttributes<HTMLParagraphElement>, ParagraphBaseProps {
+  as?: SupportedIntrinsicElements;
 }
 
 export function Paragraph(props: Readonly<ParagraphProps>): JSX.Element {
-  const [{ variant, size }, rest] = splitProps(props, ['size', 'variant']);
+  // const [{ variant, size }, rest] = splitProps(props, ['size', 'variant', 'as']);
   return (
-    <Text
-      class={paragraphtStyles({
-        variant: defaultTo('primary', variant),
-      })}
-      lineHeight={'$base'}
-      fontWeight={'$normal'}
-      size={PARAGRAPH_SIZE[defaultTo('medium', size)]}
-      {...rest}
+    <p
+    //  class={cx(paragraphtStyles({ variant, size }))}
+    // {...rest}
     >
+      {/* <As component={defaultTo('p', as)}> */}
       {props.children}
-    </Text>
+      {/* </As> */}
+    </p>
   );
 }

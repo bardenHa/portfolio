@@ -20,6 +20,9 @@ export default defineConfig(() => {
         open: env['VITE_OPEN_VISUALIZER'] === 'true',
       }),
     ],
+    // ssr: {
+    //   noExternal: ['@kobalte/core'],
+    // },
     server: {
       port: 3000,
     },
