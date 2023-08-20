@@ -15,81 +15,43 @@ const headingStyles = css({
   },
 });
 
+const HEADING_SIZE = {
+  xxlarge: { '@initial': '4xl', '@sm': '5xl' },
+  xlarge: { '@initial': '3xl', '@sm': '4xl' },
+  large: { '@initial': '2xl', '@sm': '3xl' },
+  medium: { '@initial': 'xl', '@sm': '2xl' },
+  small: { '@initial': 'lg', '@sm': 'xl' },
+  xsmall: 'lg',
+} as const;
+
+const HEADING_SIZE_LEVEL = {
+  xxlarge: 1,
+  xlarge: 2,
+  large: 3,
+  medium: 4,
+  small: 5,
+  xsmall: 6,
+} as const;
+
 interface HeadingProps extends Omit<SHeadingProps, 'size'> {
   size?: 'xxlarge' | 'xlarge' | 'large' | 'medium' | 'small' | 'xsmall';
   variant?: 'primary' | 'secondary';
 }
 
-export function Heading(props: HeadingProps): JSX.Element {
+export function Heading(props: Readonly<HeadingProps>): JSX.Element {
   const [{ variant, size }, rest] = splitProps(props, ['size', 'variant']);
+  const calculatedSize = defaultTo('medium', size);
 
   return (
     <SHeading
       class={headingStyles({ variant: defaultTo('primary', variant) })}
       fontWeight={'$bold'}
       lineHeight={'$normal'}
-      {...getHeadingProps(size)}
+      size={HEADING_SIZE[calculatedSize]}
+      level={HEADING_SIZE_LEVEL[calculatedSize]}
       {...rest}
     >
       {props.children}
     </SHeading>
   );
-}
-
-function getHeadingProps(size: HeadingProps['size']): SHeadingProps {
-  const headingProps: SHeadingProps = {
-    size: {
-      '@initial': 'xl',
-      '@sm': '2xl',
-    },
-    level: 4,
-  };
-
-  switch (size) {
-    case 'xxlarge': {
-      headingProps.size = {
-        '@initial': '4xl',
-        '@sm': '5xl',
-      };
-      headingProps.level = 1;
-      break;
-    }
-    case 'xlarge': {
-      headingProps.size = {
-        '@initial': '3xl',
-        '@sm': '4xl',
-      };
-      headingProps.level = 2;
-      break;
-    }
-    case 'large': {
-      headingProps.size = {
-        '@initial': '2xl',
-        '@sm': '3xl',
-      };
-      headingProps.level = 3;
-      break;
-    }
-    case 'medium': {
-      break;
-    }
-    case 'small': {
-      headingProps.size = {
-        '@initial': 'lg',
-        '@sm': 'xl',
-      };
-      headingProps.level = 5;
-      break;
-    }
-    case 'xsmall': {
-      headingProps.size = 'lg';
-      headingProps.level = 6;
-      break;
-    }
-    default: {
-      break;
-    }
-  }
-
-  return headingProps;
 }

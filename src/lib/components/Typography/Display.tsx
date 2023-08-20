@@ -1,48 +1,30 @@
 import { JSX, splitProps } from 'solid-js';
 import { Heading, HeadingProps } from '@hope-ui/solid';
+import { defaultTo } from 'rambda';
+
+const HEADING_SIZE = {
+  large: { '@initial': '6xl', '@sm': '8xl' },
+  medium: { '@initial': '4xl', '@sm': '6xl' },
+  small: { '@initial': '3xl', '@sm': '5xl' },
+  xsmall: { '@initial': '2xl', '@sm': '4xl' },
+} as const;
 
 interface DisplayProps extends Omit<HeadingProps, 'size'> {
   size?: 'large' | 'medium' | 'small' | 'xsmall';
 }
 
-export function Display(props: DisplayProps): JSX.Element {
+export function Display(props: Readonly<DisplayProps>): JSX.Element {
   const [{ size }, rest] = splitProps(props, ['size']);
 
   return (
-    <Heading fontWeight={'$bold'} lineHeight={'$shorter'} letterSpacing={'$tight'} {...getHeadingProps(size)} {...rest}>
+    <Heading
+      fontWeight={'$bold'}
+      lineHeight={'$shorter'}
+      letterSpacing={'$tight'}
+      size={HEADING_SIZE[defaultTo('medium', size)]}
+      {...rest}
+    >
       {props.children}
     </Heading>
   );
-}
-
-function getHeadingProps(size: DisplayProps['size']): HeadingProps {
-  const displayProps: HeadingProps = {
-    size: {
-      '@initial': '4xl',
-      '@sm': '6xl',
-    },
-  };
-
-  switch (size) {
-    case 'large': {
-      displayProps.size = { '@initial': '6xl', '@sm': '8xl' };
-      break;
-    }
-    case 'medium': {
-      break;
-    }
-    case 'small': {
-      displayProps.size = { '@initial': '3xl', '@sm': '5xl' };
-      break;
-    }
-    case 'xsmall': {
-      displayProps.size = { '@initial': '2xl', '@sm': '4xl' };
-      break;
-    }
-    default: {
-      break;
-    }
-  }
-
-  return displayProps;
 }

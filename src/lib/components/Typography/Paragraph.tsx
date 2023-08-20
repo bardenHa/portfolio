@@ -15,12 +15,19 @@ const paragraphtStyles = css({
   },
 });
 
+const PARAGRAPH_SIZE = {
+  large: 'lg',
+  medium: 'base',
+  small: 'sm',
+  xsmall: 'xs',
+} as const;
+
 interface ParagraphProps extends Omit<TextProps, 'size'> {
   size?: 'large' | 'medium' | 'small' | 'xsmall';
   variant?: 'primary' | 'secondary';
 }
 
-export function Paragraph(props: ParagraphProps): JSX.Element {
+export function Paragraph(props: Readonly<ParagraphProps>): JSX.Element {
   const [{ variant, size }, rest] = splitProps(props, ['size', 'variant']);
   return (
     <Text
@@ -29,38 +36,10 @@ export function Paragraph(props: ParagraphProps): JSX.Element {
       })}
       lineHeight={'$base'}
       fontWeight={'$normal'}
-      {...getTextProps(size)}
+      size={PARAGRAPH_SIZE[defaultTo('medium', size)]}
       {...rest}
     >
       {props.children}
     </Text>
   );
-}
-
-function getTextProps(size: ParagraphProps['size']): TextProps {
-  const paragraphProps: TextProps = {};
-
-  switch (size) {
-    case 'large': {
-      paragraphProps.size = 'lg';
-      break;
-    }
-    case 'medium': {
-      paragraphProps.size = 'base';
-      break;
-    }
-    case 'small': {
-      paragraphProps.size = 'sm';
-      break;
-    }
-    case 'xsmall': {
-      paragraphProps.size = 'xs';
-      break;
-    }
-    default: {
-      paragraphProps.size = 'base';
-    }
-  }
-
-  return paragraphProps;
 }

@@ -25,7 +25,7 @@ const NAVIGATION_LINKS = [
 ];
 
 // TODO: Make props for links/children and use as a view
-export function FullLayout(props: ParentProps): JSX.Element {
+export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
   return (
     <Box
       as="section"

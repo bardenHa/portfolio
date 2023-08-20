@@ -10,7 +10,8 @@
     "plugin:solid/typescript",
     "plugin:solid/recommended",
     "plugin:prettier/recommended",
-    "plugin:jsx-a11y/recommended"
+    "plugin:jsx-a11y/recommended",
+    "plugin:functional/lite"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -18,7 +19,7 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": ["@typescript-eslint", "unused-imports", "solid", "simple-import-sort"],
+  "plugins": ["@typescript-eslint", "unused-imports", "solid", "simple-import-sort", "functional"],
   "rules": {
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
@@ -85,7 +86,13 @@
         "format": ["UPPER_CASE"]
       }
     ],
-    "func-style": ["error", "declaration", { "allowArrowFunctions": false }]
+    "func-style": ["error", "declaration", { "allowArrowFunctions": false }],
+    "no-var": "error",
+    "no-param-reassign": "error",
+    "prefer-const": "error",
+    "@typescript-eslint/prefer-readonly": "error",
+    "@typescript-eslint/prefer-as-const": "error",
+    "@typescript-eslint/switch-exhaustiveness-check": "error"
   },
   "ignorePatterns": ["*rc.js", "*.config.js", "*.d.ts"]
 }

@@ -15,12 +15,19 @@ const labelStyles = css({
   },
 });
 
+const LABEL_SIZE = {
+  large: 'lg',
+  medium: 'base',
+  small: 'sm',
+  xsmall: 'xs',
+} as const;
+
 interface LabelProps extends Omit<TextProps, 'size'> {
   size?: 'large' | 'medium' | 'small' | 'xsmall';
   variant?: 'primary' | 'secondary';
 }
 
-export function Label(props: LabelProps): JSX.Element {
+export function Label(props: Readonly<LabelProps>): JSX.Element {
   const [{ variant, size }, rest] = splitProps(props, ['size', 'variant']);
 
   return (
@@ -29,38 +36,10 @@ export function Label(props: LabelProps): JSX.Element {
       aria-roledescription="A subtitle, short phrase or sentence that provides context or information about a specific block of text."
       fontWeight={'$medium'}
       lineHeight={'$normal'}
-      {...getTextProps(size)}
+      size={LABEL_SIZE[defaultTo('medium', size)]}
       {...rest}
     >
       {props.children}
     </Text>
   );
-}
-
-function getTextProps(size: LabelProps['size']): TextProps {
-  const labelProps: TextProps = {};
-
-  switch (size) {
-    case 'large': {
-      labelProps.size = 'lg';
-      break;
-    }
-    case 'medium': {
-      labelProps.size = 'base';
-      break;
-    }
-    case 'small': {
-      labelProps.size = 'sm';
-      break;
-    }
-    case 'xsmall': {
-      labelProps.size = 'xs';
-      break;
-    }
-    default: {
-      labelProps.size = 'base';
-    }
-  }
-
-  return labelProps;
 }

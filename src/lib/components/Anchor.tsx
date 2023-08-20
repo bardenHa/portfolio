@@ -1,5 +1,6 @@
 import { JSX, splitProps } from 'solid-js';
 import { Anchor as SAnchor, AnchorProps as SAnchorProps, css } from '@hope-ui/solid';
+import { defaultTo } from 'rambda';
 
 interface NavAnchorProps extends SAnchorProps {
   variant?: 'subtle' | 'distinguished' | 'natural';
@@ -86,11 +87,14 @@ const anchorStyles = css({
   ],
 });
 
-export function Anchor(props: NavAnchorProps): JSX.Element {
+export function Anchor(props: Readonly<NavAnchorProps>): JSX.Element {
   const [{ variant, colorScheme }, rest] = splitProps(props, ['variant', 'colorScheme']);
 
   return (
-    <SAnchor class={anchorStyles({ variant: variant ?? 'natural', colorScheme: colorScheme ?? 'primary' })} {...rest}>
+    <SAnchor
+      class={anchorStyles({ variant: defaultTo('natural', variant), colorScheme: defaultTo('primary', colorScheme) })}
+      {...rest}
+    >
       {props.children}
     </SAnchor>
   );

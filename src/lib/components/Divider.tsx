@@ -1,30 +1,22 @@
 import { JSX, splitProps } from 'solid-js';
 import { Divider as SDivider, DividerProps as SDividerProps } from '@hope-ui/solid';
+import { defaultTo } from 'rambda';
+
+const DIVIDER_SIZE_MARGIN = {
+  sm: '$4 0',
+  md: '$8 0',
+  lg: '$12 0',
+} as const;
 
 interface DividerProps extends SDividerProps {
   size?: 'sm' | 'md' | 'lg';
 }
 
-export function Divider(props: DividerProps): JSX.Element {
+export function Divider(props: Readonly<DividerProps>): JSX.Element {
   const [{ size }, rest] = splitProps(props, ['size']);
 
-  let margin: SDividerProps['margin'] = '$8 0';
-
-  switch (size) {
-    case 'sm':
-      margin = '$4 0';
-      break;
-    case 'md':
-      break;
-    case 'lg':
-      margin = '$12 0';
-      break;
-    default:
-      break;
-  }
-
   return (
-    <SDivider margin={margin} {...rest}>
+    <SDivider margin={DIVIDER_SIZE_MARGIN[defaultTo('md', size)]} {...rest}>
       {props.children}
     </SDivider>
   );
