@@ -15,9 +15,9 @@ export default defineConfig({
         '@': '/src',
       },
     },
-    // ssr: {
-    //   noExternal: ['@kobalte/core']
-    // }
+    ssr: {
+      noExternal: ['@kobalte/core'],
+    },
   },
   markdown: {
     syntaxHighlight: false,
