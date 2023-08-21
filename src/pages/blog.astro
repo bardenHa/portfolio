@@ -1,8 +1,11 @@
 ---
 import { Typography } from '@/lib/components';
+import Page from '@/lib/layouts/page.astro';
 ---
 
-<main>
-  <h1>Blog test</h1>
-  <Typography.Paragraph>This is a test</Typography.Paragraph>
-</main>
+<Page title="Blog" description="This is a test" keywords="test, blog, astro" image="/images/og.png" type="website">
+  <main>
+    <h1>Blog test</h1>
+    <Typography.Paragraph>This is a test</Typography.Paragraph>
+  </main>
+</Page>
