@@ -6,15 +6,10 @@
     "url": "https://github.com/bardenha/portfolio"
   },
   "scripts": {
-    "a:dev": "astro dev",
-    "a:build": "astro build",
-    "a:preview": "astro preview",
-    "a:check": "astro check && pnpm run typecheck",
-    "start": "vite",
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview",
-    "check": "pnpm run typecheck && pnpm run lint && pnpm run format && pnpm run build",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check && pnpm run typecheck pnpm run lint && pnpm run format && pnpm run build",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src",
     "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx ./src",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
@@ -52,11 +47,7 @@
     "rollup-plugin-visualizer": "^5.9.2",
     "solid-icons": "^1.0.8",
     "solid-js": "^1.7.6",
-    "solid-transition-group": "^0.0.10",
     "tailwindcss": "^3.3.3",
-    "typescript": "^5.1.6",
-    "vite": "^4.3.9",
-    "vite-plugin-compression": "^0.5.1",
-    "vite-plugin-solid": "^2.7.0"
+    "typescript": "^5.1.6"
   }
 }
