@@ -19,12 +19,8 @@ const paragraphtStyles = cva('Paragraph', {
       xsmall: ['text-xs', 'leading-tight'],
     },
     variant: {
-      default: {
-        color: 'contentPrimary',
-      },
-      subdued: {
-        color: 'contentSecondary',
-      },
+      default: ['text-neutral-10'],
+      subdued: ['text-neutral-12'],
     },
   },
 });
