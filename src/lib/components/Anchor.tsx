@@ -64,7 +64,9 @@ const anchorStyles = cva(['Anchor', 'transition-colors duration-200 ease-in-out'
   ],
 });
 
-interface AnchorProps extends PolymorphicComponent<HTMLAnchorElement>, AnchorBaseProps {}
+interface AnchorProps extends PolymorphicComponent<HTMLAnchorElement>, AnchorBaseProps {
+  href: string;
+}
 
 export function Anchor(props: Readonly<AnchorProps>): JSX.Element {
   const [{ variant, colourScheme, as }, rest] = splitProps(props, ['colourScheme', 'variant', 'as']);
