@@ -1,32 +1,38 @@
-// import { JSX, splitProps } from 'solid-js';
-// import { Heading, HeadingProps } from '@hope-ui/core';
-// import { defaultTo } from 'rambda';
+import { JSX, splitProps } from 'solid-js';
+import { Dynamic } from 'solid-js/web';
+import { cva, cx, type VariantProps } from 'class-variance-authority';
+import { defaultTo } from 'rambda';
 
-// const HEADING_SIZE = {
-//   large: { '@initial': '6xl', '@sm': '8xl' },
-//   medium: { '@initial': '4xl', '@sm': '6xl' },
-//   small: { '@initial': '3xl', '@sm': '5xl' },
-//   xsmall: { '@initial': '2xl', '@sm': '4xl' },
-// } as const;
+import { PolymorphicComponent } from '../types';
 
-// interface DisplayProps extends Omit<HeadingProps, 'size'> {
-//   size?: 'large' | 'medium' | 'small' | 'xsmall';
-// }
+type DisplayBaseProps = VariantProps<typeof displayStyles>;
+const displayStyles = cva(['Display', 'leading-tight'], {
+  defaultVariants: {
+    size: 'medium',
+    variant: 'default',
+  },
+  variants: {
+    size: {
+      large: ['text-8xl'],
+      medium: ['text-6xl'],
+      small: ['text-5xl'],
+      xsmall: ['text-4xl'],
+    },
+    variant: {
+      default: ['text-inherit'],
+      subdued: ['text-secondary'],
+    },
+  },
+});
 
-// export function Display(props: Readonly<DisplayProps>): JSX.Element {
-//   const [{ size }, rest] = splitProps(props, ['size']);
+interface DisplayProps extends PolymorphicComponent<HTMLHeadingElement>, DisplayBaseProps {}
 
-//   return (
-//     <Heading
-//       fontWeight={'$bold'}
-//       lineHeight={'$shorter'}
-//       letterSpacing={'$tight'}
-//       size='2xl'
+export function Display(props: Readonly<DisplayProps>): JSX.Element {
+  const [{ variant, size, as }, rest] = splitProps(props, ['size', 'variant', 'as']);
 
-//       // size={HEADING_SIZE[defaultTo('medium', size)]}
-//       {...rest}
-//     >
-//       {props.children}
-//     </Heading>
-//   );
-// }
+  return (
+    <Dynamic component={defaultTo('h1', as)} class={cx(displayStyles({ variant, size }))} {...rest}>
+      {props.children}
+    </Dynamic>
+  );
+}

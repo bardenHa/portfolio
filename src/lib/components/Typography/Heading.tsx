@@ -1,57 +1,54 @@
-// import { JSX, splitProps } from 'solid-js';
-// import { css, Heading as SHeading, HeadingProps as SHeadingProps } from '@hope-ui/solid';
-// import { defaultTo } from 'rambda';
+import { JSX, splitProps } from 'solid-js';
+import { Dynamic } from 'solid-js/web';
+import { cva, cx, type VariantProps } from 'class-variance-authority';
+import { defaultTo } from 'rambda';
 
-// const headingStyles = css({
-//   variants: {
-//     variant: {
-//       primary: {
-//         color: 'inherit',
-//       },
-//       secondary: {
-//         color: '$textSecondary',
-//       },
-//     },
-//   },
-// });
+import { PolymorphicComponent } from '../types';
 
-// const HEADING_SIZE = {
-//   xxlarge: { '@initial': '4xl', '@sm': '5xl' },
-//   xlarge: { '@initial': '3xl', '@sm': '4xl' },
-//   large: { '@initial': '2xl', '@sm': '3xl' },
-//   medium: { '@initial': 'xl', '@sm': '2xl' },
-//   small: { '@initial': 'lg', '@sm': 'xl' },
-//   xsmall: 'lg',
-// } as const;
+type HeadingLevels = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+type HeadingBaseProps = VariantProps<typeof headingStyles>;
+const headingStyles = cva(['Heading', 'leading-tight'], {
+  defaultVariants: {
+    size: 'medium',
+    variant: 'default',
+  },
+  variants: {
+    size: {
+      xxlarge: ['text-5xl'],
+      xlarge: ['text-4xl'],
+      large: ['text-3xl'],
+      medium: ['text-2xl'],
+      small: ['text-xl'],
+      xsmall: ['text-lg'],
+    },
+    variant: {
+      default: ['text-inherit'],
+      subdued: ['text-secondary'],
+    },
+  },
+});
 
-// const HEADING_SIZE_LEVEL = {
-//   xxlarge: 1,
-//   xlarge: 2,
-//   large: 3,
-//   medium: 4,
-//   small: 5,
-//   xsmall: 6,
-// } as const;
+interface HeadingProps extends PolymorphicComponent<HTMLHeadingElement>, HeadingBaseProps {}
 
-// interface HeadingProps extends Omit<SHeadingProps, 'size'> {
-//   size?: 'xxlarge' | 'xlarge' | 'large' | 'medium' | 'small' | 'xsmall';
-//   variant?: 'primary' | 'secondary';
-// }
+const HEADING_SIZE_TAG: Record<NonNullable<HeadingBaseProps['size']>, HeadingLevels> = {
+  xxlarge: 'h1',
+  xlarge: 'h2',
+  large: 'h3',
+  medium: 'h4',
+  small: 'h5',
+  xsmall: 'h6',
+};
 
-// export function Heading(props: Readonly<HeadingProps>): JSX.Element {
-//   const [{ variant, size }, rest] = splitProps(props, ['size', 'variant']);
-//   const calculatedSize = defaultTo('medium', size);
+export function Heading(props: Readonly<HeadingProps>): JSX.Element {
+  const [{ variant, size, as }, rest] = splitProps(props, ['size', 'variant', 'as']);
 
-//   return (
-//     <SHeading
-//       class={headingStyles({ variant: defaultTo('primary', variant) })}
-//       fontWeight={'$bold'}
-//       lineHeight={'$normal'}
-//       size={HEADING_SIZE[calculatedSize]}
-//       level={HEADING_SIZE_LEVEL[calculatedSize]}
-//       {...rest}
-//     >
-//       {props.children}
-//     </SHeading>
-//   );
-// }
+  return (
+    <Dynamic
+      component={as ?? HEADING_SIZE_TAG[defaultTo('medium', size)]}
+      class={cx(headingStyles({ variant, size }))}
+      {...rest}
+    >
+      {props.children}
+    </Dynamic>
+  );
+}

@@ -21,3 +21,7 @@ export type RelevantTags = Exclude<
   | 'view'
   | 'symbol'
 >;
+
+export interface PolymorphicComponent<T> extends JSX.HTMLAttributes<T> {
+  as?: RelevantTags;
+}

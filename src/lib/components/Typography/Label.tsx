@@ -1,45 +1,37 @@
-// import { JSX, splitProps } from 'solid-js';
-// import { css, Text, TextProps } from '@hope-ui/solid';
-// import { defaultTo } from 'rambda';
+import { JSX, splitProps } from 'solid-js';
+import { Dynamic } from 'solid-js/web';
+import { cva, cx, type VariantProps } from 'class-variance-authority';
+import { defaultTo } from 'rambda';
 
-// const labelStyles = css({
-//   variants: {
-//     variant: {
-//       primary: {
-//         color: 'inherit',
-//       },
-//       secondary: {
-//         color: '$neutral10',
-//       },
-//     },
-//   },
-// });
+import { PolymorphicComponent } from '../types';
 
-// const LABEL_SIZE = {
-//   large: 'lg',
-//   medium: 'base',
-//   small: 'sm',
-//   xsmall: 'xs',
-// } as const;
+type LabelBaseProps = VariantProps<typeof labelStyles>;
+const labelStyles = cva('Label', {
+  defaultVariants: {
+    size: 'medium',
+    variant: 'default',
+  },
+  variants: {
+    size: {
+      large: ['text-lg', 'leading-tight'],
+      medium: ['text-base', 'leading-tight'],
+      small: ['text-sm', 'leading-tight'],
+      xsmall: ['text-xs', 'leading-tight'],
+    },
+    variant: {
+      default: ['text-inherit'],
+      subdued: ['text-secondary'],
+    },
+  },
+});
 
-// interface LabelProps extends Omit<TextProps, 'size'> {
-//   size?: 'large' | 'medium' | 'small' | 'xsmall';
-//   variant?: 'primary' | 'secondary';
-// }
+interface LabelProps extends PolymorphicComponent<HTMLLabelElement>, LabelBaseProps {}
 
-// export function Label(props: Readonly<LabelProps>): JSX.Element {
-//   const [{ variant, size }, rest] = splitProps(props, ['size', 'variant']);
-
-//   return (
-//     <Text
-//       class={labelStyles({ variant: defaultTo('primary', variant) })}
-//       aria-roledescription="A subtitle, short phrase or sentence that provides context or information about a specific block of text."
-//       fontWeight={'$medium'}
-//       lineHeight={'$normal'}
-//       size={LABEL_SIZE[defaultTo('medium', size)]}
-//       {...rest}
-//     >
-//       {props.children}
-//     </Text>
-//   );
-// }
+export function Label(props: Readonly<LabelProps>): JSX.Element {
+  const [{ variant, size, as }, rest] = splitProps(props, ['size', 'variant', 'as']);
+  return (
+    <Dynamic component={defaultTo('label', as)} class={cx(labelStyles({ variant, size }))} {...rest}>
+      {props.children}
+    </Dynamic>
+  );
+}

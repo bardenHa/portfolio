@@ -3,10 +3,10 @@ import { Dynamic } from 'solid-js/web';
 import { cva, cx, type VariantProps } from 'class-variance-authority';
 import { defaultTo } from 'rambda';
 
-import { RelevantTags } from '../types';
+import { PolymorphicComponent } from '../types';
 
-type ParagraphBaseProps = VariantProps<typeof paragraphtStyles>;
-const paragraphtStyles = cva('Paragraph', {
+type ParagraphBaseProps = VariantProps<typeof paragraphStyles>;
+const paragraphStyles = cva('Paragraph', {
   defaultVariants: {
     size: 'medium',
     variant: 'default',
@@ -19,20 +19,18 @@ const paragraphtStyles = cva('Paragraph', {
       xsmall: ['text-xs', 'leading-tight'],
     },
     variant: {
-      default: ['text-neutral-10'],
-      subdued: ['text-neutral-12'],
+      default: ['text-inherit'],
+      subdued: ['text-secondary'],
     },
   },
 });
 
-interface ParagraphProps extends JSX.HTMLAttributes<HTMLParagraphElement>, ParagraphBaseProps {
-  as?: RelevantTags;
-}
+interface ParagraphProps extends PolymorphicComponent<HTMLParagraphElement>, ParagraphBaseProps {}
 
 export function Paragraph(props: Readonly<ParagraphProps>): JSX.Element {
   const [{ variant, size, as }, rest] = splitProps(props, ['size', 'variant', 'as']);
   return (
-    <Dynamic component={defaultTo('p', as)} class={cx(paragraphtStyles({ variant, size }))} {...rest}>
+    <Dynamic component={defaultTo('p', as)} class={cx(paragraphStyles({ variant, size }))} {...rest}>
       {props.children}
     </Dynamic>
   );
