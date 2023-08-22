@@ -1,4 +1,5 @@
-* {
+:root {
+  /* TODO: remove these temp vars */
   --light-default: #19253d;
   --light-primary: #2a6cea;
   --light-neutral: #fefeff;
@@ -15,6 +16,7 @@
   --dark-elevate: #1b263c;
   --dark-comment: #72809a;
 
+  /* TODO: Syntax */
   --light-syntax-keywords: #d73a49;
   --light-syntax-selector: #22863a;
   --light-syntax-warnings: #e36209;
@@ -35,18 +37,19 @@
   --dark-syntax-modified: #81a7f1;
   --dark-syntax-highline: #0d1628;
 
-  /* Light  */
-  --light-primary-50: #edfff3;
-  --light-primary-100: #d5ffe4;
-  --light-primary-200: #aeffca;
-  --light-primary-300: #6fffa3;
-  --light-primary-400: #24ff6f;
-  --light-primary-500: #00e94f;
-  --light-primary-600: #00c23e;
-  --light-primary-700: #009834;
-  --light-primary-800: #04772d;
-  --light-primary-900: #066128;
-  --light-primary-950: #003713;
+  /* Light */
+  --light-primary-1: #edfff3;
+  --light-primary-2: #d5ffe4;
+  --light-primary-3: #aeffca;
+  --light-primary-4: #6fffa3;
+  --light-primary-5: #24ff6f;
+  --light-primary-6: #00e94f;
+  --light-primary-7: #00c23e;
+  --light-primary-8: #009834;
+  --light-primary-9: #04772d;
+  --light-primary-10: #066128;
+  --light-primary-11: #003713;
+  --light-primary-12: #001b09;
 
   --light-neutral-1: #fbfcfd;
   --light-neutral-2: #f8f9fa;
@@ -114,17 +117,18 @@
   --light-danger-12: #381316;
 
   /* Dark */
-  --dark-primary-50: #edfff3;
-  --dark-primary-100: #d5ffe4;
-  --dark-primary-200: #aeffca;
-  --dark-primary-300: #6fffa3;
-  --dark-primary-400: #24ff6f;
-  --dark-primary-500: #00e94f;
-  --dark-primary-600: #00c23e;
-  --dark-primary-700: #009834;
-  --dark-primary-800: #04772d;
-  --dark-primary-900: #066128;
-  --dark-primary-950: #003713;
+  --dark-primary-1: #001b09;
+  --dark-primary-2: #003713;
+  --dark-primary-3: #066128;
+  --dark-primary-4: #04772d;
+  --dark-primary-5: #009834;
+  --dark-primary-7: #00e94f;
+  --dark-primary-6: #00c23e;
+  --dark-primary-8: #24ff6f;
+  --dark-primary-9: #6fffa3;
+  --dark-primary-10: #aeffca;
+  --dark-primary-11: #d5ffe4;
+  --dark-primary-12: #edfff3;
 
   --dark-neutral-1: #151718;
   --dark-neutral-2: #1a1d1e;
@@ -177,204 +181,19 @@
   --dark-warning-10: #ffcb47;
   --dark-warning-11: #f1a10d;
   --dark-warning-12: #fef3dd;
-}
 
-:root {
-  color-scheme: light;
-  --default: var(--light-default);
-  --primary: var(--light-primary);
-  --neutral: var(--light-neutral);
-  --surface: var(--light-surface);
-  --element: var(--light-element);
-  --elevate: var(--light-elevate);
-  --comment: var(--light-comment);
-
-  --syntax-keywords: var(--light-syntax-keywords);
-  --syntax-selector: var(--light-syntax-selector);
-  --syntax-warnings: var(--light-syntax-warnings);
-  --syntax-property: var(--light-syntax-property);
-  --syntax-function: var(--light-syntax-function);
-  --syntax-surround: var(--light-syntax-surround);
-  --syntax-comments: var(--light-syntax-comments);
-  --syntax-modified: var(--light-syntax-modified);
-  --syntax-highline: var(--light-syntax-highline);
-
-  --primary-50: var(--light-primary-50);
-  --primary-100: var(--light-primary-100);
-  --primary-200: var(--light-primary-200);
-  --primary-300: var(--light-primary-300);
-  --primary-400: var(--light-primary-400);
-  --primary-500: var(--light-primary-500);
-  --primary-600: var(--light-primary-600);
-  --primary-700: var(--light-primary-700);
-  --primary-800: var(--light-primary-800);
-  --primary-900: var(--light-primary-900);
-  --primary-950: var(--light-primary-950);
-
-  --neutral-1: var(--light-neutral-1);
-  --neutral-2: var(--light-neutral-2);
-  --neutral-3: var(--light-neutral-3);
-  --neutral-4: var(--light-neutral-4);
-  --neutral-5: var(--light-neutral-5);
-  --neutral-6: var(--light-neutral-6);
-  --neutral-7: var(--light-neutral-7);
-  --neutral-8: var(--light-neutral-8);
-  --neutral-9: var(--light-neutral-9);
-  --neutral-10: var(--light-neutral-10);
-  --neutral-11: var(--light-neutral-11);
-  --neutral-12: var(--light-neutral-12);
-
-  --success-1: var(--light-success-1);
-  --success-2: var(--light-success-2);
-  --success-3: var(--light-success-3);
-  --success-4: var(--light-success-4);
-  --success-5: var(--light-success-5);
-  --success-6: var(--light-success-6);
-  --success-7: var(--light-success-7);
-  --success-8: var(--light-success-8);
-  --success-9: var(--light-success-9);
-  --success-10: var(--light-success-10);
-  --success-11: var(--light-success-11);
-  --success-12: var(--light-success-12);
-
-  --info-1: var(--light-info-1);
-  --info-2: var(--light-info-2);
-  --info-3: var(--light-info-3);
-  --info-4: var(--light-info-4);
-  --info-5: var(--light-info-5);
-  --info-6: var(--light-info-6);
-  --info-7: var(--light-info-7);
-  --info-8: var(--light-info-8);
-  --info-9: var(--light-info-9);
-  --info-10: var(--light-info-10);
-  --info-11: var(--light-info-11);
-  --info-12: var(--light-info-12);
-
-  --warning-1: var(--light-warning-1);
-  --warning-2: var(--light-warning-2);
-  --warning-3: var(--light-warning-3);
-  --warning-4: var(--light-warning-4);
-  --warning-5: var(--light-warning-5);
-  --warning-6: var(--light-warning-6);
-  --warning-7: var(--light-warning-7);
-  --warning-8: var(--light-warning-8);
-  --warning-9: var(--light-warning-9);
-  --warning-10: var(--light-warning-10);
-  --warning-11: var(--light-warning-11);
-  --warning-12: var(--light-warning-12);
-
-  --danger-1: var(--light-danger-1);
-  --danger-2: var(--light-danger-2);
-  --danger-3: var(--light-danger-3);
-  --danger-4: var(--light-danger-4);
-  --danger-5: var(--light-danger-5);
-  --danger-6: var(--light-danger-6);
-  --danger-7: var(--light-danger-7);
-  --danger-8: var(--light-danger-8);
-  --danger-9: var(--light-danger-9);
-  --danger-10: var(--light-danger-10);
-  --danger-11: var(--light-danger-11);
-  --danger-12: var(--light-danger-12);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-    --default: var(--dark-default);
-    --primary: var(--dark-primary);
-    --neutral: var(--dark-neutral);
-    --surface: var(--dark-surface);
-    --element: var(--dark-element);
-    --elevate: var(--dark-elevate);
-    --comment: var(--dark-comment);
-
-    --syntax-keywords: var(--dark-syntax-keywords);
-    --syntax-selector: var(--dark-syntax-selector);
-    --syntax-warnings: var(--dark-syntax-warnings);
-    --syntax-property: var(--dark-syntax-property);
-    --syntax-function: var(--dark-syntax-function);
-    --syntax-surround: var(--dark-syntax-surround);
-    --syntax-comments: var(--dark-syntax-comments);
-    --syntax-modified: var(--dark-syntax-modified);
-    --syntax-highline: var(--dark-syntax-highline);
-
-    --primary-50: var(--dark-primary-50);
-    --primary-100: var(--dark-primary-100);
-    --primary-200: var(--dark-primary-200);
-    --primary-300: var(--dark-primary-300);
-    --primary-400: var(--dark-primary-400);
-    --primary-500: var(--dark-primary-500);
-    --primary-600: var(--dark-primary-600);
-    --primary-700: var(--dark-primary-700);
-    --primary-800: var(--dark-primary-800);
-    --primary-900: var(--dark-primary-900);
-    --primary-950: var(--dark-primary-950);
-
-    --neutral-1: var(--dark-neutral-1);
-    --neutral-2: var(--dark-neutral-2);
-    --neutral-3: var(--dark-neutral-3);
-    --neutral-4: var(--dark-neutral-4);
-    --neutral-5: var(--dark-neutral-5);
-    --neutral-6: var(--dark-neutral-6);
-    --neutral-7: var(--dark-neutral-7);
-    --neutral-8: var(--dark-neutral-8);
-    --neutral-9: var(--dark-neutral-9);
-    --neutral-10: var(--dark-neutral-10);
-    --neutral-11: var(--dark-neutral-11);
-    --neutral-12: var(--dark-neutral-12);
-
-    --success-1: var(--dark-success-1);
-    --success-2: var(--dark-success-2);
-    --success-3: var(--dark-success-3);
-    --success-4: var(--dark-success-4);
-    --success-5: var(--dark-success-5);
-    --success-6: var(--dark-success-6);
-    --success-7: var(--dark-success-7);
-    --success-8: var(--dark-success-8);
-    --success-9: var(--dark-success-9);
-    --success-10: var(--dark-success-10);
-    --success-11: var(--dark-success-11);
-    --success-12: var(--dark-success-12);
-
-    --info-1: var(--dark-info-1);
-    --info-2: var(--dark-info-2);
-    --info-3: var(--dark-info-3);
-    --info-4: var(--dark-info-4);
-    --info-5: var(--dark-info-5);
-    --info-6: var(--dark-info-6);
-    --info-7: var(--dark-info-7);
-    --info-8: var(--dark-info-8);
-    --info-9: var(--dark-info-9);
-    --info-10: var(--dark-info-10);
-    --info-11: var(--dark-info-11);
-    --info-12: var(--dark-info-12);
-
-    --warning-1: var(--dark-warning-1);
-    --warning-2: var(--dark-warning-2);
-    --warning-3: var(--dark-warning-3);
-    --warning-4: var(--dark-warning-4);
-    --warning-5: var(--dark-warning-5);
-    --warning-6: var(--dark-warning-6);
-    --warning-7: var(--dark-warning-7);
-    --warning-8: var(--dark-warning-8);
-    --warning-9: var(--dark-warning-9);
-    --warning-10: var(--dark-warning-10);
-    --warning-11: var(--dark-warning-11);
-    --warning-12: var(--dark-warning-12);
-
-    --danger-1: var(--dark-danger-1);
-    --danger-2: var(--dark-danger-2);
-    --danger-3: var(--dark-danger-3);
-    --danger-4: var(--dark-danger-4);
-    --danger-5: var(--dark-danger-5);
-    --danger-6: var(--dark-danger-6);
-    --danger-7: var(--dark-danger-7);
-    --danger-8: var(--dark-danger-8);
-    --danger-9: var(--dark-danger-9);
-    --danger-10: var(--dark-danger-10);
-    --danger-11: var(--dark-danger-11);
-    --danger-12: var(--dark-danger-12);
-  }
+  --dark-danger-1: #1f1315;
+  --dark-danger-2: #291415;
+  --dark-danger-3: #3c181a;
+  --dark-danger-4: #481a1d;
+  --dark-danger-5: #541b1f;
+  --dark-danger-6: #671e22;
+  --dark-danger-7: #822025;
+  --dark-danger-8: #aa2429;
+  --dark-danger-9: #e5484d;
+  --dark-danger-10: #f2555a;
+  --dark-danger-11: #ff6369;
+  --dark-danger-12: #feecee;
 }
 
 [color-scheme='light'],
@@ -398,17 +217,18 @@
   --syntax-modified: var(--light-syntax-modified);
   --syntax-highline: var(--light-syntax-highline);
 
-  --primary-50: var(--light-primary-50);
-  --primary-100: var(--light-primary-100);
-  --primary-200: var(--light-primary-200);
-  --primary-300: var(--light-primary-300);
-  --primary-400: var(--light-primary-400);
-  --primary-500: var(--light-primary-500);
-  --primary-600: var(--light-primary-600);
-  --primary-700: var(--light-primary-700);
-  --primary-800: var(--light-primary-800);
-  --primary-900: var(--light-primary-900);
-  --primary-950: var(--light-primary-950);
+  --primary-1: var(--light-primary-1);
+  --primary-2: var(--light-primary-2);
+  --primary-3: var(--light-primary-3);
+  --primary-4: var(--light-primary-4);
+  --primary-5: var(--light-primary-5);
+  --primary-6: var(--light-primary-6);
+  --primary-7: var(--light-primary-7);
+  --primary-8: var(--light-primary-8);
+  --primary-9: var(--light-primary-9);
+  --primary-10: var(--light-primary-10);
+  --primary-11: var(--light-primary-11);
+  --primary-12: var(--light-primary-12);
 
   --neutral-1: var(--light-neutral-1);
   --neutral-2: var(--light-neutral-2);
@@ -496,17 +316,18 @@
   --syntax-modified: var(--dark-syntax-modified);
   --syntax-highline: var(--dark-syntax-highline);
 
-  --primary-50: var(--dark-primary-50);
-  --primary-100: var(--dark-primary-100);
-  --primary-200: var(--dark-primary-200);
-  --primary-300: var(--dark-primary-300);
-  --primary-400: var(--dark-primary-400);
-  --primary-500: var(--dark-primary-500);
-  --primary-600: var(--dark-primary-600);
-  --primary-700: var(--dark-primary-700);
-  --primary-800: var(--dark-primary-800);
-  --primary-900: var(--dark-primary-900);
-  --primary-950: var(--dark-primary-950);
+  --primary-1: var(--dark-primary-1);
+  --primary-2: var(--dark-primary-2);
+  --primary-3: var(--dark-primary-3);
+  --primary-4: var(--dark-primary-4);
+  --primary-5: var(--dark-primary-5);
+  --primary-6: var(--dark-primary-6);
+  --primary-7: var(--dark-primary-7);
+  --primary-8: var(--dark-primary-8);
+  --primary-9: var(--dark-primary-9);
+  --primary-10: var(--dark-primary-10);
+  --primary-11: var(--dark-primary-11);
+  --primary-12: var(--dark-primary-12);
 
   --neutral-1: var(--dark-neutral-1);
   --neutral-2: var(--dark-neutral-2);
@@ -577,8 +398,8 @@
 html {
   /* TODO: - tokenise transitions */
   transition:
-    background-color 0.25s ease-in-out,
-    color 0.25s ease-in-out;
+    background-color 0.4s ease-in-out,
+    color 0.4s ease-in-out;
 
   @media (prefers-reduced-motion) {
     transition: none;
