@@ -5,6 +5,7 @@ import { defaultTo } from 'rambda';
 
 import { PolymorphicComponent } from './types';
 
+// TODO: look at Kent C. Dodds' anchor, has nice styles
 type AnchorBaseProps = VariantProps<typeof anchorStyles>;
 const anchorStyles = cva(['Anchor', 'transition-colors duration-200 ease-in-out', 'font-medium '], {
   defaultVariants: {
@@ -44,22 +45,22 @@ const anchorStyles = cva(['Anchor', 'transition-colors duration-200 ease-in-out'
     {
       colourScheme: 'primary',
       variant: 'subtle',
-      class: ['hover:text-primary-12'],
+      class: ['hover:text-primary-8'],
     },
     {
       colourScheme: 'neutral',
       variant: 'subtle',
-      class: ['hover:text-neutral-12'],
+      class: ['hover:text-neutral-8'],
     },
     {
       colourScheme: 'primary',
       variant: 'distinguished',
-      class: ['hover:text-primary-12'],
+      class: ['hover:text-primary-8'],
     },
     {
       colourScheme: 'neutral',
       variant: 'distinguished',
-      class: ['hover:text-neutral-12'],
+      class: ['hover:text-neutral-8'],
     },
   ],
 });
