@@ -6,7 +6,7 @@ import { defaultTo } from 'rambda';
 import { PolymorphicComponent } from '../types';
 
 type DisplayBaseProps = VariantProps<typeof displayStyles>;
-const displayStyles = cva(['Display', 'leading-tight'], {
+const displayStyles = cva(['Display', 'leading-tight', 'tracking-tighter'], {
   defaultVariants: {
     size: 'medium',
     variant: 'default',

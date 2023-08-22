@@ -1,14 +1,20 @@
-// import { JSX } from 'solid-js';
-// import { Box, HTMLHopeProps } from '@hope-ui/solid';
+import { JSX, splitProps } from 'solid-js';
+import { Dynamic } from 'solid-js/web';
+import { cva, cx, type VariantProps } from 'class-variance-authority';
+import { defaultTo } from 'rambda';
 
-// interface CardProps {
-//   test?: string;
-// }
+import { PolymorphicComponent } from './types';
 
-// export function Card(props: Readonly<HTMLHopeProps<'section', CardProps>>): JSX.Element {
-//   return (
-//     <Box as={'section'} p={'$8'} borderRadius={'$xl'} bg={'$contentNeutralSecondary'} {...props}>
-//       {props.children}
-//     </Box>
-//   );
-// }
+const cardStyles = cva(['Card', 'p-8 rounded bg-content-neutral-secondary']);
+
+type CardBaseProps = VariantProps<typeof cardStyles>;
+interface CardProps extends PolymorphicComponent<HTMLDivElement>, CardBaseProps {}
+
+export function Card(props: Readonly<CardProps>): JSX.Element {
+  const [{ as }, rest] = splitProps(props, ['as']);
+  return (
+    <Dynamic component={defaultTo('article', as)} class={cx(cardStyles())} {...rest}>
+      {props.children}
+    </Dynamic>
+  );
+}

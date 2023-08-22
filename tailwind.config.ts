@@ -95,8 +95,7 @@ module.exports = {
         },
         // Semantic tokens
         content: {
-          neutral: 'var(--content-neutral)',
-          secondary: 'var(--content-neutral-secondary)',
+          neutral: { primary: 'var(--content-neutral)', secondary: 'var(--content-neutral-secondary)' },
         },
         border: {
           neutral: 'var(--border-neutral)',
