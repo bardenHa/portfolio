@@ -37,7 +37,7 @@
   --dark-syntax-modified: #81a7f1;
   --dark-syntax-highline: #0d1628;
 
-  /* Light */
+  /* ==== Light ==== */
   --light-primary-1: #edfff3;
   --light-primary-2: #d5ffe4;
   --light-primary-3: #aeffca;
@@ -116,7 +116,7 @@
   --light-danger-11: #cd2b31;
   --light-danger-12: #381316;
 
-  /* Dark */
+  /* ==== Dark ==== */
   --dark-primary-1: #001b09;
   --dark-primary-2: #003713;
   --dark-primary-3: #066128;
@@ -194,6 +194,12 @@
   --dark-danger-10: #f2555a;
   --dark-danger-11: #ff6369;
   --dark-danger-12: #feecee;
+
+  /* Semantic tokans */
+  --content-neutral: var(--neutral-1);
+  --content-neutral-secondary: var(--neutral-3);
+  --border-neutral: var(--neutral-5);
+  --text-secondary: var(--neutral-7);
 }
 
 [color-scheme='light'],

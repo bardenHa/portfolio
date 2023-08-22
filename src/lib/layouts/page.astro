@@ -54,8 +54,8 @@ const props = Astro.props as Props;
     <title>{props.title}</title>
   </head>
 
-  <body class="overflow-y-scroll bg-surface text-default selection:bg-default selection:text-surface">
-    <section class="container mx-auto flex min-h-screen max-w-4xl flex-col px-3 py-10 lg:px-16 bg-neutral-1">
+  <body class="overflow-y-scroll bg-content-secondary text-default selection:bg-default selection:text-surface">
+    <section class="container mx-auto flex min-h-screen max-w-4xl flex-col px-3 py-10 lg:px-16 bg-content-neutral">
       <header>
         <nav class="flex justify-between">
           <ul class="flex flex-wrap items-center gap-2 text-base font-medium sm:gap-6">
@@ -85,7 +85,7 @@ const props = Astro.props as Props;
           <ul class="flex flex-wrap justify-center gap-4 sm:gap-8">
             {
               constants.links.external.map(({ name, link }) => (
-                <li>
+                <li class="hover:text-primary-7">
                   <a href={link}>{name}</a>
                 </li>
               ))

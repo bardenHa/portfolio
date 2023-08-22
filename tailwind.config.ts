@@ -93,6 +93,17 @@ module.exports = {
           11: 'var(--info-11)',
           12: 'var(--info-12)',
         },
+        // Semantic tokens
+        content: {
+          neutral: 'var(--content-neutral)',
+          secondary: 'var(--content-neutral-secondary)',
+        },
+        border: {
+          neutral: 'var(--border-neutral)',
+        },
+        text: {
+          secondary: 'var(--text-secondary)',
+        },
       },
       fontFamily: {
         sans: ['IBM Plex Sans', ...fontFamily.sans],
