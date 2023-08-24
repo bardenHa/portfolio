@@ -1,10 +1,8 @@
-import { FiMoon, FiSun } from 'solid-icons/fi';
 import { JSX, splitProps } from 'solid-js';
 import { Dynamic } from 'solid-js/web';
 import { cva, cx, type VariantProps } from 'class-variance-authority';
 import { defaultTo } from 'rambda';
 
-import { getCurrentTheme, toggleTheme } from '../utils';
 import { PolymorphicComponent } from './types';
 
 // TODO: implement styles
@@ -55,18 +53,5 @@ export function IconButton(props: Readonly<ButtonProps>): JSX.Element {
       {icon}
       {props.children}
     </Dynamic>
-  );
-}
-
-// TODO: move elsewhere
-export function ColorModeSwitcher(): JSX.Element {
-  return (
-    <IconButton
-      aria-label="Theme to toggle dark mode"
-      size={'small'}
-      variant={'ghost'}
-      onClick={toggleTheme}
-      icon={getCurrentTheme() === 'light' ? <FiSun /> : <FiMoon />}
-    />
   );
 }

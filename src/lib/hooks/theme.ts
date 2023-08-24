@@ -1,3 +1,5 @@
+import { createSignal, onMount } from 'solid-js';
+
 type Theme = 'light' | 'dark';
 
 function stringIsTheme(theme: string): theme is Theme {
@@ -22,12 +24,15 @@ function getInitialTheme(): Theme {
   return 'light';
 }
 
-export function getCurrentTheme(): Theme {
+function getCurrentTheme(): Theme {
+  console.log('getCurrentTheme');
   const colorScheme = document.documentElement.getAttribute('color-scheme');
   if (colorScheme && stringIsTheme(colorScheme)) {
+    console.log('colorScheme', colorScheme);
     return colorScheme;
   }
 
+  console.log('getInitialTheme');
   return getInitialTheme();
 }
 
@@ -37,8 +42,17 @@ function setTheme(theme: Theme): Theme {
   return theme;
 }
 
-export function toggleTheme(): Theme {
+function toggleTheme(): Theme {
   return setTheme(getCurrentTheme() === 'light' ? 'dark' : 'light');
 }
 
-// TODO: create an effect for this
+export function useTheme(): [() => Theme, () => Theme] {
+  const [state, setState] = createSignal<Theme>(getCurrentTheme());
+
+  function toggleState(): Theme {
+    return setState(toggleTheme());
+  }
+
+  onMount(() => setState(setTheme(getCurrentTheme())));
+  return [state, toggleState];
+}

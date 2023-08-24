@@ -1,8 +1,8 @@
 import { FiMoon, FiSun } from 'solid-icons/fi';
-import { For, JSX, ParentProps } from 'solid-js';
+import { For, JSX, ParentProps, Show } from 'solid-js';
 
 import { Anchor, Divider, IconButton, Typography } from '../components';
-import { getCurrentTheme, toggleTheme } from '../utils';
+import { useTheme } from '../hooks';
 
 const NAVIGATION_LINKS = [
   {
@@ -25,6 +25,7 @@ const NAVIGATION_LINKS = [
 
 // TODO: move to page.astro once ready
 export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
+  console.log(props);
   return (
     <section class="flex flex-col min-h-screen h-screen overflow-x-hidden bg-content-neutral-primary">
       {/* TODO: create a container component */}
@@ -64,13 +65,19 @@ export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
 }
 
 export function ColorModeSwitcher(): JSX.Element {
+  const [theme, toggleTheme] = useTheme();
+
   return (
     <IconButton
+      icon={
+        <Show when={theme() === 'light'} fallback={<FiMoon />}>
+          <FiSun />
+        </Show>
+      }
       aria-label="Theme to toggle dark mode"
       size={'small'}
       variant={'ghost'}
       onClick={toggleTheme}
-      icon={getCurrentTheme() === 'light' ? <FiSun /> : <FiMoon />}
     />
   );
 }
