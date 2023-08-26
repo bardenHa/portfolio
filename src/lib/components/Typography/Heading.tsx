@@ -1,8 +1,9 @@
-import { JSX, splitProps } from 'solid-js';
+import { JSX, Show, splitProps } from 'solid-js';
 import { Dynamic } from 'solid-js/web';
 import { cva, cx, type VariantProps } from 'class-variance-authority';
 import { defaultTo } from 'rambda';
 
+import { Anchor } from '../Anchor';
 import { PolymorphicComponent } from '../types';
 
 // TODO: enforce ID prop for headers
@@ -44,14 +45,37 @@ const HEADING_SIZE_TAG: Record<NonNullable<HeadingBaseProps['size']>, HeadingLev
 export function Heading(props: Readonly<HeadingProps>): JSX.Element {
   const [{ variant, size, as }, rest] = splitProps(props, ['size', 'variant', 'as']);
 
-  return (
+  const styles = headingStyles({ variant, size });
+  const heading = (
     <Dynamic
       component={as ?? HEADING_SIZE_TAG[defaultTo('medium', size)]}
-      class={cx(headingStyles({ variant, size }))}
+      class={cx(styles, {
+        inline: props.id,
+      })}
       {...rest}
     >
       {props.children}
     </Dynamic>
+  );
+
+  return (
+    <Show when={props.id} fallback={heading}>
+      {id => (
+        <div>
+          {heading}
+          <Anchor
+            href={`#${id()}`}
+            rel="bookmark"
+            aria-labelledby={id()}
+            aria-label="Permalink to “aria-labelledby”"
+            class={cx(styles, 'inline text-neutral-10')}
+          >
+            {' '}
+            #
+          </Anchor>
+        </div>
+      )}
+    </Show>
   );
 }
 
