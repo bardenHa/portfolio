@@ -54,3 +54,5 @@ export function Heading(props: Readonly<HeadingProps>): JSX.Element {
     </Dynamic>
   );
 }
+
+// TODO: add clickable tag to heading like used in these blogs - https://benmyers.dev/blog/clickable-divs/

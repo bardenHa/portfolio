@@ -11,7 +11,7 @@ const NAVIGATION_LINKS = [
   },
   {
     title: 'Projects',
-    href: '#projects',
+    href: '#featured-projects',
   },
   {
     title: 'Blog',
@@ -23,6 +23,7 @@ const NAVIGATION_LINKS = [
   },
 ];
 
+// TODO: keep progressive enhancement in mind - https://www.smashingmagazine.com/2009/04/progressive-enhancement-what-it-is-and-how-to-use-it/
 // TODO: move to page.astro once ready
 export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
   console.log(props);
@@ -31,7 +32,7 @@ export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
       {/* TODO: create a container component */}
       <header id="top" class="container mx-auto p-5 transition-[max-width] duration-200 ease-in-out">
         <nav class="flex items-center justify-between">
-          <a href="/">
+          <a href="/" title="Home">
             <img src="/h_avatar.svg" alt="Harry Barden's avatar" class="w-8 h-8" />
           </a>
           <div class="hidden md:flex gap-6">
