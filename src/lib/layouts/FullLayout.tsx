@@ -30,25 +30,25 @@ export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
     <section class="flex flex-col min-h-screen h-screen overflow-x-hidden bg-content-neutral-primary">
       {/* TODO: create a container component */}
       <header id="top" class="container mx-auto p-5 transition-[max-width] duration-200 ease-in-out">
-        <div class="flex items-center justify-between">
+        <nav class="flex items-center justify-between">
           <a href="/">
-            <img src="/h_avatar.svg" alt="Harry's avatar" class="w-8 h-8" />
+            <img src="/h_avatar.svg" alt="Harry Barden's avatar" class="w-8 h-8" />
           </a>
           <div class="hidden md:flex gap-6">
-            <nav class="flex items-center gap-4">
+            <ul class="flex items-center gap-4">
               <For each={NAVIGATION_LINKS}>
                 {link => (
-                  <Typography.Label size="small">
+                  <Typography.Text as="li" size="small">
                     <Anchor href={link.href} variant="subtle">
                       {link.title}
                     </Anchor>
-                  </Typography.Label>
+                  </Typography.Text>
                 )}
               </For>
-            </nav>
+            </ul>
             <ColorModeSwitcher />
           </div>
-        </div>
+        </nav>
       </header>
       {/* // TODO: heading of page/post should be part of the header? https://benmyers.dev/blog/aria-labels-and-descriptions/ */}
       <main class="container mx-auto p-5 transition-[max-width] duration-200 ease-in-out flex-1">{props.children}</main>

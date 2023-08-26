@@ -5,8 +5,8 @@ import { defaultTo } from 'rambda';
 
 import { PolymorphicComponent } from '../types';
 
-type LabelBaseProps = VariantProps<typeof labelStyles>;
-const labelStyles = cva('Label', {
+type TextBaseProps = VariantProps<typeof labelStyles>;
+const labelStyles = cva('Text', {
   defaultVariants: {
     size: 'medium',
     variant: 'default',
@@ -25,13 +25,12 @@ const labelStyles = cva('Label', {
   },
 });
 
-interface LabelProps extends PolymorphicComponent<HTMLLabelElement>, LabelBaseProps {}
+interface TextProps extends PolymorphicComponent<HTMLSpanElement>, TextBaseProps {}
 
-// TODO: should probaly either mimic headings implementation
-export function Label(props: Readonly<LabelProps>): JSX.Element {
+export function Text(props: Readonly<TextProps>): JSX.Element {
   const [{ variant, size, as }, rest] = splitProps(props, ['size', 'variant', 'as']);
   return (
-    <Dynamic component={defaultTo('label', as)} class={cx(labelStyles({ variant, size }))} {...rest}>
+    <Dynamic component={defaultTo('span', as)} class={cx(labelStyles({ variant, size }))} {...rest}>
       {props.children}
     </Dynamic>
   );

@@ -39,8 +39,8 @@ export default function Home(): JSX.Element {
           elit. Praesentium.
           <br />I specialise in interface design for web-based applications with a focus on simplicity & usability.
         </Typography.Paragraph>
-        <div class="flex">
-          <nav class="flex mt-16 gap-2" aria-label="A list of my social links">
+        <div class="flex mt-16">
+          <nav class="flex gap-2" aria-label="A list of my social links">
             <For each={SOCIAL_LINKS}>
               {link => (
                 <IconButton

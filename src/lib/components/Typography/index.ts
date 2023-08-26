@@ -1,11 +1,11 @@
 import { Display } from './Display';
 import { Heading } from './Heading';
-import { Label } from './Label';
 import { Paragraph } from './Paragraph';
+import { Text } from './Text';
 
 export const Typography = {
   Display,
   Heading,
-  Label,
+  Text,
   Paragraph,
 } as const;
