@@ -65,7 +65,10 @@ const anchorStyles = cva(['Anchor', 'transition-colors duration-200 ease-in-out'
   ],
 });
 
-interface AnchorProps extends PolymorphicComponent<HTMLAnchorElement>, AnchorBaseProps {
+interface AnchorProps
+  extends PolymorphicComponent<HTMLAnchorElement>,
+    AnchorBaseProps,
+    JSX.AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;
   external?: boolean;
 }
