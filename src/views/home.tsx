@@ -70,25 +70,25 @@ export default function Home(): JSX.Element {
         </Typography.Heading>
         {/* TODO: update tag and styles, probably no need for a grid here */}
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full">
-          <Card aria-labelledby="about">
-            <Typography.Label size="xsmall" variant="subdued" class="mb-2 uppercase">
+          <Card as="section" aria-labelledby="about">
+            <Typography.Heading as={'h4'} size="xsmall" variant="subdued" class="mb-2 uppercase">
               Where I'm from
-            </Typography.Label>
+            </Typography.Heading>
             <Typography.Paragraph variant="subdued" size="large">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas explicabo, expedita sed pariatur aliquam
               inventore voluptas facilis quam quia tempora ut, minima corrupti! Tenetur doloribus reiciendis dicta,
               quasi sunt temporibus neque explicabo quis quia cum impedit perferendis voluptas debitis maxime dolor?
             </Typography.Paragraph>
-            <Typography.Label size="xsmall" variant="subdued" class="mt-5 mb-2 uppercase">
+            <Typography.Heading as={'h4'} size="xsmall" variant="subdued" class="mt-5 mb-2 uppercase">
               What I used to do
-            </Typography.Label>
+            </Typography.Heading>
             <Typography.Paragraph variant="subdued" size="large">
               I'm a software engineer with a passion for building beautiful, functional, and accessible user interfaces.
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
             </Typography.Paragraph>
-            <Typography.Label size="xsmall" variant="subdued" class="mt-5 mb-2 uppercase">
+            <Typography.Heading as={'h4'} size="xsmall" variant="subdued" class="mt-5 mb-2 uppercase">
               What I do now
-            </Typography.Label>
+            </Typography.Heading>
             <Typography.Paragraph variant="subdued" size="large">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium, aspernatur{' '}
               <Anchor href="https://example.com" external>

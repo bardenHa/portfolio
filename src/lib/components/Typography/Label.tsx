@@ -27,6 +27,7 @@ const labelStyles = cva('Label', {
 
 interface LabelProps extends PolymorphicComponent<HTMLLabelElement>, LabelBaseProps {}
 
+// TODO: should probaly either mimic headings implementation
 export function Label(props: Readonly<LabelProps>): JSX.Element {
   const [{ variant, size, as }, rest] = splitProps(props, ['size', 'variant', 'as']);
   return (
