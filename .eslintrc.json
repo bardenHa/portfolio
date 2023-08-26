@@ -10,7 +10,7 @@
     "plugin:solid/typescript",
     "plugin:solid/recommended",
     "plugin:prettier/recommended",
-    "plugin:jsx-a11y/recommended",
+    "plugin:jsx-a11y/strict",
     "plugin:functional/lite"
   ],
   "parser": "@typescript-eslint/parser",

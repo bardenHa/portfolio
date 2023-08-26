@@ -67,6 +67,7 @@ const anchorStyles = cva(['Anchor', 'transition-colors duration-200 ease-in-out'
 
 interface AnchorProps extends PolymorphicComponent<HTMLAnchorElement>, AnchorBaseProps {
   href: string;
+  external?: boolean;
 }
 
 export function Anchor(props: Readonly<AnchorProps>): JSX.Element {
@@ -77,3 +78,6 @@ export function Anchor(props: Readonly<AnchorProps>): JSX.Element {
     </Dynamic>
   );
 }
+
+// TODO: implement a variant with similar styles - https://benmyers.dev/blog/aria-labels-and-descriptions/
+// TODO: external link styles

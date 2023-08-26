@@ -46,6 +46,7 @@ export function Button(props: Readonly<ButtonProps>): JSX.Element {
   );
 }
 
+// TODO: enforce aria label
 export function IconButton(props: Readonly<ButtonProps>): JSX.Element {
   const [{ as, icon }, rest] = splitProps(props, ['as', 'icon']);
   return (

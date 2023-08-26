@@ -50,11 +50,14 @@ export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
           </div>
         </div>
       </header>
+      {/* // TODO: heading of page/post should be part of the header? https://benmyers.dev/blog/aria-labels-and-descriptions/ */}
       <main class="container mx-auto p-5 transition-[max-width] duration-200 ease-in-out flex-1">{props.children}</main>
       <footer class="container mx-auto p-5 pt-0 pb-12 transition-[max-width] duration-200 ease-in-out">
         <Divider size="large" />
         <div class="flex justify-between items-center">
-          <Typography.Paragraph>All Rights Reserved © 2023</Typography.Paragraph>
+          <Typography.Paragraph>
+            <span translate="no">Harry Barden</span> © 2023
+          </Typography.Paragraph>
           <Anchor href={'#top'} variant="distinguished" colourScheme="primary">
             Back to top
           </Anchor>
@@ -81,3 +84,5 @@ export function ColorModeSwitcher(): JSX.Element {
     />
   );
 }
+
+// TODO: make an a11y statement https://benmyers.dev/accessibility-statement/

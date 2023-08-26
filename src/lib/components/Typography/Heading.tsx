@@ -5,6 +5,8 @@ import { defaultTo } from 'rambda';
 
 import { PolymorphicComponent } from '../types';
 
+// TODO: enforce ID prop for headers
+
 type HeadingLevels = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 type HeadingBaseProps = VariantProps<typeof headingStyles>;
 const headingStyles = cva(['Heading', 'leading-tight'], {
