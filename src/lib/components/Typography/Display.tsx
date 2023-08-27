@@ -29,17 +29,17 @@ const displayStyles = cva(['Display', 'leading-tight', 'tracking-tighter'], {
 interface DisplayProps extends PolymorphicComponent<HTMLHeadingElement>, DisplayBaseProps {}
 
 export function Display(props: Readonly<DisplayProps>): JSX.Element {
-  const [{ variant, size, as, id }, rest] = splitProps(props, ['size', 'variant', 'as', 'id']);
+  const [{ variant, size, as }, rest] = splitProps(props, ['size', 'variant', 'as']);
 
   const styles = displayStyles({ variant, size });
   const display = (
-    <Dynamic component={defaultTo('h1', as)} class={cx(styles, { inline: id })} {...rest}>
+    <Dynamic component={defaultTo('h1', as)} class={cx(styles, { inline: props.id })} {...rest}>
       {props.children}
     </Dynamic>
   );
 
   return (
-    <Show when={id} fallback={display}>
+    <Show when={props.id} fallback={display}>
       {id => (
         <div>
           {display}
