@@ -1,8 +1,9 @@
 import { FiGithub, FiInstagram, FiTwitter } from 'solid-icons/fi';
-import { For, JSX } from 'solid-js';
+import { ComponentProps, For, JSX } from 'solid-js';
 import { cx } from 'class-variance-authority';
 
-import { Anchor, Button, buttonStyles, Card, Divider, Typography } from '@/lib/components';
+import { Anchor, buttonStyles, Card, Divider, Typography } from '@/lib/components';
+import { Button } from '@/lib/components/ButtonNew';
 
 interface SocialLink {
   title: string;
@@ -26,6 +27,8 @@ const SOCIAL_LINKS: SocialLink[] = [
     icon: <FiGithub />,
   },
 ];
+
+const TEST_INTENT = 'success';
 
 export default function Home(): JSX.Element {
   return (
@@ -58,11 +61,30 @@ export default function Home(): JSX.Element {
           <Button
             class="ml-6"
             // colorScheme={'neutral'}
-            variant={'subtle'}
+            // variant={'subtle'}
           >
             Email me
           </Button>
         </div>
+        {/* // TODO: remove */}
+        <For each={['sm', 'md', 'lg']}>
+          {size => (
+            <div class="flex mt-12 gap-4">
+              <Button intent={TEST_INTENT} size={size} variant="solid">
+                Button
+              </Button>
+              <Button intent={TEST_INTENT} size={size} variant="subtle">
+                Button
+              </Button>
+              <Button intent={TEST_INTENT} size={size} variant="outline">
+                Button
+              </Button>
+              <Button intent={TEST_INTENT} size={size} variant="ghost">
+                Button
+              </Button>
+            </div>
+          )}
+        </For>
       </section>
       <Divider size="large" />
       <section class="gap-5 w-full flex flex-col" aria-labelledby="about">

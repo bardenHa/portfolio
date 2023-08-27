@@ -5,7 +5,7 @@ import { defaultTo } from 'rambda';
 
 import { PolymorphicComponent } from './types';
 
-const cardStyles = cva(['Card', 'p-8 rounded bg-content-neutral-secondary']);
+const cardStyles = cva(['Card', 'p-8 rounded-xl bg-content-neutral-secondary']);
 
 type CardBaseProps = VariantProps<typeof cardStyles>;
 interface CardProps extends PolymorphicComponent<HTMLDivElement>, CardBaseProps {}
