@@ -40,7 +40,7 @@ export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
               <For each={NAVIGATION_LINKS}>
                 {link => (
                   <Typography.Text as="li" size="small">
-                    <Anchor href={link.href} variant="subtle">
+                    <Anchor href={link.href} variant="subtle" aria-current="page">
                       {link.title}
                     </Anchor>
                   </Typography.Text>

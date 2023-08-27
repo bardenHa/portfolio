@@ -107,13 +107,7 @@ module.exports = {
       fontFamily: {
         sans: ['IBM Plex Sans', ...fontFamily.sans],
       },
-      minHeight: {
-        xs: '20rem',
-        sm: '40rem',
-        md: '48rem',
-        lg: '64rem',
-      },
     },
   },
-  plugins: [],
+  plugins: [require('@thoughtbot/tailwindcss-aria-attributes')],
 };

@@ -23,6 +23,9 @@ devDependencies:
   '@stitches/core':
     specifier: ^1.2.8
     version: 1.2.8
+  '@thoughtbot/tailwindcss-aria-attributes':
+    specifier: ^0.2.0
+    version: 0.2.0
   '@total-typescript/ts-reset':
     specifier: ^0.5.1
     version: 0.5.1
@@ -1071,6 +1074,10 @@ packages:
 
   /@stitches/core@1.2.8:
     resolution: {integrity: sha512-Gfkvwk9o9kE9r9XNBmJRfV8zONvXThnm1tcuojL04Uy5uRyqg93DC83lDebl0rocZCfKSjUv+fWYtMQmEDJldg==}
+    dev: true
+
+  /@thoughtbot/tailwindcss-aria-attributes@0.2.0:
+    resolution: {integrity: sha512-//4JaxWfNvz6K8b9NcwZP0h3lwH24ds318Z3g/TCgsus+VkkWovXTCd1SqRZ6Zg5T0WhtyeZ2Z8VNpFugVr6oQ==}
     dev: true
 
   /@total-typescript/ts-reset@0.5.1:
