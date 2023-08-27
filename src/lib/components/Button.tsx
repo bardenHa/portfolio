@@ -6,7 +6,8 @@ import { defaultTo } from 'rambda';
 import { PolymorphicComponent } from './types';
 
 // TODO: implement styles
-const buttonStyles = cva(['Button', 'font-semibold', 'border', 'rounded'], {
+// TODO: split button variant styles, e.g. https://ui.shadcn.com/docs/components/button
+export const buttonStyles = cva(['Button', 'font-semibold', 'border', 'rounded'], {
   variants: {
     variant: {
       primary: ['bg-blue-500', 'text-white', 'border-transparent', 'hover:bg-blue-600'],

@@ -1,7 +1,8 @@
 import { FiGithub, FiInstagram, FiTwitter } from 'solid-icons/fi';
 import { For, JSX } from 'solid-js';
+import { cx } from 'class-variance-authority';
 
-import { Anchor, Button, Card, Divider, IconButton, Typography } from '@/lib/components';
+import { Anchor, Button, buttonStyles, Card, Divider, Typography } from '@/lib/components';
 
 interface SocialLink {
   title: string;
@@ -43,13 +44,13 @@ export default function Home(): JSX.Element {
           <nav class="flex gap-2" aria-label="A list of my social links">
             <For each={SOCIAL_LINKS}>
               {link => (
-                <IconButton
+                <Anchor
+                  // Use Anchor with class={buttonVariants()}
                   // colorScheme={'neutral'}
-                  variant={'ghost'}
-                  icon={link.icon}
+                  class={cx(buttonStyles({ size: 'small', variant: 'ghost' }), 'text-xl')}
+                  // icon={link.icon}
                   aria-label={link.title}
-                  // href={link.href}
-                  class="text-xl"
+                  href={link.href}
                 />
               )}
             </For>
