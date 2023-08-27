@@ -94,5 +94,5 @@
     "@typescript-eslint/prefer-as-const": "error",
     "@typescript-eslint/switch-exhaustiveness-check": "error"
   },
-  "ignorePatterns": ["*rc.ts", "*.config.ts", "*.d.ts"]
+  "ignorePatterns": ["*rc.ts", "*.config.ts", "*.d.ts", "public/**/*"]
 }

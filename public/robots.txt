@@ -1,5 +1,3 @@
 User-agent: *
 Allow: /
-
-// TODO: can this be generated dynamic url?
 Sitemap: https://barden.dev/sitemap-index.xml

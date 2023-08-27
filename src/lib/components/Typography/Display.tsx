@@ -7,7 +7,7 @@ import { Anchor } from '../Anchor';
 import { PolymorphicComponent } from '../types';
 
 type DisplayBaseProps = VariantProps<typeof displayStyles>;
-const displayStyles = cva(['Display', 'leading-tight', 'tracking-tighter'], {
+const displayStyles = cva(['Display', 'font-semibold leading-tight tracking-tighter'], {
   defaultVariants: {
     size: 'medium',
     variant: 'default',

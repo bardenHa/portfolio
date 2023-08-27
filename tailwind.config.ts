@@ -1,5 +1,3 @@
-const { fontFamily } = require('tailwindcss/defaultTheme');
-
 // TODO: for pruduction builds, purge unused styles, minify, etc. - https://tailwindcss.com/docs/optimizing-for-production
 
 /** @type {import('tailwindcss').Config} */
@@ -105,7 +103,9 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['IBM Plex Sans', ...fontFamily.sans],
+        sans: 'var(--fonts-sans)',
+        serif: 'var(--fonts-serif)',
+        mono: 'var(--fonts-mono)',
       },
     },
   },
