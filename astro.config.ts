@@ -8,15 +8,12 @@ import solid from '@astrojs/solid-js';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://barden.dev',
+  site: 'https://barden.dev', // TODO: define in var
   vite: {
     resolve: {
       alias: {
         '@': '/src',
       },
-    },
-    ssr: {
-      noExternal: ['@kobalte/core'],
     },
   },
   markdown: {

@@ -14,7 +14,8 @@
     "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx ./src",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,astro,json,css,scss,md}\" --plugin=prettier-plugin-astro --plugin=prettier-plugin-tailwindcss",
     "typecheck": "tsc --noEmit",
-    "analyse:bundle": "VITE_OPEN_VISUALIZER=true vite build"
+    "test:a11y": "TODO: fix sitemap pa11y-ci --config .pa11yci.json --sitemap http://localhost:3000/sitemap-index.xml --sitemap-find https://barden.dev --sitemap-replace http://localhost:3000",
+    "a11ycheck": "start-server-and-test preview http://localhost:3000 test:a11y"
   },
   "type": "module",
   "license": "MIT",
@@ -40,6 +41,7 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-solid": "^0.12.1",
     "eslint-plugin-unused-imports": "^3.0.0",
+    "pa11y-ci": "^3.0.1",
     "prettier": "^3.0.2",
     "prettier-plugin-astro": "^0.11.1",
     "prettier-plugin-tailwindcss": "^0.5.3",
@@ -48,6 +50,7 @@
     "rollup-plugin-visualizer": "^5.9.2",
     "solid-icons": "^1.0.8",
     "solid-js": "^1.7.6",
+    "start-server-and-test": "^2.0.0",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.1.6"
   }
