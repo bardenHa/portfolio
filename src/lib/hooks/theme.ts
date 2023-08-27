@@ -47,7 +47,7 @@ function toggleTheme(): Theme {
 }
 
 export function useTheme(): [() => Theme, () => Theme] {
-  const [state, setState] = createSignal<Theme>(getCurrentTheme());
+  const [state, setState] = createSignal<Theme>('light');
 
   function toggleState(): Theme {
     return setState(toggleTheme());

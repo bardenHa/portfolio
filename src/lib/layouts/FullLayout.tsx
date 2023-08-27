@@ -30,7 +30,7 @@ export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
   return (
     <section class="flex flex-col min-h-screen h-screen overflow-x-hidden bg-content-neutral-primary">
       {/* TODO: create a container component */}
-      <header id="top" class="container mx-auto p-5 transition-[max-width] duration-200 ease-in-out">
+      <header id="header" class="container mx-auto p-5 transition-[max-width] duration-200 ease-in-out">
         <nav class="flex items-center justify-between">
           <a href="/" title="Home">
             <img src="/h_avatar.svg" alt="Harry Barden's avatar" class="w-8 h-8" />
@@ -59,7 +59,7 @@ export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
           <Typography.Paragraph>
             <span translate="no">Harry Barden</span> © 2023
           </Typography.Paragraph>
-          <Anchor href={'#top'} variant="distinguished" colourScheme="primary">
+          <Anchor href={'#header'} variant="distinguished" colourScheme="primary">
             Back to top
           </Anchor>
         </div>
