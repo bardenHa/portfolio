@@ -22,16 +22,60 @@ html {
   }
 }
 
-/* TODO: apple ring outline for focus styles globally */
-/* TODO: add outline transition for this */
-:focus-visible,
-[role='button']:focus-visible,
-[role='button']:focus,
-[role='a']:focus-visible {
-  outline: 2px solid var(--neutral-12);
-  outline-offset: 2px;
-  box-shadow: 0 0 0 4px var(--neutral-1);
-  border-radius: 0.15rem;
+@layer base {
+  /* TODO: apple ring outline for focus styles globally */
+  /* TODO: add outline transition for this */
+  :focus-visible,
+  [role='button']:focus-visible,
+  [role='button']:focus {
+    outline: 2px solid var(--neutral-12);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px var(--neutral-1);
+    border-radius: 0.15rem;
+  }
+
+  .underline-link {
+    position: relative;
+    text-decoration: none;
+    white-space: nowrap;
+
+    @media (prefers-reduced-motion: reduce) {
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      &:hover,
+      &:focus {
+        text-decoration: none;
+
+        &::after {
+          background-color: var(--primary-6);
+          transform: scaleX(1);
+        }
+      }
+
+      &:focus-visible {
+        outline: none;
+      }
+
+      &::after {
+        bottom: -2px;
+        content: '';
+        display: block;
+        height: 0.1em;
+        min-height: 4px;
+        left: 0;
+        position: absolute;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.25s ease;
+        width: 100%;
+      }
+    }
+  }
 }
 
 /* TODO: update selection styles */

@@ -76,7 +76,13 @@ export function Heading(props: Readonly<HeadingProps>): JSX.Element {
             rel="bookmark"
             aria-labelledby={id()}
             aria-label="Permalink to “aria-labelledby”"
-            class={cx(styles, 'inline text-neutral-10 ml-3', className)}
+            class={cx(
+              styles,
+              'inline text-text-secondary ml-[0.5ch]',
+              // TODO: mode this to anchor styles
+              'underline-link',
+              className
+            )}
           >
             #
           </Anchor>
