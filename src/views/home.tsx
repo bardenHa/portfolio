@@ -58,24 +58,22 @@ export default function Home(): JSX.Element {
               )}
             </For>
           </nav>
-          <Button class="ml-6" variant={'subtle'}>
-            Email me
-          </Button>
+          <Button class="ml-6">Email me</Button>
         </div>
         {/* // TODO: remove */}
         <For each={['sm', 'md', 'lg'] as const}>
           {size => (
             <div class="flex mt-12 gap-4">
-              <Button intent={TEST_INTENT} size={size} variant="solid">
+              <Button intent={TEST_INTENT} size={size} variant="primary">
                 Button
               </Button>
-              <Button intent={TEST_INTENT} size={size} variant="subtle">
+              <Button intent={TEST_INTENT} size={size} variant="secondary">
                 Button
               </Button>
-              <Button intent={TEST_INTENT} size={size} variant="ghost">
+              <Button intent={TEST_INTENT} size={size} variant="tertiary">
                 Button
               </Button>
-              <Button intent={TEST_INTENT} size={size} variant="outline">
+              <Button intent={TEST_INTENT} size={size} variant="placeholder">
                 Button
               </Button>
             </div>

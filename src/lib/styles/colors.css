@@ -180,10 +180,10 @@
   --dark-danger-12: #feecee;
 
   /* Semantic tokans */
-  --content-neutral: var(--neutral-1);
-  --content-neutral-secondary: var(--neutral-3);
+  --content-neutral: var(--neutral-2);
+  --content-neutral-secondary: var(--neutral-4);
   --border-neutral: var(--neutral-5);
-  --text-secondary: var(--neutral-10);
+  --text-secondary: var(--neutral-11);
 }
 
 [color-scheme='light'],
