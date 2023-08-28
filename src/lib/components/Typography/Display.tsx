@@ -51,9 +51,8 @@ export function Display(props: Readonly<DisplayProps>): JSX.Element {
             rel="bookmark"
             aria-labelledby={id()}
             aria-label="Permalink to “aria-labelledby”"
-            class={cx(styles, 'inline text-neutral-10', className)}
+            class={cx(styles, 'inline text-neutral-10 ml-3', className)}
           >
-            {' '}
             #
           </Anchor>
         </div>
