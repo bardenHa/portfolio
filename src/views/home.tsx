@@ -1,5 +1,5 @@
 import { FiGithub, FiInstagram, FiTwitter } from 'solid-icons/fi';
-import { ComponentProps, For, JSX } from 'solid-js';
+import { For, JSX } from 'solid-js';
 import { cx } from 'class-variance-authority';
 
 import { Anchor, buttonStyles, Card, Divider, Typography } from '@/lib/components';
@@ -28,7 +28,7 @@ const SOCIAL_LINKS: SocialLink[] = [
   },
 ];
 
-const TEST_INTENT = 'success';
+const TEST_INTENT = 'neutral' as const;
 
 export default function Home(): JSX.Element {
   return (
@@ -58,16 +58,12 @@ export default function Home(): JSX.Element {
               )}
             </For>
           </nav>
-          <Button
-            class="ml-6"
-            // colorScheme={'neutral'}
-            // variant={'subtle'}
-          >
+          <Button class="ml-6" variant={'subtle'}>
             Email me
           </Button>
         </div>
         {/* // TODO: remove */}
-        <For each={['sm', 'md', 'lg']}>
+        <For each={['sm', 'md', 'lg'] as const}>
           {size => (
             <div class="flex mt-12 gap-4">
               <Button intent={TEST_INTENT} size={size} variant="solid">
@@ -76,10 +72,10 @@ export default function Home(): JSX.Element {
               <Button intent={TEST_INTENT} size={size} variant="subtle">
                 Button
               </Button>
-              <Button intent={TEST_INTENT} size={size} variant="outline">
+              <Button intent={TEST_INTENT} size={size} variant="ghost">
                 Button
               </Button>
-              <Button intent={TEST_INTENT} size={size} variant="ghost">
+              <Button intent={TEST_INTENT} size={size} variant="outline">
                 Button
               </Button>
             </div>

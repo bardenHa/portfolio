@@ -25,11 +25,13 @@ html {
 /* TODO: apple ring outline for focus styles globally */
 /* TODO: add outline transition for this */
 :focus-visible,
-button:focus-visible,
-button:focus,
-a:focus-visible {
+[role='button']:focus-visible,
+[role='button']:focus,
+[role='a']:focus-visible {
   outline: 2px solid var(--neutral-12);
   outline-offset: 2px;
   box-shadow: 0 0 0 4px var(--neutral-1);
   border-radius: 0.15rem;
 }
+
+/* TODO: update selection styles */
