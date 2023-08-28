@@ -1,21 +1,4 @@
 :root {
-  /* TODO: remove these temp vars */
-  --light-default: #19253d;
-  --light-primary: #2a6cea;
-  --light-neutral: #fefeff;
-  --light-surface: #fcfcfc;
-  --light-element: #f5f6f7;
-  --light-elevate: #edf0f6;
-  --light-comment: #72809a;
-
-  --dark-default: #dee3ee;
-  --dark-primary: #81a7f1;
-  --dark-neutral: #070e1d;
-  --dark-surface: #091121;
-  --dark-element: #0f182c;
-  --dark-elevate: #1b263c;
-  --dark-comment: #72809a;
-
   /* TODO: Syntax */
   --light-syntax-keywords: #d73a49;
   --light-syntax-selector: #22863a;
@@ -62,6 +45,7 @@
   --light-neutral-9: #889096;
   --light-neutral-10: #7e868c;
   --light-neutral-11: #687076;
+  /* TODO: could try using inverse palette instead */
   --light-neutral-12: #11181c;
 
   --light-success-1: #fbfefc;
@@ -249,6 +233,19 @@
   --neutral-11: var(--light-neutral-11);
   --neutral-12: var(--light-neutral-12);
 
+  --neutral-inverse-1: var(--dark-neutral-1);
+  --neutral-inverse-2: var(--dark-neutral-2);
+  --neutral-inverse-3: var(--dark-neutral-3);
+  --neutral-inverse-4: var(--dark-neutral-4);
+  --neutral-inverse-5: var(--dark-neutral-5);
+  --neutral-inverse-6: var(--dark-neutral-6);
+  --neutral-inverse-7: var(--dark-neutral-7);
+  --neutral-inverse-8: var(--dark-neutral-8);
+  --neutral-inverse-9: var(--dark-neutral-9);
+  --neutral-inverse-10: var(--dark-neutral-10);
+  --neutral-inverse-11: var(--dark-neutral-11);
+  --neutral-inverse-12: var(--dark-neutral-12);
+
   --success-1: var(--light-success-1);
   --success-2: var(--light-success-2);
   --success-3: var(--light-success-3);
@@ -348,7 +345,47 @@
   --neutral-11: var(--dark-neutral-11);
   --neutral-12: var(--dark-neutral-12);
 
+  --neutral-inverse-1: var(--light-neutral-1);
+  --neutral-inverse-2: var(--light-neutral-2);
+  --neutral-inverse-3: var(--light-neutral-3);
+  --neutral-inverse-4: var(--light-neutral-4);
+  --neutral-inverse-5: var(--light-neutral-5);
+  --neutral-inverse-6: var(--light-neutral-6);
+  --neutral-inverse-7: var(--light-neutral-7);
+  --neutral-inverse-8: var(--light-neutral-8);
+  --neutral-inverse-9: var(--light-neutral-9);
+  --neutral-inverse-10: var(--light-neutral-10);
+  --neutral-inverse-11: var(--light-neutral-11);
+  --neutral-inverse-12: var(--light-neutral-12);
+
   --success-1: var(--dark-success-1);
+  --success-2: var(--dark-success-2);
+  --success-3: var(--dark-success-3);
+  --success-4: var(--dark-success-4);
+  --success-5: var(--dark-success-5);
+  --success-6: var(--dark-success-6);
+  --success-7: var(--dark-success-7);
+  --success-8: var(--dark-success-8);
+  --success-9: var(--dark-success-9);
+  --success-10: var(--dark-success-10);
+  --success-11: var(--dark-success-11);
+  --success-12: var(--dark-success-12);
+
+  --info-1: var(--dark-info-1);
+  --info-2: var(--dark-info-2);
+  --info-3: var(--dark-info-3);
+  --info-4: var(--dark-info-4);
+  --info-5: var(--dark-info-5);
+  --info-6: var(--dark-info-6);
+  --info-7: var(--dark-info-7);
+  --info-8: var(--dark-info-8);
+  --info-9: var(--dark-info-9);
+  --info-10: var(--dark-info-10);
+  --info-11: var(--dark-info-11);
+  --info-12: var(--dark-info-12);
+
+  --warning-1: var(--dark-warning-1);
+  --warning-2: --success-1: var(--dark-success-1);
   --success-2: var(--dark-success-2);
   --success-3: var(--dark-success-3);
   --success-4: var(--dark-success-4);
