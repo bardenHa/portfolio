@@ -20,7 +20,7 @@ const labelStyles = cva('Text', {
     },
     variant: {
       default: ['text-inherit'],
-      subdued: ['text-secondary'],
+      subdued: ['text-text-secondary'],
     },
   },
 });

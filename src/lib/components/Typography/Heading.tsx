@@ -26,32 +26,40 @@ const headingStyles = cva(['Heading', 'font-semibold leading-tight'], {
     },
     variant: {
       default: ['text-inherit'],
-      subdued: ['text-secondary'],
+      subdued: ['text-text-secondary'],
     },
   },
 });
 
 interface HeadingProps extends PolymorphicComponent<HTMLHeadingElement>, HeadingBaseProps {}
 
+/**
+ * Rarely do we need to nest more than 4 levels of headings, so we can use 'h4' for multiple sizes.
+ */
 const HEADING_SIZE_TAG: Record<NonNullable<HeadingBaseProps['size']>, HeadingLevels> = {
   xxlarge: 'h1',
   xlarge: 'h2',
   large: 'h3',
   medium: 'h4',
-  small: 'h5',
-  xsmall: 'h6',
+  small: 'h4',
+  xsmall: 'h4',
 };
 
+// TODO: include prop to add default margins?
 export function Heading(props: Readonly<HeadingProps>): JSX.Element {
-  const [{ variant, size, as }, rest] = splitProps(props, ['size', 'variant', 'as']);
+  const [{ variant, size, as, class: className }, rest] = splitProps(props, ['size', 'variant', 'as', 'class']);
 
   const styles = headingStyles({ variant, size });
   const heading = (
     <Dynamic
       component={as ?? HEADING_SIZE_TAG[defaultTo('medium', size)]}
-      class={cx(styles, {
-        inline: props.id,
-      })}
+      class={cx(
+        styles,
+        {
+          inline: props.id,
+        },
+        className
+      )}
       {...rest}
     >
       {props.children}
@@ -68,7 +76,7 @@ export function Heading(props: Readonly<HeadingProps>): JSX.Element {
             rel="bookmark"
             aria-labelledby={id()}
             aria-label="Permalink to “aria-labelledby”"
-            class={cx(styles, 'inline text-neutral-10')}
+            class={cx(styles, 'inline text-neutral-10', className)}
           >
             {' '}
             #

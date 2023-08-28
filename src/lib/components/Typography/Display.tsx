@@ -21,19 +21,22 @@ const displayStyles = cva(['Display', 'font-semibold leading-tight tracking-tigh
     },
     variant: {
       default: ['text-inherit'],
-      subdued: ['text-secondary'],
+      subdued: ['text-text-secondary'],
     },
   },
 });
 
 interface DisplayProps extends PolymorphicComponent<HTMLHeadingElement>, DisplayBaseProps {}
 
+/**
+ * To be used for large headings, such as page titles. Should not be used more than once per page.
+ */
 export function Display(props: Readonly<DisplayProps>): JSX.Element {
-  const [{ variant, size, as }, rest] = splitProps(props, ['size', 'variant', 'as']);
+  const [{ variant, size, as, class: className }, rest] = splitProps(props, ['size', 'variant', 'as', 'class']);
 
   const styles = displayStyles({ variant, size });
   const display = (
-    <Dynamic component={defaultTo('h1', as)} class={cx(styles, { inline: props.id })} {...rest}>
+    <Dynamic component={defaultTo('h1', as)} class={cx(styles, { inline: props.id }, className)} {...rest}>
       {props.children}
     </Dynamic>
   );
@@ -48,7 +51,7 @@ export function Display(props: Readonly<DisplayProps>): JSX.Element {
             rel="bookmark"
             aria-labelledby={id()}
             aria-label="Permalink to “aria-labelledby”"
-            class={cx(styles, 'inline text-neutral-10')}
+            class={cx(styles, 'inline text-neutral-10', className)}
           >
             {' '}
             #

@@ -90,7 +90,7 @@ export default function Home(): JSX.Element {
         {/* TODO: update tag and styles, probably no need for a grid here */}
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full">
           <Card as="section" aria-labelledby="about">
-            <Typography.Heading as={'h4'} size="xsmall" variant="subdued" class="mb-2 uppercase">
+            <Typography.Heading size="xsmall" class="mb-2">
               Where I'm from
             </Typography.Heading>
             <Typography.Paragraph variant="subdued" size="large">
@@ -98,14 +98,14 @@ export default function Home(): JSX.Element {
               inventore voluptas facilis quam quia tempora ut, minima corrupti! Tenetur doloribus reiciendis dicta,
               quasi sunt temporibus neque explicabo quis quia cum impedit perferendis voluptas debitis maxime dolor?
             </Typography.Paragraph>
-            <Typography.Heading as={'h4'} size="xsmall" variant="subdued" class="mt-5 mb-2 uppercase">
+            <Typography.Heading size="xsmall" class="mt-5 mb-2">
               What I used to do
             </Typography.Heading>
             <Typography.Paragraph variant="subdued" size="large">
               I'm a software engineer with a passion for building beautiful, functional, and accessible user interfaces.
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
             </Typography.Paragraph>
-            <Typography.Heading as={'h4'} size="xsmall" variant="subdued" class="mt-5 mb-2 uppercase">
+            <Typography.Heading size="xsmall" class="mt-5 mb-2">
               What I do now
             </Typography.Heading>
             <Typography.Paragraph variant="subdued" size="large">
@@ -128,7 +128,7 @@ export default function Home(): JSX.Element {
         <Typography.Heading size={'large'} id="featured-projects">
           Featured projects
         </Typography.Heading>
-        <Typography.Paragraph variant="subdued" id="featured-projects-description">
+        <Typography.Paragraph variant="subdued" id="featured-projects-description" class="mt-1">
           A collection of some side projects that have shipped recently.
         </Typography.Paragraph>
         <ul

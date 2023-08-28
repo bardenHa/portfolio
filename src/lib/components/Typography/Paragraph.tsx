@@ -20,7 +20,7 @@ const paragraphStyles = cva('Paragraph', {
     },
     variant: {
       default: ['text-inherit'],
-      subdued: ['text-secondary'],
+      subdued: ['text-text-secondary'],
     },
   },
 });
@@ -28,9 +28,9 @@ const paragraphStyles = cva('Paragraph', {
 interface ParagraphProps extends PolymorphicComponent<HTMLParagraphElement>, ParagraphBaseProps {}
 
 export function Paragraph(props: Readonly<ParagraphProps>): JSX.Element {
-  const [{ variant, size, as }, rest] = splitProps(props, ['size', 'variant', 'as']);
+  const [{ variant, size, as, class: className }, rest] = splitProps(props, ['size', 'variant', 'as', 'class']);
   return (
-    <Dynamic component={defaultTo('p', as)} class={cx(paragraphStyles({ variant, size }))} {...rest}>
+    <Dynamic component={defaultTo('p', as)} class={cx(paragraphStyles({ variant, size }), className)} {...rest}>
       {props.children}
     </Dynamic>
   );
