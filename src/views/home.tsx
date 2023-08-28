@@ -1,8 +1,6 @@
 import { For, JSX } from 'solid-js';
-import { cx } from 'class-variance-authority';
 
-import { Anchor, buttonStyles, Card, Divider, Typography } from '@/lib/components';
-import { Button } from '@/lib/components/ButtonNew';
+import { Anchor, Button, Card, Divider, IconButton, Typography } from '@/lib/components';
 import { Github, Instagram, Sun, Twitter } from '@/lib/icons';
 
 interface SocialLink {
@@ -47,13 +45,12 @@ export default function Home(): JSX.Element {
           <nav class="flex gap-2" aria-label="A list of my social links">
             <For each={SOCIAL_LINKS}>
               {link => (
-                <Anchor
-                  // Use Anchor with class={buttonVariants()}
-                  // colorScheme={'neutral'}
-                  class={cx(buttonStyles({ size: 'small', variant: 'ghost' }), 'text-xl')}
-                  // icon={link.icon}
+                <IconButton
+                  // TODO: Use Anchor with class={buttonVariants()}
+                  variant={'tertiary'}
+                  icon={link.icon}
                   aria-label={link.title}
-                  href={link.href}
+                  // href={link.href}
                 />
               )}
             </For>

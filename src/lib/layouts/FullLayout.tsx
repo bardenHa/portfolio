@@ -1,7 +1,7 @@
 import { For, JSX, ParentProps, Show } from 'solid-js';
 
 import { Anchor, Divider, Typography } from '../components';
-import { IconButton } from '../components/ButtonNew';
+import { IconButton } from '../components/Button';
 import { useTheme } from '../hooks';
 import { Moon, Sun } from '../icons';
 
