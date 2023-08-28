@@ -89,9 +89,6 @@ devDependencies:
   rollup-plugin-visualizer:
     specifier: ^5.9.2
     version: 5.9.2
-  solid-icons:
-    specifier: ^1.0.8
-    version: 1.0.8(solid-js@1.7.6)
   solid-js:
     specifier: ^1.7.6
     version: 1.7.6
@@ -5663,15 +5660,6 @@ packages:
   /slash@3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
     engines: {node: '>=8'}
-    dev: true
-
-  /solid-icons@1.0.8(solid-js@1.7.6):
-    resolution: {integrity: sha512-7aQGNjM5ZAGlE25s4APE+2QEQUyltqsTuhfO0OhYZaH2wbY0ZAqL7qRQJPMN98qhoIfroYRNEi/0l7UJN902MA==}
-    engines: {node: '>= 16'}
-    peerDependencies:
-      solid-js: '*'
-    dependencies:
-      solid-js: 1.7.6
     dev: true
 
   /solid-js@1.7.6:

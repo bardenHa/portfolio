@@ -1,9 +1,9 @@
-import { FiGithub, FiInstagram, FiTwitter } from 'solid-icons/fi';
 import { For, JSX } from 'solid-js';
 import { cx } from 'class-variance-authority';
 
 import { Anchor, buttonStyles, Card, Divider, Typography } from '@/lib/components';
 import { Button } from '@/lib/components/ButtonNew';
+import { Github, Instagram, Sun, Twitter } from '@/lib/icons';
 
 interface SocialLink {
   title: string;
@@ -14,17 +14,17 @@ const SOCIAL_LINKS: SocialLink[] = [
   {
     title: 'Twitter',
     href: 'https://twitter.com/harrybarden',
-    icon: <FiTwitter />,
+    icon: <Twitter />,
   },
   {
     title: 'Instagram',
-    href: 'https://instagram.com/harrybarden',
-    icon: <FiInstagram />,
+    href: 'https://instagram.com/harry-barden',
+    icon: <Instagram />,
   },
   {
     title: 'Github',
     href: 'https://github.com/bardenha',
-    icon: <FiGithub />,
+    icon: <Github />,
   },
 ];
 
@@ -64,7 +64,13 @@ export default function Home(): JSX.Element {
         <For each={['sm', 'md', 'lg'] as const}>
           {size => (
             <div class="flex mt-12 gap-4">
-              <Button intent={TEST_INTENT} size={size} variant="primary">
+              <Button
+                leadingIcon={<Github />}
+                trailingIcon={<Sun />}
+                intent={TEST_INTENT}
+                size={size}
+                variant="primary"
+              >
                 Button
               </Button>
               <Button intent={TEST_INTENT} size={size} variant="secondary">

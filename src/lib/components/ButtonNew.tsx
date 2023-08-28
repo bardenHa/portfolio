@@ -1,10 +1,11 @@
-import { JSX, splitProps } from 'solid-js';
+import { JSX, Show, splitProps } from 'solid-js';
 import { cva, cx, type VariantProps } from 'class-variance-authority';
 
+// TODO: colour transition seems laggy, perhaps due to transition-all?
 export const buttonStyles = cva(
   [
     'Button',
-    'inline-flex items-center justify-center rounded-md text-base font-medium ring-offset-background whitespace-nowrap',
+    'inline-flex items-center justify-center gap-2 rounded-md text-base font-medium ring-offset-background whitespace-nowrap',
     'transition-all motion-reduce:transition-none duration-150 ease-in-out',
     'disabled:pointer-events-none disabled:opacity-50',
   ],
@@ -74,9 +75,16 @@ interface ButtonProps extends JSX.HTMLAttributes<HTMLButtonElement>, ButtonBaseP
  */
 export function Button(props: Readonly<ButtonProps>): JSX.Element {
   const [{ variant, size, intent, class: className }, rest] = splitProps(props, ['variant', 'size', 'class', 'intent']);
+
   return (
     <button class={cx(buttonStyles({ variant, size, intent }), className)} {...rest}>
+      <Show when={props.leadingIcon}>
+        <IconContainer>{props.leadingIcon}</IconContainer>
+      </Show>
       {props.children}
+      <Show when={props.trailingIcon}>
+        <IconContainer>{props.trailingIcon}</IconContainer>
+      </Show>
     </button>
   );
 }
@@ -85,17 +93,26 @@ export function Button(props: Readonly<ButtonProps>): JSX.Element {
 // TODO: enforce aria label (Icon button should not allow children)
 // TODO: need to add class prop to all components e.g. class={cx(buttonStyles({ variant, size }), props.class)}
 
-interface IconButtonProps extends ButtonProps {
+interface IconButtonProps extends Omit<ButtonProps, 'children'> {
   icon: JSX.Element;
-  children: never;
 }
 
 export function IconButton(props: Readonly<IconButtonProps>): JSX.Element {
-  const [{ icon, class: className }, rest] = splitProps(props, ['icon', 'class']);
+  const [{ variant, size, intent, icon, class: className }, rest] = splitProps(props, [
+    'icon',
+    'class',
+    'variant',
+    'size',
+    'intent',
+  ]);
+
   return (
-    <button class={cx(buttonStyles(), className)} {...rest}>
-      {icon}
-      {props.children}
+    <button class={cx(buttonStyles({ variant, size, intent }), className)} {...rest}>
+      <IconContainer>{icon}</IconContainer>
     </button>
   );
+}
+
+function IconContainer(props: Readonly<JSX.HTMLAttributes<HTMLDivElement>>): JSX.Element {
+  return <div>{props.children}</div>;
 }
