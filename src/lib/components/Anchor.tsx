@@ -5,8 +5,6 @@ import { defaultTo } from 'rambda';
 
 import { PolymorphicComponent } from './types';
 
-// TODO: look at Kent C. Dodds' anchor, has nice styles
-// TODO: fix aria-current-page selector
 type AnchorBaseProps = VariantProps<typeof anchorStyles>;
 const anchorStyles = cva(['Anchor', 'transition-colors duration-200 ease-in-out', 'font-medium '], {
   defaultVariants: {
@@ -30,13 +28,16 @@ interface AnchorProps
 }
 
 export function Anchor(props: Readonly<AnchorProps>): JSX.Element {
-  const [{ variant, as, class: className }, rest] = splitProps(props, ['variant', 'as', 'class']);
+  const [{ variant, as, class: className, external }, rest] = splitProps(props, ['variant', 'as', 'class', 'external']);
   return (
-    <Dynamic component={defaultTo('a', as)} class={cx(anchorStyles({ variant }), className)} {...rest}>
+    <Dynamic
+      component={defaultTo('a', as)}
+      class={cx(anchorStyles({ variant }), className)}
+      target={external ? '_blank' : '_self'}
+      rel={external ? 'noopener noreferrer' : ''}
+      {...rest}
+    >
       {props.children}
     </Dynamic>
   );
 }
-
-// TODO: implement a variant with similar styles - https://benmyers.dev/blog/aria-labels-and-descriptions/
-// TODO: external link styles
