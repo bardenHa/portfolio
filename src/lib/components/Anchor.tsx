@@ -25,14 +25,20 @@ interface AnchorProps
     JSX.AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;
   external?: boolean;
+  noStyle?: boolean;
 }
-
 export function Anchor(props: Readonly<AnchorProps>): JSX.Element {
-  const [{ variant, as, class: className, external }, rest] = splitProps(props, ['variant', 'as', 'class', 'external']);
+  const [{ variant, as, class: className, external, noStyle }, rest] = splitProps(props, [
+    'variant',
+    'as',
+    'class',
+    'external',
+    'noStyle',
+  ]);
   return (
     <Dynamic
       component={defaultTo('a', as)}
-      class={cx(anchorStyles({ variant }), className)}
+      class={cx(noStyle ? null : anchorStyles({ variant }), className)}
       target={external ? '_blank' : '_self'}
       rel={external ? 'noopener noreferrer' : ''}
       {...rest}
