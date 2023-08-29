@@ -48,6 +48,7 @@
     "rambda": "^8.3.0",
     "rehype-prism-plus": "^1.6.3",
     "rollup-plugin-visualizer": "^5.9.2",
+    "sass": "^1.66.1",
     "solid-js": "^1.7.6",
     "start-server-and-test": "^2.0.0",
     "tailwindcss": "^3.3.3",

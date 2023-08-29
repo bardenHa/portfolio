@@ -40,9 +40,8 @@ html {
     white-space: nowrap;
 
     &:hover,
-    &:focus {
-      text-decoration: none;
-
+    &:focus,
+    &:focus-visible {
       &::after {
         background-color: var(--primary-6);
         transform: scaleX(1);
@@ -59,7 +58,7 @@ html {
       content: '';
       display: block;
       height: 0.1em;
-      min-height: 4px;
+      min-height: 2.5px;
       left: 0;
       position: absolute;
       transform: scaleX(0);
