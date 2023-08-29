@@ -39,41 +39,33 @@ html {
     text-decoration: none;
     white-space: nowrap;
 
-    @media (prefers-reduced-motion: reduce) {
-      &:hover,
-      &:focus {
-        text-decoration: underline;
+    &:hover,
+    &:focus {
+      text-decoration: none;
+
+      &::after {
+        background-color: var(--primary-6);
+        transform: scaleX(1);
       }
     }
 
-    @media (prefers-reduced-motion: no-preference) {
-      &:hover,
-      &:focus {
-        text-decoration: none;
+    &:focus-visible {
+      outline: none;
+      box-shadow: none;
+    }
 
-        &::after {
-          background-color: var(--primary-6);
-          transform: scaleX(1);
-        }
-      }
-
-      &:focus-visible {
-        outline: none;
-      }
-
-      &::after {
-        bottom: -2px;
-        content: '';
-        display: block;
-        height: 0.1em;
-        min-height: 4px;
-        left: 0;
-        position: absolute;
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.25s ease;
-        width: 100%;
-      }
+    &::after {
+      bottom: -2px;
+      content: '';
+      display: block;
+      height: 0.1em;
+      min-height: 4px;
+      left: 0;
+      position: absolute;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+      width: 100%;
     }
   }
 }

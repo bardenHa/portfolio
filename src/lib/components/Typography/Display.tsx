@@ -5,6 +5,7 @@ import { defaultTo } from 'rambda';
 
 import { Anchor } from '../Anchor';
 import { PolymorphicComponent } from '../types';
+import { Typography } from '.';
 
 type DisplayBaseProps = VariantProps<typeof displayStyles>;
 const displayStyles = cva(['Display', 'font-semibold leading-tight tracking-tighter'], {
@@ -49,17 +50,14 @@ export function Display(props: Readonly<DisplayProps>): JSX.Element {
           <Anchor
             href={`#${id()}`}
             rel="bookmark"
-            aria-labelledby={id()}
+            // TODO: fix aria reference label, lookup how this works
             aria-label="Permalink to “aria-labelledby”"
-            class={cx(
-              styles,
-              'inline text-text-secondary ml-[0.5ch]',
-              // TODO: mode this to anchor styles
-              'underline-link',
-              className
-            )}
+            class={cx(styles, 'inline text-text-secondary ml-[0.5ch]', className)}
+            variant={'distinguished'}
           >
-            #
+            <Typography.Text variant={'subdued'} class="text-inherit">
+              #
+            </Typography.Text>
           </Anchor>
         </div>
       )}
