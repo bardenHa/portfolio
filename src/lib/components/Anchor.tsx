@@ -14,8 +14,8 @@ const anchorStyles = cva(['Anchor', 'transition-colors duration-200 ease-in-out'
   },
   variants: {
     variant: {
-      default: [],
-      subtle: ['text-neutral-10 no-underline', 'hover:text-neutral-12 hover:no-underline'],
+      default: ['text-primary-8 no-underline font-medium', 'hover:underline'],
+      subtle: ['no-underline', 'hover:text-primary-8 hover:no-underline'],
       distinguished: ['underline-link'],
     },
   },

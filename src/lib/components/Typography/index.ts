@@ -15,3 +15,5 @@ export const Typography = {
 // TODO: could implement comps for text styles, small, abbr, strong, em, etc.?
 // TODO: make use of skip links https://benmyers.dev/blog/skip-links/
 // TODO: https://benmyers.dev/blog/doubled-lighthouse-score/
+
+// TODO: use emphasis & skip-to-content from https://practical-accessibility.today/#main;

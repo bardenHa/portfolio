@@ -43,7 +43,7 @@ html {
     &:focus,
     &:focus-visible {
       &::after {
-        background-color: var(--primary-6);
+        background-color: var(--primary-8);
         transform: scaleX(1);
       }
     }

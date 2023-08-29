@@ -37,8 +37,8 @@ export default function Home(): JSX.Element {
         </Typography.Display>
         <Typography.Paragraph id="intro-description" size="large" variant="subdued" class="mt-16">
           I’m Harry Barden, a UK based Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas explicabo,
-          expedita sed pariatur aliquam inventore voluptas. Dolor facilis quam quia sit amet consectetur adipisicing
-          elit. Praesentium.
+          expedita sed pariatur aliquam <Anchor href="#test">inventore</Anchor> voluptas. Dolor facilis quam quia sit
+          amet consectetur adipisicing elit. Praesentium.
           <br />I specialise in interface design for web-based applications with a focus on simplicity & usability.
         </Typography.Paragraph>
         <div class="flex mt-16">
