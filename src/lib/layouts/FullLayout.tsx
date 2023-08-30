@@ -31,7 +31,7 @@ export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
   return (
     <section class="flex h-screen min-h-screen flex-col overflow-x-hidden bg-content-neutral-primary">
       {/* TODO: create a container component */}
-      <header id="header" class="container mx-auto p-5 transition-[max-width] duration-200 ease-in-out">
+      <header role="banner" id="header" class="container mx-auto p-5 transition-[max-width] duration-200 ease-in-out">
         <nav class="flex items-center justify-between">
           <a href="/" title="Home">
             <img src="/h_avatar.svg" alt="Harry Barden's avatar" class="h-8 w-8" />
@@ -53,7 +53,13 @@ export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
         </nav>
       </header>
       {/* // TODO: heading of page/post should be part of the header? https://benmyers.dev/blog/aria-labels-and-descriptions/ */}
-      <main class="container mx-auto flex-1 p-5 transition-[max-width] duration-200 ease-in-out">{props.children}</main>
+      <main
+        role="main"
+        id="main-content"
+        class="container mx-auto flex-1 p-5 transition-[max-width] duration-200 ease-in-out"
+      >
+        {props.children}
+      </main>
       <footer class="container mx-auto p-5 pb-12 pt-0 transition-[max-width] duration-200 ease-in-out">
         <Divider size="large" />
         <div class="flex items-center justify-between">
