@@ -5,7 +5,6 @@ import '@/lib/styles/syntax.scss';
 
 import { constants } from '@/config';
 import { FullLayout } from './FullLayout';
-// import { ViewTransitions } from 'astro:transitions';
 
 type Props = {
   title: string;
@@ -49,6 +48,7 @@ const props = Astro.props as Props;
     <meta name="twitter:url" content={constants.site + Astro.url.pathname} />
     <meta name="twitter:image" content={constants.site + props.image} />
     <meta name="twitter:image:alt" content={props.title} />
+    <meta name="view-transition" content="same-origin" />
     {props.date ? <meta property="article:published_time" content={new Date(props.date).toISOString()} /> : null}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -60,7 +60,6 @@ const props = Astro.props as Props;
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="canonical" href={constants.site + Astro.url.pathname} />
     <title>{props.title}</title>
-    <!-- <ViewTransitions /> -->
   </head>
   <body>
     <FullLayout client:only>
