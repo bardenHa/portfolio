@@ -67,6 +67,9 @@ html {
       width: 100%;
     }
   }
-}
 
-/* TODO: update selection styles */
+ ::selection {
+    color: var(--neutral-1);
+    background: var(--primary-8);
+  }
+}
