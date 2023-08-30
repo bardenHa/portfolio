@@ -21,7 +21,4 @@ export default defineConfig({
     rehypePlugins: [prism],
   },
   integrations: [mdx(), prefetch(), sitemap(), tailwind(), solid()],
-  experimental: {
-    viewTransitions: true,
-  },
 });

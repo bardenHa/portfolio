@@ -5,6 +5,7 @@ import '@/lib/styles/syntax.scss';
 
 import { constants } from '@/config';
 import { FullLayout } from './FullLayout';
+// import { ViewTransitions } from 'astro:transitions';
 
 type Props = {
   title: string;
@@ -59,6 +60,7 @@ const props = Astro.props as Props;
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="canonical" href={constants.site + Astro.url.pathname} />
     <title>{props.title}</title>
+    <!-- <ViewTransitions /> -->
   </head>
   <body>
     <FullLayout client:only>
