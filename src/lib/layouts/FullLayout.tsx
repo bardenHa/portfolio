@@ -29,14 +29,14 @@ const NAVIGATION_LINKS = [
 export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
   console.log(props);
   return (
-    <section class="flex flex-col min-h-screen h-screen overflow-x-hidden bg-content-neutral-primary">
+    <section class="flex h-screen min-h-screen flex-col overflow-x-hidden bg-content-neutral-primary">
       {/* TODO: create a container component */}
       <header id="header" class="container mx-auto p-5 transition-[max-width] duration-200 ease-in-out">
         <nav class="flex items-center justify-between">
           <a href="/" title="Home">
-            <img src="/h_avatar.svg" alt="Harry Barden's avatar" class="w-8 h-8" />
+            <img src="/h_avatar.svg" alt="Harry Barden's avatar" class="h-8 w-8" />
           </a>
-          <div class="hidden md:flex gap-6">
+          <div class="hidden gap-6 md:flex">
             <ul class="flex items-center gap-4">
               <For each={NAVIGATION_LINKS}>
                 {link => (
@@ -53,14 +53,14 @@ export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
         </nav>
       </header>
       {/* // TODO: heading of page/post should be part of the header? https://benmyers.dev/blog/aria-labels-and-descriptions/ */}
-      <main class="container mx-auto p-5 transition-[max-width] duration-200 ease-in-out flex-1">{props.children}</main>
-      <footer class="container mx-auto p-5 pt-0 pb-12 transition-[max-width] duration-200 ease-in-out">
+      <main class="container mx-auto flex-1 p-5 transition-[max-width] duration-200 ease-in-out">{props.children}</main>
+      <footer class="container mx-auto p-5 pb-12 pt-0 transition-[max-width] duration-200 ease-in-out">
         <Divider size="large" />
-        <div class="flex justify-between items-center">
+        <div class="flex items-center justify-between">
           <Typography.Paragraph>
             <span translate="no">Harry Barden</span> © 2023
           </Typography.Paragraph>
-          <Anchor href={'#header'} variant="distinguished" colourScheme="primary">
+          <Anchor href={'#header'} variant="distinguished">
             Back to top
           </Anchor>
         </div>

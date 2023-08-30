@@ -6,7 +6,7 @@ const profile = {
   image: '/images/cover.png',
   username: 'bardenha',
   links: {
-    email: 'mailto:bardenha@gmail.com',
+    email: 'mailto:bardenha+portfolio@gmail.com',
     github: 'https://github.com/bardenha',
     twitter: 'https://twitter.com/bardenha',
     linkedin: 'https://linkedin.com/in/harry-barden',

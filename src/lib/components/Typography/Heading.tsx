@@ -76,7 +76,7 @@ export function Heading(props: Readonly<HeadingProps>): JSX.Element {
             href={`#${id()}`}
             rel="bookmark"
             aria-label="Permalink to “aria-labelledby”"
-            class={cx(styles, 'inline text-text-secondary ml-[0.5ch]', className)}
+            class={cx(styles, 'ml-[0.5ch] inline text-text-secondary', className)}
             variant={'distinguished'}
           >
             <Typography.Text variant={'subdued'} class="text-inherit">

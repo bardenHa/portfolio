@@ -2,13 +2,15 @@ import { For, JSX } from 'solid-js';
 import { cx } from 'class-variance-authority';
 
 import { Anchor, Button, buttonStyles, Card, Divider, Typography } from '@/lib/components';
-import { Github, Instagram, Sun, Twitter } from '@/lib/icons';
+import { Github, Instagram, Twitter } from '@/lib/icons';
 
 interface SocialLink {
   title: string;
   href: string;
   icon: JSX.Element;
 }
+
+// TODO: try to move most of this to the astro page. Also add social links to config file
 const SOCIAL_LINKS: SocialLink[] = [
   {
     title: 'Twitter',
@@ -27,8 +29,6 @@ const SOCIAL_LINKS: SocialLink[] = [
   },
 ];
 
-const TEST_INTENT = 'neutral' as const;
-
 export default function Home(): JSX.Element {
   return (
     <>
@@ -42,7 +42,7 @@ export default function Home(): JSX.Element {
           amet consectetur adipisicing elit. Praesentium.
           <br />I specialise in interface design for web-based applications with a focus on simplicity & usability.
         </Typography.Paragraph>
-        <div class="flex mt-16">
+        <div class="mt-16 flex">
           <nav class="flex gap-2" aria-label="A list of my social links">
             <For each={SOCIAL_LINKS}>
               {link => (
@@ -61,39 +61,14 @@ export default function Home(): JSX.Element {
           </nav>
           <Button class="ml-6">Email me</Button>
         </div>
-        {/* // TODO: remove */}
-        <For each={['sm', 'md', 'lg'] as const}>
-          {size => (
-            <div class="flex mt-12 gap-4">
-              <Button
-                leadingIcon={<Github />}
-                trailingIcon={<Sun />}
-                intent={TEST_INTENT}
-                size={size}
-                variant="primary"
-              >
-                Button
-              </Button>
-              <Button intent={TEST_INTENT} size={size} variant="secondary">
-                Button
-              </Button>
-              <Button intent={TEST_INTENT} size={size} variant="tertiary">
-                Button
-              </Button>
-              <Button intent={TEST_INTENT} size={size} variant="placeholder">
-                Button
-              </Button>
-            </div>
-          )}
-        </For>
       </section>
       <Divider size="large" />
-      <section class="gap-5 w-full flex flex-col" aria-labelledby="about">
+      <section class="flex w-full flex-col gap-5" aria-labelledby="about">
         <Typography.Heading size={'large'} id="about">
           A little bit about me
         </Typography.Heading>
         {/* TODO: update tag and styles, probably no need for a grid here */}
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full">
+        <div class="grid w-full grid-cols-1 gap-5 sm:grid-cols-2">
           <Card as="section" aria-labelledby="about">
             <Typography.Heading size="xsmall" class="mb-2">
               Where I'm from
@@ -103,14 +78,14 @@ export default function Home(): JSX.Element {
               inventore voluptas facilis quam quia tempora ut, minima corrupti! Tenetur doloribus reiciendis dicta,
               quasi sunt temporibus neque explicabo quis quia cum impedit perferendis voluptas debitis maxime dolor?
             </Typography.Paragraph>
-            <Typography.Heading size="xsmall" class="mt-5 mb-2">
+            <Typography.Heading size="xsmall" class="mb-2 mt-5">
               What I used to do
             </Typography.Heading>
             <Typography.Paragraph variant="subdued" size="large">
               I'm a software engineer with a passion for building beautiful, functional, and accessible user interfaces.
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
             </Typography.Paragraph>
-            <Typography.Heading size="xsmall" class="mt-5 mb-2">
+            <Typography.Heading size="xsmall" class="mb-2 mt-5">
               What I do now
             </Typography.Heading>
             <Typography.Paragraph variant="subdued" size="large">
@@ -124,7 +99,7 @@ export default function Home(): JSX.Element {
           <img
             src="/me.jpeg" // TODO: choose new higher res image
             alt="Harry Barden portrait"
-            class="h-full bg-cover rounded-xl overflow-hidden"
+            class="h-full overflow-hidden rounded-xl bg-cover"
           />
         </div>
       </section>
@@ -137,7 +112,7 @@ export default function Home(): JSX.Element {
           A collection of some side projects that have shipped recently.
         </Typography.Paragraph>
         <ul
-          class="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full mt-8"
+          class="mt-8 grid w-full grid-cols-1 gap-5 sm:grid-cols-2"
           aria-labelledby="featured-projects"
           aria-describedby="featured-projects-description"
         >

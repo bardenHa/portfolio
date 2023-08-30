@@ -31,6 +31,7 @@ interface DisplayProps extends PolymorphicComponent<HTMLHeadingElement>, Display
 
 /**
  * To be used for large headings, such as page titles. Should not be used more than once per page.
+ * @see https://fae.disability.illinois.edu/rulesets/HEADING_2/
  */
 export function Display(props: Readonly<DisplayProps>): JSX.Element {
   const [{ variant, size, as, class: className }, rest] = splitProps(props, ['size', 'variant', 'as', 'class']);
@@ -52,7 +53,7 @@ export function Display(props: Readonly<DisplayProps>): JSX.Element {
             rel="bookmark"
             // TODO: fix aria reference label, lookup how this works
             aria-label="Permalink to “aria-labelledby”"
-            class={cx(styles, 'inline text-text-secondary ml-[0.5ch]', className)}
+            class={cx(styles, 'ml-[0.5ch] inline text-text-secondary', className)}
             variant={'distinguished'}
           >
             <Typography.Text variant={'subdued'} class="text-inherit">
