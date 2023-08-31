@@ -1,6 +1,6 @@
 const profile = {
   name: 'Harry Barden',
-  title: 'Harry Barden | Software Engineer',
+  title: 'Harry Barden - Software Engineer',
   description:
     'Software engineer and linux enthusiast interested in user/dev experience, design systems, statically typed languages and functional programming',
   image: '/images/cover.png',
@@ -36,20 +36,19 @@ export const constants = {
     {
       name: 'Generouted',
       description: 'Generated client-side file-based routes',
-      link: 'https://github.com/oedotme/generouted',
+      link: 'https://github.com/TODO/generouted',
       using: ['TypeScript', 'Node.js', 'Vite', 'Plugin', 'Codegen'],
     },
     {
       name: 'Render',
       description: 'Opinionated React template',
-      link: 'https://github.com/oedotme/render',
+      link: 'https://github.com/TODO/render',
       using: ['TypeScript', 'React', 'React Router', 'Tailwind', 'Vite'],
     },
     {
       name: 'ST',
       description: 'Custom build of Simple Terminal',
-
-      link: 'https://github.com/oedotme/st',
+      link: 'https://github.com/TODO/st',
       using: ['C'],
     },
   ],

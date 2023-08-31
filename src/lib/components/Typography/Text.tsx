@@ -25,7 +25,7 @@ const labelStyles = cva('Text', {
   },
 });
 
-interface TextProps extends PolymorphicComponent<HTMLSpanElement>, TextBaseProps {}
+export interface TextProps extends PolymorphicComponent<HTMLSpanElement>, TextBaseProps {}
 
 export function Text(props: Readonly<TextProps>): JSX.Element {
   const [{ variant, size, as }, rest] = splitProps(props, ['size', 'variant', 'as']);

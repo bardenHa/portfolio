@@ -32,7 +32,7 @@ const headingStyles = cva(['Heading', 'font-semibold leading-tight'], {
   },
 });
 
-interface HeadingProps extends PolymorphicComponent<HTMLHeadingElement>, HeadingBaseProps {}
+export interface HeadingProps extends PolymorphicComponent<HTMLHeadingElement>, HeadingBaseProps {}
 
 /**
  * Rarely do we need to nest more than 4 levels of headings, so we can use 'h4' for multiple sizes.

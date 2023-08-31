@@ -1,0 +1,1 @@
+export { hyphenate } from './string';

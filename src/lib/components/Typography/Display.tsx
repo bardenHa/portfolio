@@ -27,7 +27,7 @@ const displayStyles = cva(['Display', 'font-semibold leading-tight tracking-tigh
   },
 });
 
-interface DisplayProps extends PolymorphicComponent<HTMLHeadingElement>, DisplayBaseProps {}
+export interface DisplayProps extends PolymorphicComponent<HTMLHeadingElement>, DisplayBaseProps {}
 
 /**
  * To be used for large headings, such as page titles. Should not be used more than once per page.

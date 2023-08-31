@@ -25,7 +25,7 @@ const paragraphStyles = cva('Paragraph', {
   },
 });
 
-interface ParagraphProps extends PolymorphicComponent<HTMLParagraphElement>, ParagraphBaseProps {}
+export interface ParagraphProps extends PolymorphicComponent<HTMLParagraphElement>, ParagraphBaseProps {}
 
 export function Paragraph(props: Readonly<ParagraphProps>): JSX.Element {
   const [{ variant, size, as, class: className }, rest] = splitProps(props, ['size', 'variant', 'as', 'class']);
