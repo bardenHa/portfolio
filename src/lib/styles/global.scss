@@ -71,10 +71,10 @@ html {
   .skip-link {
     position: absolute;
     left: -999px;
-    width:1px;
+    width: 1px;
     height: 1px;
     top: auto;
-  
+
     &:focus {
       z-index: 100;
       position: fixed;
@@ -88,7 +88,7 @@ html {
     }
   }
 
- ::selection {
+  ::selection {
     color: var(--neutral-1);
     background: var(--primary-8);
   }
