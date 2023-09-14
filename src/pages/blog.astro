@@ -1,8 +1,40 @@
 ---
+import { Anchor } from '@/lib/components';
 import Page from '@/lib/layouts/page.astro';
+import { hyphenate } from '@/lib/utils';
 import { Blogs } from '@/views/blog';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('posts')).sort((a, z) => +new Date(z.data.date) - +new Date(a.data.date));
+const tags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
 ---
 
-<Page title="Blog" description="This is a test" keywords="test, blog, astro" image="/images/og.png" type="website">
+<Page
+  title="Blog"
+  description="This is a test"
+  keywords={`uses, tools, web, software, development, environment, ${tags.join(', ')}`}
+  image="/images/og.png"
+  type="website"
+>
   <Blogs />
+  <ul class="mb-16">
+    {
+      posts?.map(post => (
+        <li class="mt-14 flex flex-col first:mt-4">
+          <article id={hyphenate(post.slug)}>
+            <Anchor href={`/blog/${post.slug}`}>
+              <span class="block text-sm font-medium opacity-60">{post.data.date}</span>
+              <h3 class="mt-2 text-xl font-semibold">{post.data.title}</h3>
+              <p class="mt-2">{post.data.description}</p>
+              <ul class="mt-2 flex flex-wrap gap-x-3 gap-y-1 opacity-60">
+                {post.data.tags.map(tag => (
+                  <li class="text-sm font-light">#{tag}</li>
+                ))}
+              </ul>
+            </Anchor>
+          </article>
+        </li>
+      ))
+    }
+  </ul>
 </Page>

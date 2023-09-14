@@ -12,6 +12,11 @@ export function Blogs(): JSX.Element {
         </Typography.Paragraph>
       </section>
       <Divider size="large" />
+      <section class="mt-12" aria-labelledby="latest-posts">
+        <Typography.Heading size={'large'} id="latest-posts">
+          Latest posts
+        </Typography.Heading>
+      </section>
     </div>
   );
 }
