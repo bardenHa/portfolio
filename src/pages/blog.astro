@@ -1,7 +1,6 @@
 ---
-import { Anchor } from '@/lib/components';
+import { BlogCard } from '@/lib/components';
 import Page from '@/lib/layouts/page.astro';
-import { hyphenate } from '@/lib/utils';
 import { Blogs } from '@/views/blog';
 import { getCollection } from 'astro:content';
 
@@ -10,7 +9,7 @@ const tags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
 ---
 
 <Page
-  title="Blog"
+  title="Posts - Harry Barden"
   description="This is a test"
   keywords={`uses, tools, web, software, development, environment, ${tags.join(', ')}`}
   image="/images/og.png"
@@ -21,18 +20,7 @@ const tags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
     {
       posts?.map(post => (
         <li class="mt-14 flex flex-col first:mt-4">
-          <article id={hyphenate(post.slug)}>
-            <Anchor href={`/blog/${post.slug}`}>
-              <span class="block text-sm font-medium opacity-60">{post.data.date}</span>
-              <h3 class="mt-2 text-xl font-semibold">{post.data.title}</h3>
-              <p class="mt-2">{post.data.description}</p>
-              <ul class="mt-2 flex flex-wrap gap-x-3 gap-y-1 opacity-60">
-                {post.data.tags.map(tag => (
-                  <li class="text-sm font-light">#{tag}</li>
-                ))}
-              </ul>
-            </Anchor>
-          </article>
+          <BlogCard slug={post.slug} post={post.data} />
         </li>
       ))
     }
