@@ -15,11 +15,12 @@ const PROJECTS_SCHEMA = z.object({
   title: z.string(),
   description: z.string(),
   tags: z.array(z.string()),
-  status: z.enum(['backlog', 'wip', 'complete']),
+  status: z.enum(['backlog', 'wip', 'complete', 'graveyard']),
   type: z.enum(['personal', 'professional']),
   url: z.string().optional(),
   startDate: z.date().optional(),
   // TODO: make these required
+  screenshot: z.string().optional(),
   image: z.string().optional(),
   logo: z.string().optional(),
 });

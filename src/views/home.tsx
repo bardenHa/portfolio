@@ -125,8 +125,6 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
           <Card as="li">Some card</Card>
           <Card as="li">Some card</Card>
           <Card as="li">Some card</Card>
-          <Card as="li">Some card</Card>
-          <Card as="li">Some card</Card>
         </ul>
       </section>
     </>
