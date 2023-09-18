@@ -1,6 +1,11 @@
 ---
 import Page from '@/lib/layouts/page.astro';
 import Home from '@/views/home';
+
+import { getCollection } from 'astro:content';
+import { map } from 'rambda';
+
+const projects = await getCollection('projects');
 ---
 
 <Page
@@ -10,5 +15,5 @@ import Home from '@/views/home';
   image="/images/og.png"
   type="website"
 >
-  <Home />
+  <Home projects={map(p => p.data, projects)} />
 </Page>

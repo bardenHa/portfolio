@@ -2,8 +2,8 @@ import { For, JSX, splitProps } from 'solid-js';
 
 import { Post } from '@/content/config';
 
-import { hyphenate } from '../utils';
-import { Anchor } from './Anchor';
+import { Anchor } from '../lib/components/Anchor';
+import { hyphenate } from '../lib/utils';
 
 interface BlogCardProps {
   slug: string;

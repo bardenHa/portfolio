@@ -1,6 +1,7 @@
 import { For, JSX } from 'solid-js';
 import { cx } from 'class-variance-authority';
 
+import { Project } from '@/content/config';
 import { Anchor, Button, buttonStyles, Card, Divider, Typography } from '@/lib/components';
 import { Github, Instagram, Twitter } from '@/lib/icons';
 
@@ -29,7 +30,11 @@ const SOCIAL_LINKS: SocialLink[] = [
   },
 ];
 
-export default function Home(): JSX.Element {
+interface HomeProps {
+  projects: Project[];
+}
+
+export default function Home(props: Readonly<HomeProps>): JSX.Element {
   return (
     <>
       <section class="mt-12" aria-labelledby="intro" aria-describedby="intro-description">
@@ -116,7 +121,7 @@ export default function Home(): JSX.Element {
           aria-labelledby="featured-projects"
           aria-describedby="featured-projects-description"
         >
-          <Card as="li">Some card</Card>
+          <For each={props.projects}>{project => <Card as="li">{project.title}</Card>}</For>
           <Card as="li">Some card</Card>
           <Card as="li">Some card</Card>
           <Card as="li">Some card</Card>
