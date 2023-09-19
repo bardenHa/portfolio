@@ -28,9 +28,9 @@ const labelStyles = cva('Text', {
 export interface TextProps extends PolymorphicComponent<HTMLSpanElement>, TextBaseProps {}
 
 export function Text(props: Readonly<TextProps>): JSX.Element {
-  const [{ variant, size, as }, rest] = splitProps(props, ['size', 'variant', 'as']);
+  const [{ variant, size, as, class: className }, rest] = splitProps(props, ['size', 'variant', 'as', 'class']);
   return (
-    <Dynamic component={defaultTo('span', as)} class={cx(labelStyles({ variant, size }))} {...rest}>
+    <Dynamic component={defaultTo('span', as)} class={cx(labelStyles({ variant, size }), className)} {...rest}>
       {props.children}
     </Dynamic>
   );

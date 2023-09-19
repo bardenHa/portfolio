@@ -34,13 +34,13 @@ export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
       <header role="banner" id="header" class="container mx-auto p-5 transition-[max-width] duration-200 ease-in-out">
         <nav class="flex items-center justify-between">
           <a href="/" title="Home">
-            <img src="/h_avatar.svg" alt="Harry Barden's avatar" class="h-8 w-8" />
+            <img src="/h_avatar.svg" alt="Harry Barden's avatar" class="h-12 w-12" />
           </a>
-          <div class="hidden gap-6 md:flex">
+          <div class="hidden gap-6 md:flex justify-center items-center">
             <ul class="flex items-center gap-4">
               <For each={NAVIGATION_LINKS}>
                 {link => (
-                  <Typography.Text as="li" size="small">
+                  <Typography.Text as="li" size="medium">
                     <Anchor href={link.href} variant="subtle" aria-current="page">
                       {link.title}
                     </Anchor>
@@ -88,7 +88,7 @@ export function ColorModeSwitcher(): JSX.Element {
       }
       aria-label="Theme toggle switch"
       role="switch"
-      size={'sm'}
+      size={'md'}
       variant={'tertiary'}
       onClick={toggleTheme}
     />

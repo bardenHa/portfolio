@@ -1,9 +1,11 @@
-import { For, JSX } from 'solid-js';
+import { CollectionEntry } from 'astro:content';
+import { For, JSX, Show } from 'solid-js';
 import { cx } from 'class-variance-authority';
 
-import { Project } from '@/content/config';
 import { Anchor, Button, buttonStyles, Card, Divider, Typography } from '@/lib/components';
 import { Github, Instagram, Twitter } from '@/lib/icons';
+
+import { ProjectCard } from './ProjectCard';
 
 interface SocialLink {
   title: string;
@@ -31,7 +33,7 @@ const SOCIAL_LINKS: SocialLink[] = [
 ];
 
 interface HomeProps {
-  projects: Project[];
+  projects: CollectionEntry<'projects'>[];
 }
 
 export default function Home(props: Readonly<HomeProps>): JSX.Element {
@@ -108,25 +110,30 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
           />
         </div>
       </section>
-      <Divider size="large" />
-      <section aria-labelledby="featured-projects" aria-describedby="featured-projects-description">
-        <Typography.Heading size={'large'} id="featured-projects">
-          Featured projects
-        </Typography.Heading>
-        <Typography.Paragraph variant="subdued" id="featured-projects-description" class="mt-1">
-          A collection of some side projects that have shipped recently.
-        </Typography.Paragraph>
-        <ul
-          class="mt-8 grid w-full grid-cols-1 gap-5 sm:grid-cols-2"
-          aria-labelledby="featured-projects"
-          aria-describedby="featured-projects-description"
-        >
-          <For each={props.projects}>{project => <Card as="li">{project.title}</Card>}</For>
-          <Card as="li">Some card</Card>
-          <Card as="li">Some card</Card>
-          <Card as="li">Some card</Card>
-        </ul>
-      </section>
+      <Show when={props.projects.length > 0}>
+        <Divider size="large" />
+        <section aria-labelledby="featured-projects" aria-describedby="featured-projects-description">
+          <Typography.Heading size={'large'} id="featured-projects">
+            Featured projects
+          </Typography.Heading>
+          <Typography.Paragraph variant="subdued" id="featured-projects-description" class="mt-1">
+            A collection of some side projects that have shipped recently.
+          </Typography.Paragraph>
+          <ul
+            class="mt-8 grid w-full grid-cols-1 gap-5 sm:grid-cols-2"
+            aria-labelledby="featured-projects"
+            aria-describedby="featured-projects-description"
+          >
+            <For each={props.projects}>
+              {project => (
+                <li>
+                  <ProjectCard project={project} />
+                </li>
+              )}
+            </For>
+          </ul>
+        </section>
+      </Show>
     </>
   );
 }

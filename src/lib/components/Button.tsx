@@ -13,7 +13,7 @@ export const buttonStyles = cva(
     variants: {
       variant: {
         primary: 'text-neutral-1 bg-neutral-inverse-1 hover:bg-neutral-inverse-6 active:bg-neutral-inverse-8',
-        secondary: 'text-neutral-12 bg-neutral-4 hover:bg-neutral-5 active:bg-neutral-6',
+        secondary: 'text-neutral-12 bg-neutral-4 hover:bg-neutral-5 active:bg-neutral-6 border border-neutral-7',
         tertiary: 'bg-transparent hover:bg-neutral-5 active:bg-neutral-6',
         placeholder: 'border-neutral-12 border-dashed border bg-transparent hover:bg-neutral-5 active:bg-neutral-6',
         // TODO: implement
@@ -41,7 +41,7 @@ export const buttonStyles = cva(
       {
         variant: 'secondary',
         intent: 'success',
-        class: 'text-success-11 bg-success-3 hover:bg-success-4 active:bg-success-5',
+        class: 'text-success-11 bg-success-3 hover:bg-success-4 active:bg-success-5 border border-success-7',
       },
       {
         variant: 'tertiary',

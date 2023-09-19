@@ -32,7 +32,9 @@ const headingStyles = cva(['Heading', 'font-semibold leading-tight'], {
   },
 });
 
-export interface HeadingProps extends PolymorphicComponent<HTMLHeadingElement>, HeadingBaseProps {}
+export interface HeadingProps extends PolymorphicComponent<HTMLHeadingElement>, HeadingBaseProps {
+  hideAnchor?: boolean;
+}
 
 /**
  * Rarely do we need to nest more than 4 levels of headings, so we can use 'h4' for multiple sizes.
@@ -48,7 +50,13 @@ const HEADING_SIZE_TAG: Record<NonNullable<HeadingBaseProps['size']>, HeadingLev
 
 // TODO: include prop to add default margins?
 export function Heading(props: Readonly<HeadingProps>): JSX.Element {
-  const [{ variant, size, as, class: className }, rest] = splitProps(props, ['size', 'variant', 'as', 'class']);
+  const [{ variant, size, as, class: className, hideAnchor }, rest] = splitProps(props, [
+    'size',
+    'variant',
+    'as',
+    'class',
+    'hideAnchor',
+  ]);
 
   const styles = headingStyles({ variant, size });
   const heading = (
@@ -68,7 +76,7 @@ export function Heading(props: Readonly<HeadingProps>): JSX.Element {
   );
 
   return (
-    <Show when={props.id} fallback={heading}>
+    <Show when={props.id && !hideAnchor} fallback={heading}>
       {id => (
         <div>
           {heading}

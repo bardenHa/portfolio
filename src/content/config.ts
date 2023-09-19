@@ -9,8 +9,6 @@ const POST_SCHEMA = z.object({
   cowritten: z.boolean().optional(),
 });
 
-export type Post = z.infer<typeof POST_SCHEMA>;
-
 const PROJECTS_SCHEMA = z.object({
   title: z.string(),
   description: z.string(),
@@ -20,12 +18,9 @@ const PROJECTS_SCHEMA = z.object({
   url: z.string().optional(),
   startDate: z.date().optional(),
   // TODO: make these required
-  screenshot: z.string().optional(),
   image: z.string().optional(),
   logo: z.string().optional(),
 });
-
-export type Project = z.infer<typeof PROJECTS_SCHEMA>;
 
 export const collections = {
   posts: defineCollection({

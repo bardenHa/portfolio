@@ -30,7 +30,7 @@ const tags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
     {
       posts?.map(post => (
         <li class="mt-14 flex flex-col first:mt-4">
-          <BlogCard slug={post.slug} post={post.data} />
+          <BlogCard post={post} />
         </li>
       ))
     }

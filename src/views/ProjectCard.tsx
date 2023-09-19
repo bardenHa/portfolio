@@ -1,38 +1,45 @@
-import { For, JSX, splitProps } from 'solid-js';
+import { CollectionEntry } from 'astro:content';
+import { JSX, Match, Show, splitProps, Switch } from 'solid-js';
 
-import { Post } from '@/content/config';
+import { Card, Typography } from '@/lib/components';
 
-import { Anchor } from '../lib/components/Anchor';
 import { hyphenate } from '../lib/utils';
 
 interface ProjectCardProps {
-  slug: string;
-  post: Readonly<Post>;
+  project: Readonly<CollectionEntry<'projects'>>;
 }
 
 // TODO: inspo from https://daleanthony.com/ & https://daleanthony.com/projects
 export function ProjectCard(props: Readonly<ProjectCardProps>): JSX.Element {
-  const [{ slug, post }, rest] = splitProps(props, ['slug', 'post']);
-  const hyphenatedSlug = hyphenate(slug);
+  const [{ project }, rest] = splitProps(props, ['project']);
+  const hyphenatedSlug = hyphenate(project.slug);
 
   return (
-    <article id={hyphenatedSlug} aria-labelledby={`${hyphenatedSlug}-title`} {...rest}>
-      <Anchor variant={'subtle'} href={`/Project/${slug}`} class="block">
-        <span class="block text-sm font-medium opacity-60">
-          {post.date.toLocaleDateString('en-EN', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-          })}
-        </span>
-        <h3 class="mt-2 text-xl font-semibold" id={`${hyphenatedSlug}-title`}>
-          {post.title}
-        </h3>
-        <p class="mt-2">{post.description}</p>
-        <ul class="mt-2 flex flex-wrap gap-x-3 gap-y-1 opacity-60">
-          <For each={post.tags}>{tag => <li class="text-sm font-light">#{tag}</li>}</For>
-        </ul>
-      </Anchor>
-    </article>
+    <Card
+      id={hyphenatedSlug}
+      aria-labelledby={`${hyphenatedSlug}-title`}
+      class="flex gap-4 border border-neutral-7"
+      {...rest}
+    >
+      <Show when={project.data.logo}>
+        {logo => <img src={logo()} alt={`${project.data.title} logo`} class="h-16 w-16 rounded-lg" />}
+      </Show>
+      <div>
+        <Typography.Heading id={`${hyphenatedSlug}-title`} size="xsmall" hideAnchor>
+          {project.data.title}
+          <Switch fallback={null}>
+            {/* TODO: replace with some kind of tag/badge component */}
+            <Match when={project.data.status === 'wip'}>
+              <Typography.Text size="small" variant="subdued" class="ml-2 text-warning-10">
+                ({project.data.status})
+              </Typography.Text>
+            </Match>
+          </Switch>
+        </Typography.Heading>
+        <Typography.Paragraph size="medium" variant="subdued" class="mt-2">
+          {project.data.description}
+        </Typography.Paragraph>
+      </div>
+    </Card>
   );
 }
