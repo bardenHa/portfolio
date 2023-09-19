@@ -1,6 +1,6 @@
-import { Anchor } from './Anchor';
-import { Divider } from './Divider';
-import { HeadingProps, Typography } from './Typography';
+import { Anchor } from './anchor';
+import { Divider } from './divider';
+import { HeadingProps, Typography } from './typography';
 
 // TODO: Add missing components
 // TODO: include default margins for these components

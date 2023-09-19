@@ -1,7 +1,7 @@
 import { CollectionEntry } from 'astro:content';
 import { For, JSX, splitProps } from 'solid-js';
 
-import { Anchor } from '../lib/components/Anchor';
+import { Anchor } from '../lib/components/anchor';
 import { hyphenate } from '../lib/utils';
 
 interface BlogCardProps {

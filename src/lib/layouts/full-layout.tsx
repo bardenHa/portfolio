@@ -1,7 +1,7 @@
 import { For, JSX, ParentProps, Show } from 'solid-js';
 
 import { Anchor, Divider, Typography } from '../components';
-import { IconButton } from '../components/Button';
+import { IconButton } from '../components/button';
 import { useTheme } from '../hooks';
 import { Moon, Sun } from '../icons';
 
@@ -36,7 +36,7 @@ export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
           <a href="/" title="Home">
             <img src="/h_avatar.svg" alt="Harry Barden's avatar" class="h-12 w-12" />
           </a>
-          <div class="hidden gap-6 md:flex justify-center items-center">
+          <div class="hidden items-center justify-center gap-6 md:flex">
             <ul class="flex items-center gap-4">
               <For each={NAVIGATION_LINKS}>
                 {link => (

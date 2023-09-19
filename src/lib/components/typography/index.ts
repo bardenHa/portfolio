@@ -1,8 +1,8 @@
-import { Code } from './Code';
-import { Display } from './Display';
-import { Heading } from './Heading';
-import { Paragraph } from './Paragraph';
-import { Text } from './Text';
+import { Code } from './code';
+import { Display } from './display';
+import { Heading } from './heading';
+import { Paragraph } from './paragraph';
+import { Text } from './text';
 
 export const Typography = {
   Display,
@@ -12,10 +12,10 @@ export const Typography = {
   Code,
 } as const;
 
-export type { DisplayProps } from './Display';
-export type { HeadingProps } from './Heading';
-export type { ParagraphProps } from './Paragraph';
-export type { TextProps } from './Text';
+export type { DisplayProps } from './display';
+export type { HeadingProps } from './heading';
+export type { ParagraphProps } from './paragraph';
+export type { TextProps } from './text';
 
 // TODO: add tooltip component like https://dev.to/link2twenty/native-html-tooltips-3od1 but make sure to look into accessibility
 // TODO: use abbr tag for abbreviations

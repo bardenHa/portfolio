@@ -19,7 +19,7 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": ["@typescript-eslint", "unused-imports", "solid", "simple-import-sort", "functional"],
+  "plugins": ["@typescript-eslint", "unused-imports", "check-file", "solid", "simple-import-sort", "functional"],
   "rules": {
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
@@ -92,7 +92,20 @@
     "prefer-const": "error",
     "@typescript-eslint/prefer-readonly": "error",
     "@typescript-eslint/prefer-as-const": "error",
-    "@typescript-eslint/switch-exhaustiveness-check": "error"
+    "@typescript-eslint/switch-exhaustiveness-check": "error",
+    "check-file/filename-naming-convention": [
+      "error",
+      {
+        "**/*.{js,ts,astro}": "KEBAB_CASE",
+        "**/*.{jsx,tsx}": "KEBAB_CASE"
+      }
+    ],
+    "check-file/folder-naming-convention": [
+      "error",
+      {
+        "src/**/": "KEBAB_CASE"
+      }
+    ]
   },
   "ignorePatterns": ["*rc.ts", "*.config.ts", "*.d.ts", "public/**/*"]
 }

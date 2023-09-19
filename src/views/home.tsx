@@ -5,7 +5,7 @@ import { cx } from 'class-variance-authority';
 import { Anchor, Button, buttonStyles, Card, Divider, Typography } from '@/lib/components';
 import { Github, Instagram, Twitter } from '@/lib/icons';
 
-import { ProjectCard } from './ProjectCard';
+import { ProjectCard } from './project-card';
 
 interface SocialLink {
   title: string;

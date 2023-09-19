@@ -3,7 +3,7 @@ import { Dynamic } from 'solid-js/web';
 import { cva, cx, type VariantProps } from 'class-variance-authority';
 import { defaultTo } from 'rambda';
 
-import { Anchor } from '../Anchor';
+import { Anchor } from '../anchor';
 import { PolymorphicComponent } from '../types';
 import { Typography } from '.';
 
