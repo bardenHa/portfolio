@@ -15,11 +15,14 @@ export function ProjectCard(props: Readonly<ProjectCardProps>): JSX.Element {
   const hyphenatedSlug = hyphenate(project.slug);
 
   return (
-    <Anchor noStyle href={`/project/${project.data.url}`} class="group">
+    <Anchor noStyle href={project.data.url} external class="group">
       <Card
         id={hyphenatedSlug}
         aria-labelledby={`${hyphenatedSlug}-title`}
-        class={'flex gap-4 group-hover:bg-neutral-5'}
+        // TODO: align outline style with the one in gobal.scss. Use apply directive?
+        class={
+          'flex gap-4 group-hover:bg-neutral-5 group-focus:bg-neutral-5 group-focus:outline group-focus:outline-2 group-focus:outline-offset-2'
+        }
         {...rest}
       >
         <Show when={project.data.logo}>
