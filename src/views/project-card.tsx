@@ -30,7 +30,7 @@ export function ProjectCard(props: Readonly<ProjectCardProps>): JSX.Element {
           <Switch fallback={null}>
             {/* TODO: replace with some kind of tag/badge component */}
             <Match when={project.data.status === 'wip'}>
-              <Typography.Text size="small" variant="subdued" class="ml-2 text-warning-10">
+              <Typography.Text variant="subdued" class="ml-2 text-warning-10">
                 ({project.data.status})
               </Typography.Text>
             </Match>

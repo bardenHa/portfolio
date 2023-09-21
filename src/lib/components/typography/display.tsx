@@ -30,7 +30,7 @@ const displayStyles = cva(['Display', 'font-semibold leading-tight tracking-tigh
 export interface DisplayProps extends PolymorphicComponent<HTMLHeadingElement>, DisplayBaseProps {}
 
 /**
- * To be used for large headings, such as page titles. Should not be used more than once per page.
+ * To be used for standout headings, such as page titles. Should not be used more than once per page.
  * @see https://fae.disability.illinois.edu/rulesets/HEADING_2/
  */
 export function Display(props: Readonly<DisplayProps>): JSX.Element {

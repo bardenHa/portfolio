@@ -77,22 +77,18 @@ export function Heading(props: Readonly<HeadingProps>): JSX.Element {
 
   return (
     <Show when={props.id && !hideAnchor} fallback={heading}>
-      {id => (
-        <div>
-          {heading}
-          <Anchor
-            href={`#${id()}`}
-            rel="bookmark"
-            aria-label="Permalink to “aria-labelledby”"
-            class={cx(styles, 'ml-[0.5ch] inline text-text-secondary', className)}
-            variant={'distinguished'}
-          >
-            <Typography.Text variant={'subdued'} class="text-inherit">
-              #
-            </Typography.Text>
-          </Anchor>
-        </div>
-      )}
+      <div>
+        {heading}
+        <Anchor
+          href={`#${props.id}`}
+          rel="bookmark"
+          aria-label="Permalink to “aria-labelledby”"
+          class={cx(styles, 'ml-[0.5ch] inline text-text-secondary', className)}
+          variant={'distinguished'}
+        >
+          <Typography.Text variant={'subdued'}>#</Typography.Text>
+        </Anchor>
+      </div>
     </Show>
   );
 }

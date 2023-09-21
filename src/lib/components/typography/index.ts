@@ -8,6 +8,7 @@ export const Typography = {
   Display,
   Heading,
   Text,
+  // TODO: rename to Body? Feel like paragraph is too specific
   Paragraph,
   Code,
 } as const;
@@ -26,3 +27,5 @@ export type { TextProps } from './text';
 // TODO: use emphasis & skip-to-content from https://practical-accessibility.today/#main;
 
 // TODO: should probably move towards lowercase filenames to be consistent with all other files
+
+// TODO: Adobe uses detail? could be a nice addition - https://spectrum.adobe.com/page/typography/#Typography-components

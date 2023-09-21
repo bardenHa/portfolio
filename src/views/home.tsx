@@ -120,7 +120,7 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
             A collection of some side projects that have shipped recently.
           </Typography.Paragraph>
           <ul
-            class="mt-8 grid w-full grid-cols-1 gap-5 sm:grid-cols-2"
+            class="mt-8 grid w-full grid-cols-1 gap-5 xl:grid-cols-2"
             aria-labelledby="featured-projects"
             aria-describedby="featured-projects-description"
           >
