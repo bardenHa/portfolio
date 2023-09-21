@@ -1,3 +1,4 @@
+// TODO: Update all of this, mostly placeholder for now
 const profile = {
   name: 'Harry Barden',
   title: 'Harry Barden - Software Engineer',
@@ -6,7 +7,7 @@ const profile = {
   image: '/images/cover.png',
   username: 'bardenha',
   links: {
-    email: 'mailto:bardenha+portfolio@gmail.com',
+    email: 'bardenha+portfolio@gmail.com',
     github: 'https://github.com/bardenha',
     twitter: 'https://twitter.com/bardenha',
     linkedin: 'https://linkedin.com/in/harry-barden',
@@ -75,4 +76,4 @@ export const constants = {
       { name: 'Volta', description: 'JavaScript tool manager', link: 'https://volta.sh' },
     ],
   },
-};
+} as const;

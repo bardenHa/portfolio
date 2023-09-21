@@ -2,7 +2,8 @@ import { CollectionEntry } from 'astro:content';
 import { For, JSX, Show } from 'solid-js';
 import { cx } from 'class-variance-authority';
 
-import { Anchor, Button, buttonStyles, Card, Divider, Typography } from '@/lib/components';
+import { constants } from '@/config';
+import { Anchor, buttonStyles, Card, Divider, Typography } from '@/lib/components';
 import { Github, Instagram, Twitter } from '@/lib/icons';
 
 import { ProjectCard } from './project-card';
@@ -49,7 +50,7 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
           amet consectetur adipisicing elit. Praesentium.
           <br />I specialise in interface design for web-based applications with a focus on simplicity & usability.
         </Typography.Paragraph>
-        <div class="mt-16 flex">
+        <div class="mt-16 flex gap-6">
           <nav class="flex gap-2" aria-label="A list of my social links">
             <For each={SOCIAL_LINKS}>
               {link => (
@@ -66,7 +67,10 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
               )}
             </For>
           </nav>
-          <Button class="ml-6">Email me</Button>
+          {/* TODO: add prop for anchor to use these styles (variant button?) & vice versa */}
+          <Anchor noStyle href={`mailto:${constants.profile.links.email}`} class={buttonStyles()}>
+            Email me
+          </Anchor>
         </div>
       </section>
       <Divider size="large" />
