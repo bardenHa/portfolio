@@ -15,7 +15,7 @@ const PROJECTS_SCHEMA = z.object({
   tags: z.array(z.string()),
   status: z.enum(['backlog', 'wip', 'complete', 'graveyard']),
   type: z.enum(['personal', 'professional']),
-  url: z.string().optional(),
+  url: z.string().url(),
   startDate: z.date().optional(),
   // TODO: make these required
   image: z.string().optional(),

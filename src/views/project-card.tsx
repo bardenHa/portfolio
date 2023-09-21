@@ -15,7 +15,7 @@ export function ProjectCard(props: Readonly<ProjectCardProps>): JSX.Element {
   const hyphenatedSlug = hyphenate(project.slug);
 
   return (
-    <Anchor noStyle href={`/project/${project.slug}`} class="group">
+    <Anchor noStyle href={`/project/${project.data.url}`} class="group">
       <Card
         id={hyphenatedSlug}
         aria-labelledby={`${hyphenatedSlug}-title`}
