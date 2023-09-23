@@ -79,7 +79,7 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
           A little bit about me
         </Typography.Heading>
         {/* TODO: update the max container width */}
-        <div class="flex flex-col lg:flex-row lg:flex-row-reverse items-stretch w-full gap-5">
+        <div class="flex flex-col lg:flex-row-reverse items-stretch w-full gap-5">
           <img
             src="/me.jpeg" // TODO: choose new higher res image
             alt="Harry Barden portrait"

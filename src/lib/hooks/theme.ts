@@ -25,14 +25,11 @@ function getInitialTheme(): Theme {
 }
 
 function getCurrentTheme(): Theme {
-  console.log('getCurrentTheme');
   const colorScheme = document.documentElement.getAttribute('color-scheme');
   if (colorScheme && stringIsTheme(colorScheme)) {
-    console.log('colorScheme', colorScheme);
     return colorScheme;
   }
 
-  console.log('getInitialTheme');
   return getInitialTheme();
 }
 

@@ -32,20 +32,22 @@ const next = posts?.[index - 1];
   type="article"
   date={post.data.date.toDateString()}
 >
-  <Typography.Display id={hyphenate(post.data.title)}>{post.data.title}</Typography.Display>
-  <p class="">{post.data.description}</p>
+  <section class="mt-12">
+    <Typography.Display id={hyphenate(post.data.title)}>{post.data.title}</Typography.Display>
+    <Typography.Paragraph variant={'subdued'} size={'large'} class="mt-8">{post.data.description}</Typography.Paragraph>
 
-  <div class="mt-5 text-sm">
-    <span class="opacity-70"
-      >{
-        post.data.date.toLocaleDateString('en-EN', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
-        })
-      }</span
-    >
-  </div>
+    <div class="mt-5 text-sm">
+      <span class="opacity-70"
+        >{
+          post.data.date.toLocaleDateString('en-EN', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })
+        }</span
+      >
+    </div>
+  </section>
 
   <hr class="h-16 border-0" />
 

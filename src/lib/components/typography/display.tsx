@@ -15,10 +15,10 @@ const displayStyles = cva(['Display', 'font-semibold leading-tight tracking-tigh
   },
   variants: {
     size: {
-      large: ['text-8xl'],
-      medium: ['text-6xl'],
-      small: ['text-5xl'],
-      xsmall: ['text-4xl'],
+      large: ['text-5xl sm:text-8xl'],
+      medium: ['text-4xl sm:text-6xl'],
+      small: ['text-3xl sm:text-5xl'],
+      xsmall: ['text-2xl sm:text-4xl'],
     },
     variant: {
       default: ['text-inherit'],
