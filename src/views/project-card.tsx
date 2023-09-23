@@ -34,7 +34,6 @@ export function ProjectCard(props: Readonly<ProjectCardProps>): JSX.Element {
               {project.data.title}
             </Typography.Heading>
             <Switch fallback={null}>
-              {/* TODO: replace with some kind of tag/badge component */}
               <Match when={project.data.status === 'wip'}>
                 <Badge intent={'warning'} size={'sm'}>
                   {project.data.status.toUpperCase()}
