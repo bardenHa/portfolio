@@ -12,7 +12,7 @@ const NAVIGATION_LINKS = [
   },
   {
     title: 'Projects',
-    href: '#featured-projects',
+    href: '/#featured-projects',
   },
   {
     title: 'Blog',
@@ -20,7 +20,11 @@ const NAVIGATION_LINKS = [
   },
   {
     title: 'Contact',
-    href: '#contact',
+    href: '/#contact',
+  },
+  {
+    title: 'Uses',
+    href: '/uses',
   },
 ];
 

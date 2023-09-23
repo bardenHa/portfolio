@@ -51,7 +51,7 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
           <br />I specialise in interface design for web-based applications with a focus on simplicity & usability.
         </Typography.Paragraph>
         <div class="mt-16 flex gap-6">
-          <nav class="flex gap-2" aria-label="A list of my social links">
+          <nav class="flex gap-2" aria-label="A list of my social links" id="contact">
             <For each={SOCIAL_LINKS}>
               {link => (
                 <Anchor
