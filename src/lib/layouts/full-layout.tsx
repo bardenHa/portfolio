@@ -27,7 +27,6 @@ const NAVIGATION_LINKS = [
 // TODO: keep progressive enhancement in mind - https://www.smashingmagazine.com/2009/04/progressive-enhancement-what-it-is-and-how-to-use-it/
 // TODO: move to page.astro once ready
 export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
-  console.log(props);
   return (
     <section class="flex h-screen min-h-screen flex-col overflow-x-hidden bg-content-neutral-primary">
       {/* TODO: create a container component */}
@@ -40,7 +39,7 @@ export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
             <ul class="flex items-center gap-4">
               <For each={NAVIGATION_LINKS}>
                 {link => (
-                  <Typography.Text as="li" size="medium">
+                  <Typography.Text as="li">
                     <Anchor href={link.href} variant="subtle" aria-current="page">
                       {link.title}
                     </Anchor>

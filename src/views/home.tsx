@@ -78,9 +78,14 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
         <Typography.Heading size={'large'} id="about">
           A little bit about me
         </Typography.Heading>
-        {/* TODO: update tag and styles, probably no need for a grid here */}
-        <div class="grid w-full grid-cols-1 gap-5 sm:grid-cols-2">
-          <Card as="section" aria-labelledby="about">
+        {/* TODO: update the max container width */}
+        <div class="flex flex-col lg:flex-row lg:flex-row-reverse items-stretch w-full gap-5">
+          <img
+            src="/me.jpeg" // TODO: choose new higher res image
+            alt="Harry Barden portrait"
+            class="overflow-hidden rounded-xl object-cover"
+          />
+          <Card as="section" aria-labelledby="about" class="flex-initial h-c">
             <Typography.Heading size="xsmall" class="mb-2">
               Where I'm from
             </Typography.Heading>
@@ -107,11 +112,6 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
               . Ipsum facilis quam quia tempor temporibus.
             </Typography.Paragraph>
           </Card>
-          <img
-            src="/me.jpeg" // TODO: choose new higher res image
-            alt="Harry Barden portrait"
-            class="h-full overflow-hidden rounded-xl bg-cover"
-          />
         </div>
       </section>
       <Show when={props.projects.length > 0}>
