@@ -1,7 +1,7 @@
 import { CollectionEntry } from 'astro:content';
 import { JSX, Match, Show, splitProps, Switch } from 'solid-js';
 
-import { Anchor, Card, Typography } from '@/lib/components';
+import { Anchor, Badge, Card, Typography } from '@/lib/components';
 
 import { hyphenate } from '../lib/utils';
 
@@ -29,17 +29,19 @@ export function ProjectCard(props: Readonly<ProjectCardProps>): JSX.Element {
           {logo => <img src={logo()} alt={`${project.data.title} logo`} class="h-16 w-16 rounded-lg" />}
         </Show>
         <div>
-          <Typography.Heading id={`${hyphenatedSlug}-title`} size="xsmall" hideAnchor>
-            {project.data.title}
+          <div class="flex gap-[1.5ch] items-center">
+            <Typography.Heading id={`${hyphenatedSlug}-title`} size="xsmall" hideAnchor>
+              {project.data.title}
+            </Typography.Heading>
             <Switch fallback={null}>
               {/* TODO: replace with some kind of tag/badge component */}
               <Match when={project.data.status === 'wip'}>
-                <Typography.Text variant="subdued" class="ml-2 text-warning-10">
-                  ({project.data.status})
-                </Typography.Text>
+                <Badge intent={'warning'} size={'sm'}>
+                  {project.data.status.toUpperCase()}
+                </Badge>
               </Match>
             </Switch>
-          </Typography.Heading>
+          </div>
           <Typography.Paragraph size="medium" variant="subdued" class="mt-2">
             {project.data.description}
           </Typography.Paragraph>
