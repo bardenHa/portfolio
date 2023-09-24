@@ -6,7 +6,7 @@ import { defaultTo } from 'rambda';
 import { PolymorphicComponent } from '../types';
 
 type ListBaseProps = VariantProps<typeof listStyles>;
-const listStyles = cva(['List', 'mb-6 space-y-2 list-disc list-inside'], {
+const listStyles = cva(['List', 'space-y-2 list-disc list-outside pl-[1.75rem]'], {
   defaultVariants: {
     variant: 'default',
   },
