@@ -3,8 +3,7 @@ import { CollectionEntry, getCollection } from 'astro:content';
 
 import { constants } from '@/config';
 import Page from '@/lib/layouts/page.astro';
-import { Anchor, Typography } from '@/lib/components';
-import { MdxComponents } from '@/lib/components/mdx';
+import { Anchor, Divider, MdxComponents, Typography } from '@/lib/components';
 import { hyphenate } from '@/lib/utils';
 
 export const getStaticPaths = async () => {
@@ -49,7 +48,7 @@ const next = posts?.[index - 1];
     </div>
   </section>
 
-  <hr class="h-16 border-0" />
+  <Divider />
 
   <!-- TODO: add in margin spacing for headings on MDX -->
   <Content components={MdxComponents} />

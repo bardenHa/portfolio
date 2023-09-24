@@ -77,13 +77,14 @@ export function Heading(props: Readonly<HeadingProps>): JSX.Element {
 
   return (
     <Show when={props.id && !hideAnchor} fallback={heading}>
-      <div>
+      {/* TODO: maybe change so that anchor is within the heading */}
+      <div class={className}>
         {heading}
         <Anchor
           href={`#${props.id}`}
           rel="bookmark"
           aria-label="Permalink to “aria-labelledby”"
-          class={cx(styles, 'ml-[0.5ch] inline text-text-secondary', className)}
+          class={cx(styles, 'ml-[0.5ch] inline text-text-secondary')}
           variant={'distinguished'}
         >
           <Typography.Text variant={'subdued'}>#</Typography.Text>
