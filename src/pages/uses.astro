@@ -1,7 +1,12 @@
 ---
-import { Divider, Typography } from '@/lib/components';
+import { Divider, MdxComponents, Typography } from '@/lib/components';
 import Page from '@/lib/layouts/page.astro';
+import { getEntry } from 'astro:content';
+
 // TODO: implement og image for all pages
+
+const uses = await getEntry('uses', 'uses');
+const { Content } = await uses.render();
 ---
 
 <Page
@@ -18,27 +23,7 @@ import Page from '@/lib/layouts/page.astro';
     </Typography.Paragraph>
   </section>
   <Divider size="large" />
-  <article class="space-y-12">
-    <section class="mt-12" aria-labelledby="editor-terminal">
-      <Typography.Heading size={'large'} id="editor-terminal">Editor & Terminal</Typography.Heading>
-    </section>
-    <section class="mt-12" aria-labelledby="languages">
-      <Typography.Heading size={'large'} id="languages">Languages</Typography.Heading>
-    </section>
-    <section class="mt-12" aria-labelledby="apps">
-      <Typography.Heading size={'large'} id="apps">Apps</Typography.Heading>
-    </section>
-    <section class="mt-12" aria-labelledby="finance">
-      <Typography.Heading size={'large'} id="finance">Finance</Typography.Heading>
-    </section>
-    <section class="mt-12" aria-labelledby="note-taking">
-      <Typography.Heading size={'large'} id="note-taking">Note taking</Typography.Heading>
-    </section>
-    <section class="mt-12" aria-labelledby="hardware">
-      <Typography.Heading size={'large'} id="hardware">Hardware</Typography.Heading>
-    </section>
-    <section class="mt-12" aria-labelledby="misc">
-      <Typography.Heading size={'large'} id="misc">Misc</Typography.Heading>
-    </section>
+  <article>
+    <Content components={MdxComponents} />
   </article>
 </Page>
