@@ -14,8 +14,8 @@ export const MdxComponents = {
   h5: (props: Readonly<HeadingProps>) => <Typography.Heading size={'small'} class="mt-8 mb-2" {...props} />,
   h6: (props: Readonly<HeadingProps>) => <Typography.Heading size={'xsmall'} class="mt-6 mb-2" {...props} />,
   hr: Divider,
-  // li: ListItem,
+  li: Typography.ListItem,
   p: Typography.Paragraph,
-  // strong: Strong,
-  // ul: List,
+  // TODO: strong: Strong,
+  ul: Typography.List,
 } as const;
