@@ -19,10 +19,6 @@ const NAVIGATION_LINKS = [
     href: '/blog',
   },
   {
-    title: 'Contact',
-    href: '/#contact',
-  },
-  {
     title: 'Uses',
     href: '/uses',
   },
