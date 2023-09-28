@@ -5,7 +5,7 @@ export function Code(props: Readonly<JSX.HTMLAttributes<HTMLElement>>): JSX.Elem
   return (
     <code
       {...props}
-      class="border-neutral-7 bg-neutral-1 my-7 grid overflow-x-scroll rounded-lg border p-5 pr-6 text-xs font-medium leading-normal"
+      class="my-7 grid overflow-x-scroll rounded-lg border border-neutral-7 bg-neutral-1 p-5 pr-6 text-xs font-medium leading-normal"
     >
       {props.children}
     </code>

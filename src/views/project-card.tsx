@@ -29,7 +29,7 @@ export function ProjectCard(props: Readonly<ProjectCardProps>): JSX.Element {
           {logo => <img src={logo()} alt={`${project.data.title} logo`} class="h-16 w-16 rounded-lg" />}
         </Show>
         <div>
-          <div class="flex gap-[1.5ch] items-center">
+          <div class="flex items-center gap-[1.5ch]">
             <Typography.Heading id={`${hyphenatedSlug}-title`} size="xsmall" hideAnchor>
               {project.data.title}
             </Typography.Heading>

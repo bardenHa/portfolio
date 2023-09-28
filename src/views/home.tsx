@@ -79,13 +79,13 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
           A little bit about me
         </Typography.Heading>
         {/* TODO: update the max container width, should be a litter smaller for optimal reading ex */}
-        <div class="flex flex-col lg:flex-row-reverse items-stretch w-full gap-5">
+        <div class="flex w-full flex-col items-stretch gap-5 lg:flex-row-reverse">
           <img
             src="/me.jpeg" // TODO: choose new higher res image
             alt="Harry Barden portrait"
             class="overflow-hidden rounded-xl object-cover"
           />
-          <Card as="section" aria-labelledby="about" class="flex-initial h-c">
+          <Card as="section" aria-labelledby="about" class="h-c flex-initial">
             <Typography.Heading size="xsmall" class="mb-2">
               Where I'm from
             </Typography.Heading>
