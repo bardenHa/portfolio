@@ -1,6 +1,6 @@
 import { Anchor, AnchorProps } from './anchor';
 import { Divider } from './divider';
-import { HeadingProps, Typography } from './typography';
+import { HeadingProps, ParagraphProps, Typography } from './typography';
 
 // TODO: Add missing components
 // TODO: include default margins for these components
@@ -15,7 +15,7 @@ export const MdxComponents = {
   h6: (props: Readonly<HeadingProps>) => <Typography.Heading size={'xsmall'} class="mt-6 mb-2" {...props} />,
   hr: Divider,
   li: Typography.ListItem,
-  p: Typography.Paragraph,
+  p: (props: Readonly<ParagraphProps>) => <Typography.Paragraph class="mb-5" {...props} />,
   // TODO: strong: Strong,
   ul: Typography.List,
 } as const;

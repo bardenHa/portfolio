@@ -20,7 +20,7 @@ const index = posts.findIndex(({ id }) => id === post.id);
 const prev = posts?.[index + 1];
 const next = posts?.[index - 1];
 
-// TODO: Just a template for now, need to update this whole file
+// TODO: replace hardcodes links
 ---
 
 <Page
@@ -34,30 +34,23 @@ const next = posts?.[index - 1];
   <section class="mt-12">
     <Typography.Display id={hyphenate(post.data.title)}>{post.data.title}</Typography.Display>
     <Typography.Paragraph variant={'subdued'} size={'large'} class="mt-8">{post.data.description}</Typography.Paragraph>
-
-    <div class="mt-5 text-sm">
-      <span class="opacity-70"
-        >{
-          post.data.date.toLocaleDateString('en-EN', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-          })
-        }</span
-      >
-    </div>
+    <Typography.Paragraph variant={'subdued'} size={'small'} class="mt-5">
+      {
+        post.data.date.toLocaleDateString('en-EN', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        })
+      }
+    </Typography.Paragraph>
   </section>
-
-  <Divider />
-
+  <Divider size={'large'} />
   <!-- TODO: add in margin spacing for headings on MDX -->
   <Content components={MdxComponents} />
-
-  <hr class="h-4 border-0" />
-
-  <section class="my-8 text-sm">
-    <div class="my-8 flex justify-center gap-4 sm:justify-end sm:gap-6">
+  <section aria-label="Blog post next actions" class="mt-16">
+    <div class="my-4 flex gap-4 sm:gap-6">
       <Anchor
+        variant={'distinguished'}
         external
         href={`https://twitter.com/intent/tweet` +
           `?text=${post.data.title} — ${post.data.description}` +
@@ -67,38 +60,31 @@ const next = posts?.[index - 1];
       >
         Share on Twitter
       </Anchor>
-
-      <Anchor external href={`https://twitter.com/search?q=${constants.site}/blog/${post.slug}&src=typed_query`}>
+      <Anchor
+        variant={'distinguished'}
+        external
+        href={`https://twitter.com/search?q=${constants.site}/blog/${post.slug}&src=typed_query`}
+      >
         Discuss on Twitter
       </Anchor>
     </div>
-
-    <div class="my-4 flex gap-8 text-sm">
+    <nav class="mt-4 flex justify-between gap-8">
       {
-        prev ? (
-          <Anchor
-            variant={'subtle'}
-            class="mr-auto flex w-1/2 truncate rounded-sm py-2 text-left font-medium"
-            href={`/blog/${prev.slug}`}
-          >
+        prev && (
+          <Anchor class="flex truncate rounded-sm" href={`/blog/${prev.slug}`}>
             <span class="mr-2">←</span>
             <span class="flex-1 truncate">{prev.data.title}</span>
           </Anchor>
-        ) : null
+        )
       }
-
       {
-        next ? (
-          <Anchor
-            variant={'subtle'}
-            class="ml-auto flex w-1/2 truncate rounded-sm py-2 text-right font-medium"
-            href={`/blog/${next.slug}`}
-          >
+        next && (
+          <Anchor class="flex truncate rounded-sm" href={`/blog/${next.slug}`}>
             <span class="flex-1 truncate">{next.data.title}</span>
             <span class="ml-2">→</span>
           </Anchor>
-        ) : null
+        )
       }
-    </div>
+    </nav>
   </section>
 </Page>

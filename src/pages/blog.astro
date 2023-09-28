@@ -5,8 +5,6 @@ import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('posts')).sort((a, z) => +z.data.date - +a.data.date);
 const tags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
-
-// TODO: create tools page - https://daleanthony.com/tools
 ---
 
 <Page

@@ -55,7 +55,7 @@ export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
       <main
         role="main"
         id="main-content"
-        class="container mx-auto flex-1 p-5 transition-[max-width] duration-200 ease-in-out"
+        class="container mx-auto flex-1 px-5 transition-[max-width] duration-200 ease-in-out"
       >
         {props.children}
       </main>
