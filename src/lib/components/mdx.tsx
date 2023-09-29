@@ -1,3 +1,4 @@
+import { JSX } from 'solid-js/jsx-runtime';
 import { Anchor, AnchorProps } from './anchor';
 import { Divider } from './divider';
 import { HeadingProps, ParagraphProps, Typography } from './typography';
@@ -16,7 +17,9 @@ export const MdxComponents = {
   hr: Divider,
   li: Typography.ListItem,
   p: (props: Readonly<ParagraphProps>) => <Typography.Paragraph class="mb-5" {...props} />,
-  // TODO: strong: Strong,
+  // TODO: add to typography component,
+  strong: (props: Readonly<JSX.HTMLAttributes<HTMLElement>>) => <strong class={'font-bold'} {...props} />,
+  em: (props: Readonly<JSX.HTMLAttributes<HTMLElement>>) => <em class={'italic'} {...props} />,
   ul: Typography.List,
   // TODO: add image component, using a caption if available - https://stackoverflow.com/questions/19331362/using-an-image-caption-in-markdown-jekyll
 } as const;
