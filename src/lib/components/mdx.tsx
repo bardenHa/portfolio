@@ -18,4 +18,5 @@ export const MdxComponents = {
   p: (props: Readonly<ParagraphProps>) => <Typography.Paragraph class="mb-5" {...props} />,
   // TODO: strong: Strong,
   ul: Typography.List,
+  // TODO: add image component, using a caption if available - https://stackoverflow.com/questions/19331362/using-an-image-caption-in-markdown-jekyll
 } as const;

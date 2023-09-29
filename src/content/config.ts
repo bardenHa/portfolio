@@ -7,6 +7,7 @@ const POST_SCHEMA = z.object({
   date: z.date(),
   footnote: z.string().optional(),
   cowritten: z.boolean().optional(),
+  image: z.string().optional(),
 });
 
 const PROJECTS_SCHEMA = z.object({
