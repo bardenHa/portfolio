@@ -4,6 +4,7 @@ import { Anchor, Divider, Typography } from '../components';
 import { IconButton } from '../components/button';
 import { useTheme } from '../hooks';
 import { Moon, Sun } from '../icons';
+import { cx } from 'class-variance-authority';
 
 const NAVIGATION_LINKS = [
   {
@@ -92,7 +93,7 @@ export function ColorModeSwitcher(props: Readonly<{ class?: string }>): JSX.Elem
       size={'md'}
       variant={'tertiary'}
       onClick={toggleTheme}
-      class={props.class}
+      class={cx('h-12 w-12', props.class)}
     />
   );
 }
