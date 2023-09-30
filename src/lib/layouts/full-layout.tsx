@@ -30,7 +30,7 @@ export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
   return (
     <section class="flex min-h-screen max-w-4xl mx-auto flex-col">
       <header role="banner" id="header" class="container mx-auto p-5 transition-[max-width] duration-200 ease-in-out">
-        <nav class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+        <nav id="main-nav" aria-label="Main" class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
           <div class="flex items-center justify-between">
             <a href="/" title="Home">
               <img src="/h_avatar.svg" alt="Harry Barden's avatar" class="h-12 w-12" />
