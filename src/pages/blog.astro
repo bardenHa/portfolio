@@ -2,7 +2,6 @@
 import { BlogCard, Divider, Typography } from '@/lib/components';
 import Page from '@/lib/layouts/page.astro';
 import { getCollection } from 'astro:content';
-
 const posts = (await getCollection('posts')).sort((a, z) => +z.data.date - +a.data.date);
 const tags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
 ---
@@ -24,13 +23,19 @@ const tags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
   <section class="mt-12" aria-labelledby="latest-posts">
     <Typography.Heading size={'large'} id="latest-posts">Latest posts</Typography.Heading>
   </section>
-  <ul class="mt-16">
-    {
-      posts?.map(post => (
-        <li class="mt-14 flex flex-col first:mt-4">
-          <BlogCard post={post} />
-        </li>
-      ))
-    }
-  </ul>
+  {
+    posts.length > 0 ? (
+      <ul class="mt-8">
+        {posts.map(post => (
+          <li class="mt-14 flex flex-col first:mt-4">
+            <BlogCard post={post} />
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <Typography.Paragraph variant="subdued" class="mt-8">
+        No posts yet, check again soon!
+      </Typography.Paragraph>
+    )
+  }
 </Page>
