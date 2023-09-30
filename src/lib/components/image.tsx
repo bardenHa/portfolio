@@ -39,7 +39,9 @@ export function Image(props: Readonly<ImageProps>): JSX.Element {
           {props.children}
         </img>
         <figcaption class="text-center italic mt-2">
-          <Typography.Text variant="subdued">{caption ?? alt}</Typography.Text>
+          <small>
+            <Typography.Text variant="subdued">{caption ?? alt}</Typography.Text>
+          </small>
         </figcaption>
       </figure>
     </Show>

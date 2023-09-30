@@ -74,13 +74,13 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
       </section>
       <Divider size="large" />
       <section class="flex w-full flex-col gap-5" aria-labelledby="about">
-        <Typography.Heading size={'large'} id="about">
+        <Typography.Heading size={'xlarge'} id="about">
           A little bit about me
         </Typography.Heading>
         <div class="flex w-full flex-col items-stretch gap-5 lg:flex-row-reverse">
           <img src="/me.jpeg" alt="Harry Barden portrait" class="overflow-hidden rounded-xl object-cover" />
           <Card as="section" aria-labelledby="about" class="h-c flex-initial">
-            <Typography.Heading size="xsmall" class="mb-2">
+            <Typography.Heading as="h3" size="xsmall" class="mb-2">
               Where I'm from
             </Typography.Heading>
             <Typography.Paragraph variant="subdued" size="large">
@@ -88,14 +88,14 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
               inventore voluptas facilis quam quia tempora ut, minima corrupti! Tenetur doloribus reiciendis dicta,
               quasi sunt temporibus neque explicabo quis quia cum impedit perferendis voluptas debitis maxime dolor?
             </Typography.Paragraph>
-            <Typography.Heading size="xsmall" class="mb-2 mt-5">
+            <Typography.Heading as="h3" size="xsmall" class="mb-2 mt-5">
               What I used to do
             </Typography.Heading>
             <Typography.Paragraph variant="subdued" size="large">
               I'm a software engineer with a passion for building beautiful, functional, and accessible user interfaces.
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
             </Typography.Paragraph>
-            <Typography.Heading size="xsmall" class="mb-2 mt-5">
+            <Typography.Heading as="h3" size="xsmall" class="mb-2 mt-5">
               What I do now
             </Typography.Heading>
             <Typography.Paragraph variant="subdued" size="large">
@@ -111,7 +111,7 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
       <Show when={props.projects.length > 0}>
         <Divider size="large" />
         <section aria-labelledby="featured-projects" aria-describedby="featured-projects-description">
-          <Typography.Heading size={'large'} id="featured-projects">
+          <Typography.Heading size={'xlarge'} id="featured-projects">
             Featured projects
           </Typography.Heading>
           <Typography.Paragraph variant="subdued" id="featured-projects-description" class="mt-1">

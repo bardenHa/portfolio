@@ -118,7 +118,7 @@ html {
 
     th,
     td {
-      @apply py-3 px-4;
+      @apply py-3 px-4 text-sm sm:text-base;
       border-bottom: 1px solid var(--neutral-6);
 
       &:first-child {

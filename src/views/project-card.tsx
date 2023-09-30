@@ -31,7 +31,7 @@ export function ProjectCard(props: Readonly<ProjectCardProps>): JSX.Element {
         </Show>
         <div>
           <div class="flex items-center gap-[1.5ch]">
-            <Typography.Heading id={`${hyphenatedSlug}-title`} size="xsmall" hideAnchor>
+            <Typography.Heading as="h3" id={`${hyphenatedSlug}-title`} size="small" hideAnchor>
               {project.data.title}
             </Typography.Heading>
             <Switch fallback={null}>
