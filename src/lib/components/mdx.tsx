@@ -6,8 +6,12 @@ import { Image, ImageProps } from './image';
 import { Table, TableProps } from './table';
 import { HeadingProps, ListProps, ParagraphProps, Typography } from './typography';
 
+function isExternalLink(href: string): boolean {
+  return href.startsWith('http');
+}
+
 export const MdxComponents = {
-  a: (props: Readonly<AnchorProps>) => <Anchor external {...props} />,
+  a: (props: Readonly<AnchorProps>) => <Anchor external={isExternalLink(props.href)} {...props} />,
   h1: (props: Readonly<HeadingProps>) => <Typography.Heading size={'xxlarge'} class="mb-4 mt-0" {...props} />,
   h2: (props: Readonly<HeadingProps>) => <Typography.Heading size={'xlarge'} class="mb-4 mt-10" {...props} />,
   h3: (props: Readonly<HeadingProps>) => <Typography.Heading size={'large'} class="mb-4 mt-10" {...props} />,

@@ -30,11 +30,14 @@ export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
   return (
     <section class="flex min-h-screen max-w-4xl mx-auto flex-col">
       <header role="banner" id="header" class="container mx-auto p-5 transition-[max-width] duration-200 ease-in-out">
-        <nav class="flex items-center justify-between">
-          <a href="/" title="Home">
-            <img src="/h_avatar.svg" alt="Harry Barden's avatar" class="h-12 w-12" />
-          </a>
-          <div class="hidden items-center justify-center gap-6 md:flex">
+        <nav class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+          <div class="flex items-center justify-between">
+            <a href="/" title="Home">
+              <img src="/h_avatar.svg" alt="Harry Barden's avatar" class="h-12 w-12" />
+            </a>
+            <ColorModeSwitcher class="sm:hidden" />
+          </div>
+          <div class="flex items-center sm:justify-center gap-6">
             <ul class="flex items-center gap-4">
               <For each={NAVIGATION_LINKS}>
                 {link => (
@@ -46,7 +49,7 @@ export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
                 )}
               </For>
             </ul>
-            <ColorModeSwitcher />
+            <ColorModeSwitcher class="hidden sm:block" />
           </div>
         </nav>
       </header>
@@ -73,7 +76,7 @@ export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
   );
 }
 
-export function ColorModeSwitcher(): JSX.Element {
+export function ColorModeSwitcher(props: Readonly<{ class?: string }>): JSX.Element {
   const [theme, toggleTheme] = useTheme();
 
   // TODO: fix a11y on this
@@ -89,6 +92,7 @@ export function ColorModeSwitcher(): JSX.Element {
       size={'md'}
       variant={'tertiary'}
       onClick={toggleTheme}
+      class={props.class}
     />
   );
 }
