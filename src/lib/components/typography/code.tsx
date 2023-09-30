@@ -2,6 +2,7 @@ import { JSX } from 'solid-js';
 
 export type CodeProps = JSX.HTMLAttributes<HTMLElement>;
 
+// TODO: add support for inline code
 export function Code(props: Readonly<CodeProps>): JSX.Element {
   return (
     <code
