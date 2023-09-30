@@ -1,7 +1,9 @@
+import { JSX } from 'solid-js/jsx-runtime';
+
 import { Anchor, AnchorProps } from './anchor';
 import { Divider } from './divider';
 import { Image, ImageProps } from './image';
-import { HeadingProps, ParagraphProps, Typography } from './typography';
+import { HeadingProps, ListProps, ParagraphProps, Typography } from './typography';
 
 export const MdxComponents = {
   a: (props: Readonly<AnchorProps>) => <Anchor external {...props} />,
@@ -17,7 +19,8 @@ export const MdxComponents = {
   p: (props: Readonly<ParagraphProps>) => <Typography.Paragraph class="mb-5" {...props} />,
   strong: Typography.Strong,
   em: Typography.Emphasis,
-  ul: Typography.List,
+  ul: (props: Readonly<ListProps>) => <Typography.List class="mb-5" {...props} />,
+  ol: (props: Readonly<JSX.HTMLAttributes<HTMLOListElement>>) => <ol {...props} class="mb-5" />,
   img: (props: Readonly<ImageProps>) => (
     <Image {...props} showCaption class="rounded-xl" containerClass="mb-5" center />
   ),

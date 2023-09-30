@@ -101,4 +101,11 @@ html {
     padding-left: 1rem;
     color: var(--text-secondary);
   }
+
+  ol {
+    list-style-type: decimal;
+    list-style-position: outside;
+    margin: 0;
+    padding-left: 1.75rem;
+  }
 }
