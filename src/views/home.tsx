@@ -78,7 +78,12 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
           A little bit about me
         </Typography.Heading>
         <div class="flex w-full flex-col items-stretch gap-5 lg:flex-row-reverse">
-          <img src="/me.jpeg" alt="Harry Barden portrait" class="overflow-hidden rounded-xl object-cover" />
+          <img
+            src="/me.jpeg"
+            alt="Harry Barden smiling"
+            title="It's me!"
+            class="overflow-hidden rounded-xl object-cover"
+          />
           <Card as="section" aria-labelledby="about" class="h-c flex-initial">
             <Typography.Heading as="h3" size="xsmall" class="mb-2">
               Where I'm from
