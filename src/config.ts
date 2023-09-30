@@ -36,3 +36,10 @@ export const constants = {
     fallbackImage: '/images/cover.png',
   },
 } as const;
+
+// TODO: check for better way to do this
+export const abbreviations = {
+  WIP: 'Work in progress',
+  TBD: 'To be determined',
+  TBC: 'To be confirmed',
+};
