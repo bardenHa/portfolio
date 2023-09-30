@@ -6,4 +6,5 @@ export { Card } from './card';
 export { Divider } from './divider';
 export { Image } from './image';
 export { MdxComponents } from './mdx';
+export { Table } from './table';
 export { Typography } from './typography';

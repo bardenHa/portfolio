@@ -108,4 +108,35 @@ html {
     margin: 0;
     padding-left: 1.75rem;
   }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 2rem 0;
+    width: 100%;
+    margin: 0;
+    background-color: var(--neutral-1);
+
+    th,
+    td {
+      @apply py-3 px-4;
+      border-bottom: 1px solid var(--neutral-6);
+
+      &:first-child {
+        @apply pl-12;
+      }
+
+      &:last-child {
+        @apply pr-12;
+      }
+    }
+
+    thead th {
+      padding-top: 0;
+    }
+
+    tbody {
+      background-color: var(--neutral-3);
+      color: var(--text-secondary);
+    }
+  }
 }

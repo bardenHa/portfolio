@@ -3,6 +3,7 @@ import { JSX } from 'solid-js/jsx-runtime';
 import { Anchor, AnchorProps } from './anchor';
 import { Divider } from './divider';
 import { Image, ImageProps } from './image';
+import { Table, TableProps } from './table';
 import { HeadingProps, ListProps, ParagraphProps, Typography } from './typography';
 
 export const MdxComponents = {
@@ -24,6 +25,7 @@ export const MdxComponents = {
   img: (props: Readonly<ImageProps>) => (
     <Image {...props} showCaption class="rounded-xl" containerClass="mb-5" center />
   ),
+  table: (props: Readonly<TableProps>) => <Table {...props} containerClass="mb-5" />,
 } as const;
 
 // TODO: add table components
