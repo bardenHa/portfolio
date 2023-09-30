@@ -1,5 +1,3 @@
-import { JSX } from 'solid-js/jsx-runtime';
-
 import { Anchor, AnchorProps } from './anchor';
 import { Divider } from './divider';
 import { Image, ImageProps } from './image';
@@ -17,11 +15,14 @@ export const MdxComponents = {
   hr: Divider,
   li: Typography.ListItem,
   p: (props: Readonly<ParagraphProps>) => <Typography.Paragraph class="mb-5" {...props} />,
-  // TODO: add to typography component,
-  strong: (props: Readonly<JSX.HTMLAttributes<HTMLElement>>) => <strong class={'font-bold'} {...props} />,
-  em: (props: Readonly<JSX.HTMLAttributes<HTMLElement>>) => <em class={'italic'} {...props} />,
+  strong: Typography.Strong,
+  em: Typography.Emphasis,
   ul: Typography.List,
   img: (props: Readonly<ImageProps>) => (
     <Image {...props} showCaption class="rounded-xl" containerClass="mb-5" center />
   ),
 } as const;
+
+// TODO: add table components
+// TODO: add blockquote components
+// TODO: go through third blog post and check we have all the components we need

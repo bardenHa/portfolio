@@ -1,7 +1,8 @@
 import { JSX } from 'solid-js';
 
-// TODO: use mono font
-export function Code(props: Readonly<JSX.HTMLAttributes<HTMLElement>>): JSX.Element {
+export type CodeProps = JSX.HTMLAttributes<HTMLElement>;
+
+export function Code(props: Readonly<CodeProps>): JSX.Element {
   return (
     <code
       {...props}
