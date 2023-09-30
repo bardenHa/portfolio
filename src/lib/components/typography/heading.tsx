@@ -11,7 +11,7 @@ import { Typography } from '.';
 
 type HeadingLevels = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 type HeadingBaseProps = VariantProps<typeof headingStyles>;
-const headingStyles = cva(['Heading', 'font-semibold leading-tight'], {
+export const headingStyles = cva(['Heading', 'font-semibold leading-tight'], {
   defaultVariants: {
     size: 'medium',
     variant: 'default',

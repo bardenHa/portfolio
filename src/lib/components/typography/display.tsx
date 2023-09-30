@@ -8,7 +8,7 @@ import { PolymorphicComponent } from '../types';
 import { Typography } from '.';
 
 type DisplayBaseProps = VariantProps<typeof displayStyles>;
-const displayStyles = cva(['Display', 'font-semibold leading-tight tracking-tighter'], {
+export const displayStyles = cva(['Display', 'font-semibold leading-tight tracking-tighter'], {
   defaultVariants: {
     size: 'medium',
     variant: 'default',

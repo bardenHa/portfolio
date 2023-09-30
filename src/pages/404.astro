@@ -1,5 +1,44 @@
 ---
-// TODO: Add 404 page
+import { Anchor, Typography } from '@/lib/components';
+import { headingStyles } from '@/lib/components/typography';
+import Page from '@/lib/layouts/page.astro';
+import { cx } from 'class-variance-authority';
 ---
 
-<h1>Could not be found</h1>
+<!-- TODO: Don't hardcode keywords --><!-- TODO: Don't hardcode author name, maybe concat it in the Page component instead? -->
+<Page
+  title="Not found - Harry Barden"
+  description="This is a test"
+  keywords={'uses, tools, web, software, development, environment'}
+  image="/images/og.png"
+  type="website"
+>
+  <section class="mt-12" aria-labelledby="404">
+    <div class="text-center max-w-md mx-auto">
+      <Typography.Heading
+        as="h1"
+        id="404"
+        hideAnchor
+        class="block mt-8 text-7xl sm:text-9xl font-mono font-extrabold"
+        size={'xlarge'}
+      >
+        404
+      </Typography.Heading>
+      <p
+        class={cx(
+          headingStyles({
+            size: 'xlarge',
+          }),
+          'text-xl sm:text-4xl'
+        )}
+      >
+        Something's missing.
+      </p>
+      <Typography.Paragraph size="large" variant="subdued" class="mt-12">
+        Oh no! You're either lost or I've done something <Typography.Emphasis>terribly</Typography.Emphasis> wrong...
+        Anyway, let's get you back on track.
+      </Typography.Paragraph>
+      <Anchor href="/" variant={'distinguished'} class="inline-block pt-8">Go back Home</Anchor>
+    </div>
+  </section>
+</Page>

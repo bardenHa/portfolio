@@ -19,8 +19,10 @@ export const Typography = {
 } as const;
 
 export type { DisplayProps } from './display';
+export { displayStyles } from './display';
 export type { EmphasisProps } from './emphasis';
 export type { HeadingProps } from './heading';
+export { headingStyles } from './heading';
 export type { ListItemProps, ListProps } from './list';
 export type { ParagraphProps } from './paragraph';
 export type { StrongProps } from './strong';
