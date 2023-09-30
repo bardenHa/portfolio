@@ -1,6 +1,5 @@
 ---
 import { CollectionEntry, getCollection } from 'astro:content';
-
 import { constants } from '@/config';
 import Page from '@/lib/layouts/page.astro';
 import { Anchor, Divider, MdxComponents, Typography } from '@/lib/components';
@@ -20,8 +19,9 @@ const index = posts.findIndex(({ id }) => id === post.id);
 const prev = posts?.[index + 1];
 const next = posts?.[index - 1];
 
-// TODO: replace hardcodes links
 const titleId = hyphenate(post.data.title);
+const BLOG_PATH = '/blog';
+const TWITTER_URL = 'https://twitter.com';
 ---
 
 <Page
@@ -53,9 +53,9 @@ const titleId = hyphenate(post.data.title);
       <Anchor
         variant={'distinguished'}
         external
-        href={`https://twitter.com/intent/tweet` +
+        href={`${TWITTER_URL}/intent/tweet` +
           `?text=${post.data.title} — ${post.data.description}` +
-          `&url=${constants.site}/blog/${post.slug}` +
+          `&url=${constants.site}${BLOG_PATH}/${post.slug}` +
           `&via=bardenha` +
           `&hashtags=${tags.join(',')}`}
       >
@@ -64,7 +64,7 @@ const titleId = hyphenate(post.data.title);
       <Anchor
         variant={'distinguished'}
         external
-        href={`https://twitter.com/search?q=${constants.site}/blog/${post.slug}&src=typed_query`}
+        href={`${TWITTER_URL}/search?q=${constants.site}${BLOG_PATH}/${post.slug}&src=typed_query`}
       >
         Discuss on Twitter
       </Anchor>
@@ -72,7 +72,7 @@ const titleId = hyphenate(post.data.title);
     <nav class="mt-4 flex justify-between gap-8">
       {
         prev && (
-          <Anchor class="flex truncate rounded-sm" href={`/blog/${prev.slug}`}>
+          <Anchor class="flex truncate rounded-sm" href={`${BLOG_PATH}/${prev.slug}`}>
             <span class="mr-2">←</span>
             <span class="flex-1 truncate">{prev.data.title}</span>
           </Anchor>
@@ -80,7 +80,7 @@ const titleId = hyphenate(post.data.title);
       }
       {
         next && (
-          <Anchor class="flex truncate rounded-sm" href={`/blog/${next.slug}`}>
+          <Anchor class="flex truncate rounded-sm" href={`${BLOG_PATH}/${next.slug}`}>
             <span class="flex-1 truncate">{next.data.title}</span>
             <span class="ml-2">→</span>
           </Anchor>
