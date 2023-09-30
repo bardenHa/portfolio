@@ -28,8 +28,7 @@ const NAVIGATION_LINKS = [
 // TODO: move to page.astro once ready
 export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
   return (
-    <section class="flex h-screen min-h-screen flex-col overflow-x-hidden bg-content-neutral-primary">
-      {/* TODO: create a container component */}
+    <section class="flex min-h-screen max-w-4xl mx-auto flex-col">
       <header role="banner" id="header" class="container mx-auto p-5 transition-[max-width] duration-200 ease-in-out">
         <nav class="flex items-center justify-between">
           <a href="/" title="Home">

@@ -14,7 +14,7 @@ interface SocialLink {
   icon: JSX.Element;
 }
 
-// TODO: try to move most of this to the astro page. Also add social links to config file
+// TODO: try to move most of this to an astro page. Also add social links to config file
 const SOCIAL_LINKS: SocialLink[] = [
   {
     title: 'Twitter',
@@ -55,7 +55,6 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
             <For each={SOCIAL_LINKS}>
               {link => (
                 <Anchor
-                  // TODO: Use Anchor with class={buttonVariants()}
                   aria-label={link.title}
                   href={link.href}
                   class={cx(buttonStyles({ variant: 'tertiary' }))}
@@ -78,13 +77,8 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
         <Typography.Heading size={'large'} id="about">
           A little bit about me
         </Typography.Heading>
-        {/* TODO: update the max container width, should be a litter smaller for optimal reading ex */}
         <div class="flex w-full flex-col items-stretch gap-5 lg:flex-row-reverse">
-          <img
-            src="/me.jpeg" // TODO: choose new higher res image
-            alt="Harry Barden portrait"
-            class="overflow-hidden rounded-xl object-cover"
-          />
+          <img src="/me.jpeg" alt="Harry Barden portrait" class="overflow-hidden rounded-xl object-cover" />
           <Card as="section" aria-labelledby="about" class="h-c flex-initial">
             <Typography.Heading size="xsmall" class="mb-2">
               Where I'm from
@@ -124,11 +118,12 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
             A collection of some side projects that have shipped recently.
           </Typography.Paragraph>
           <ul
-            class="mt-8 grid w-full grid-cols-1 gap-5 xl:grid-cols-2"
+            class="mt-8 grid w-full grid-cols-1 gap-5"
             aria-labelledby="featured-projects"
             aria-describedby="featured-projects-description"
           >
-            <For each={props.projects}>
+            {/* In future we'll want to filter by a featured property */}
+            <For each={props.projects.slice(0, 4)}>
               {project => (
                 <li>
                   <ProjectCard project={project} />

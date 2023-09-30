@@ -122,11 +122,11 @@ html {
       border-bottom: 1px solid var(--neutral-6);
 
       &:first-child {
-        @apply pl-12;
+        @apply sm:pl-12;
       }
 
       &:last-child {
-        @apply pr-12;
+        @apply sm:pr-12;
       }
     }
 
