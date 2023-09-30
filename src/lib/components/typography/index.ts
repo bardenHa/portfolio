@@ -1,4 +1,3 @@
-import { Code } from './code';
 import { Display } from './display';
 import { Emphasis } from './emphasis';
 import { Heading } from './heading';
@@ -13,14 +12,12 @@ export const Typography = {
   Text,
   // TODO: rename to Body? Feel like paragraph is too specific
   Paragraph,
-  Code,
   List,
   ListItem,
   Emphasis,
   Strong,
 } as const;
 
-export type { CodeProps } from './code';
 export type { DisplayProps } from './display';
 export type { EmphasisProps } from './emphasis';
 export type { HeadingProps } from './heading';

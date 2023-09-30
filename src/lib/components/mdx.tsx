@@ -8,7 +8,6 @@ import { HeadingProps, ListProps, ParagraphProps, Typography } from './typograph
 
 export const MdxComponents = {
   a: (props: Readonly<AnchorProps>) => <Anchor external {...props} />,
-  code: Typography.Code,
   h1: (props: Readonly<HeadingProps>) => <Typography.Heading size={'xxlarge'} class="mb-4 mt-0" {...props} />,
   h2: (props: Readonly<HeadingProps>) => <Typography.Heading size={'xlarge'} class="mb-4 mt-10" {...props} />,
   h3: (props: Readonly<HeadingProps>) => <Typography.Heading size={'large'} class="mb-4 mt-10" {...props} />,

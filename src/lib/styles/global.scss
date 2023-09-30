@@ -139,4 +139,12 @@ html {
       color: var(--text-secondary);
     }
   }
+
+  code {
+    @apply inline my-5 px-1 rounded border border-neutral-7 bg-neutral-1 font-medium leading-normal;
+  }
+
+  pre code {
+    @apply grid overflow-x-scroll text-sm p-5 pr-6 rounded-lg;
+  }
 }
