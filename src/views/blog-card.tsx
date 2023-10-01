@@ -22,7 +22,12 @@ export function BlogCard(props: Readonly<BlogCardProps>): JSX.Element {
   return (
     <article id={hyphenatedSlug} aria-labelledby={`${hyphenatedSlug}-title`} {...rest}>
       <Anchor variant={'subtle'} href={`/blog/${post.slug}`} class="block">
-        <Image src={post.data.image.src} alt={post.data.image.alt} class="rounded-xl aspect-3/4 object-cover" />
+        <Image
+          title={post.data.title}
+          src={post.data.image.src}
+          alt={post.data.image.alt}
+          class="w-full rounded-xl aspect-3/4 object-cover"
+        />
         <Typography.Paragraph variant={'subdued'} class="mt-3">
           <time dateTime={post.data.date.toISOString()}>
             {post.data.date.toLocaleDateString('en-EN', {
@@ -32,13 +37,13 @@ export function BlogCard(props: Readonly<BlogCardProps>): JSX.Element {
             })}
           </time>
         </Typography.Paragraph>
-        <div class="mt-2">
+        <div class="mt-1">
           <Typography.Heading size={'large'} id={`${hyphenatedSlug}-title`} hideAnchor>
             {post.data.title}
           </Typography.Heading>
           {/* TODO: show max lines 1/2? and truncate */}
           {FLAGS.showDescription && (
-            <Typography.Paragraph variant={'subdued'} size={'small'} class="mt-2">
+            <Typography.Paragraph variant={'subdued'} size={'small'} class="mt-2 truncate">
               {post.data.description}
             </Typography.Paragraph>
           )}

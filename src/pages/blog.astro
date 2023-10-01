@@ -21,11 +21,11 @@ const tags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
   </section>
   <Divider size="large" />
   <section class="mt-12" aria-labelledby="latest-posts">
-    <Typography.Heading size={'large'} id="latest-posts">Latest posts</Typography.Heading>
+    <Typography.Heading size={'xlarge'} id="latest-posts">Latest posts</Typography.Heading>
   </section>
   {
     posts.length > 0 ? (
-      <ul class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <ul class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-10">
         {posts.map(post => (
           <li>
             <BlogCard post={post} />
