@@ -5,9 +5,12 @@ const POST_SCHEMA = z.object({
   description: z.string(),
   tags: z.array(z.string()),
   date: z.date(),
+  image: z.object({
+    src: z.string(),
+    alt: z.string(),
+  }),
   footnote: z.string().optional(),
   cowritten: z.boolean().optional(),
-  image: z.string().optional(),
 });
 
 const PROJECTS_SCHEMA = z.object({
@@ -17,10 +20,9 @@ const PROJECTS_SCHEMA = z.object({
   status: z.enum(['backlog', 'wip', 'complete', 'graveyard']),
   type: z.enum(['personal', 'professional']),
   url: z.string().url(),
+  image: z.string(),
+  logo: z.string(),
   startDate: z.date().optional(),
-  // TODO: make these required
-  image: z.string().optional(),
-  logo: z.string().optional(),
 });
 
 export const collections = {

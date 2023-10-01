@@ -121,6 +121,10 @@ module.exports = {
         serif: 'var(--fonts-serif)',
         mono: 'var(--fonts-mono)',
       },
+      aspectRatio: {
+        '4/3': '4 / 3',
+        '3/4': '3 / 4',
+      },
     },
   },
   plugins: [require('@thoughtbot/tailwindcss-aria-attributes')],

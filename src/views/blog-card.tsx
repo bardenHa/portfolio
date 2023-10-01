@@ -1,12 +1,19 @@
 import { CollectionEntry } from 'astro:content';
 import { For, JSX, splitProps } from 'solid-js';
 
+import { Image, Typography } from '@/lib/components';
+
 import { Anchor } from '../lib/components/anchor';
 import { hyphenate } from '../lib/utils';
 
 interface BlogCardProps {
   post: Readonly<CollectionEntry<'posts'>>;
 }
+
+const FLAGS = {
+  showDescription: true,
+  showTags: false,
+};
 
 export function BlogCard(props: Readonly<BlogCardProps>): JSX.Element {
   const [{ post }, rest] = splitProps(props, ['post']);
@@ -15,20 +22,32 @@ export function BlogCard(props: Readonly<BlogCardProps>): JSX.Element {
   return (
     <article id={hyphenatedSlug} aria-labelledby={`${hyphenatedSlug}-title`} {...rest}>
       <Anchor variant={'subtle'} href={`/blog/${post.slug}`} class="block">
-        <span class="block text-sm font-medium opacity-60">
-          {post.data.date.toLocaleDateString('en-EN', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-          })}
-        </span>
-        <h3 class="mt-2 text-xl font-semibold" id={`${hyphenatedSlug}-title`}>
-          {post.data.title}
-        </h3>
-        <p class="mt-2">{post.data.description}</p>
-        <ul class="mt-2 flex flex-wrap gap-x-3 gap-y-1 opacity-60">
-          <For each={post.data.tags}>{tag => <li class="text-sm font-light">#{tag}</li>}</For>
-        </ul>
+        <Image src={post.data.image.src} alt={post.data.image.alt} class="rounded-xl aspect-3/4 object-cover" />
+        <Typography.Paragraph variant={'subdued'} class="mt-3">
+          <time dateTime={post.data.date.toISOString()}>
+            {post.data.date.toLocaleDateString('en-EN', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
+          </time>
+        </Typography.Paragraph>
+        <div class="mt-2">
+          <Typography.Heading size={'large'} id={`${hyphenatedSlug}-title`} hideAnchor>
+            {post.data.title}
+          </Typography.Heading>
+          {/* TODO: show max lines 1/2? and truncate */}
+          {FLAGS.showDescription && (
+            <Typography.Paragraph variant={'subdued'} size={'small'} class="mt-2">
+              {post.data.description}
+            </Typography.Paragraph>
+          )}
+          {FLAGS.showTags && (
+            <ul class="mt-2 flex flex-wrap gap-x-3 gap-y-1 opacity-60">
+              <For each={post.data.tags}>{tag => <li class="text-sm font-light">#{tag}</li>}</For>
+            </ul>
+          )}
+        </div>
       </Anchor>
     </article>
   );

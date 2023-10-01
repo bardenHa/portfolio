@@ -25,9 +25,9 @@ const tags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
   </section>
   {
     posts.length > 0 ? (
-      <ul class="mt-8">
+      <ul class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
         {posts.map(post => (
-          <li class="mt-14 flex flex-col first:mt-4">
+          <li>
             <BlogCard post={post} />
           </li>
         ))}
