@@ -1,7 +1,6 @@
 const GOOGLE_FONTS_REGEX = /fonts.(googleapis|gstatic).com\/css/;
 
 // TODO: add a entry to rollup.config.js to generate sw.js, then we can use ts
-// TODO: make sure there are no conflicts with browser cache
 
 const SW_VERSION = '0.1.0'; // TODO: use package.json version
 const CACHE_NAME = `cache-${SW_VERSION}`;
