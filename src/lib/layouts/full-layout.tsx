@@ -62,7 +62,6 @@ export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
 export function ColorModeSwitcher(props: Readonly<{ class?: string }>): JSX.Element {
   const [theme, toggleTheme] = useTheme();
 
-  // TODO: fix a11y on this
   return (
     <IconButton
       icon={
@@ -70,7 +69,7 @@ export function ColorModeSwitcher(props: Readonly<{ class?: string }>): JSX.Elem
           <Sun aria-label="Switch to light mode" />
         </Show>
       }
-      aria-label="Theme toggle switch"
+      aria-label="Theme toggle"
       role="switch"
       size={'md'}
       variant={'tertiary'}

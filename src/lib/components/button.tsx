@@ -1,12 +1,11 @@
 import { JSX, Show, splitProps } from 'solid-js';
 import { cva, cx, type VariantProps } from 'class-variance-authority';
 
-// TODO: colour transition seems laggy, perhaps due to transition-all?
 export const buttonStyles = cva(
   [
     'Button',
     'inline-flex items-center justify-center gap-2 rounded-md text-base font-medium ring-offset-background whitespace-nowrap',
-    'transition-all motion-reduce:transition-none duration-150 ease-in-out',
+    'transition-colors motion-reduce:transition-none duration-150 ease-in-out',
     'disabled:pointer-events-none disabled:opacity-50',
   ],
   {
@@ -87,10 +86,6 @@ export function Button(props: Readonly<ButtonProps>): JSX.Element {
   );
 }
 
-// TODO: we weary of https://css-tricks.com/focusing-on-focus-styles/
-// TODO: enforce aria label (Icon button should not allow children)
-// TODO: need to add class prop to all components e.g. class={cx(buttonStyles({ variant, size }), props.class)}
-
 const iconButtonStyles = cva(['IconButton'], {
   variants: {
     size: {
@@ -105,7 +100,9 @@ const iconButtonStyles = cva(['IconButton'], {
 });
 
 interface IconButtonProps extends Omit<ButtonProps, 'children'> {
+  children?: never;
   icon: JSX.Element;
+  'aria-label': string;
 }
 
 export function IconButton(props: Readonly<IconButtonProps>): JSX.Element {
