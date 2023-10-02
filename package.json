@@ -15,8 +15,7 @@
     "format": "prettier --check \"src/**/*.{js,jsx,ts,tsx,astro,json,css,scss,md}\" --plugin=prettier-plugin-astro --plugin=prettier-plugin-tailwindcss",
     "format:fix": "prettier --write \"src/**/*.{js,jsx,ts,tsx,astro,json,css,scss,md}\" --plugin=prettier-plugin-astro --plugin=prettier-plugin-tailwindcss",
     "typecheck": "tsc --noEmit",
-    "test:a11y": "TODO: fix sitemap pa11y-ci --config .pa11yci.json --sitemap http://localhost:3000/sitemap-index.xml --sitemap-find https://barden.dev --sitemap-replace http://localhost:3000",
-    "a11ycheck": "start-server-and-test preview http://localhost:3000 test:a11y"
+    "test:a11y": "pa11y-ci --sitemap http://localhost:4321/sitemap-index.xml"
   },
   "type": "module",
   "license": "MIT",
