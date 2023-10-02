@@ -1,5 +1,3 @@
-// TODO: for pruduction builds, purge unused styles, minify, etc. - https://tailwindcss.com/docs/optimizing-for-production
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['src/**/*.{astro,md,mdx,js,ts,jsx,tsx}'],
