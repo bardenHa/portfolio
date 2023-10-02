@@ -1,6 +1,5 @@
 import { Github, LinkedIn, Twitter } from '@/lib/icons';
 
-// TODO: Update all of this, mostly placeholder for now
 const profile = {
   name: 'Harry Barden',
   title: 'Harry Barden - Software Engineer',
@@ -41,7 +40,6 @@ export const constants = {
     ],
     external: [
       { name: 'Twitter', href: profile.links.twitter, icon: <Twitter /> },
-      // TODO: update icon
       { name: 'LinkedIn', href: profile.links.linkedin, icon: <LinkedIn /> },
       { name: 'GitHub', href: profile.links.github, icon: <Github /> },
     ],
