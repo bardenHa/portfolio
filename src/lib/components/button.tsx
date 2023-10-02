@@ -16,8 +16,6 @@ export const buttonStyles = cva(
         secondary: 'text-neutral-12 bg-neutral-4 hover:bg-neutral-5 active:bg-neutral-6 border border-neutral-7',
         tertiary: 'bg-transparent hover:bg-neutral-5 active:bg-neutral-6',
         placeholder: 'border-neutral-12 border-dashed border bg-transparent hover:bg-neutral-5 active:bg-neutral-6',
-        // TODO: implement
-        link: 'text-primary underline-offset-4 hover:underline', // TODO: can we use this instead to inject anchor styles?
       },
       size: {
         sm: 'text-sm px-3 py-4 h-9',
