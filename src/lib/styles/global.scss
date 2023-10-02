@@ -118,7 +118,7 @@ html {
 
     th,
     td {
-      @apply py-3 px-4 text-sm sm:text-base;
+      @apply px-4 py-3 text-sm sm:text-base;
       border-bottom: 1px solid var(--neutral-6);
 
       &:first-child {
@@ -141,10 +141,10 @@ html {
   }
 
   code {
-    @apply inline my-5 px-1 rounded border border-neutral-7 bg-neutral-1 font-medium leading-normal;
+    @apply my-5 inline rounded border border-neutral-7 bg-neutral-1 px-1 font-medium leading-normal;
   }
 
   pre code {
-    @apply grid overflow-x-scroll text-sm p-5 pr-6 rounded-lg;
+    @apply grid overflow-x-scroll rounded-lg p-5 pr-6 text-sm;
   }
 }

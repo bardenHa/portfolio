@@ -10,7 +10,6 @@ export const Typography = {
   Display,
   Heading,
   Text,
-  // TODO: rename to Body? Feel like paragraph is too specific
   Paragraph,
   List,
   ListItem,

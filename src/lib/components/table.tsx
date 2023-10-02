@@ -11,7 +11,7 @@ export interface TableProps extends JSX.HTMLAttributes<HTMLTableElement>, TableB
 export function Table(props: Readonly<TableProps>): JSX.Element {
   const [{ class: className, containerClass }, rest] = splitProps(props, ['class', 'containerClass']);
   return (
-    <div class={cx('border border-solid border-neutral-7 rounded-xl bg-neutral-1 overflow-x-auto', containerClass)}>
+    <div class={cx('overflow-x-auto rounded-xl border border-solid border-neutral-7 bg-neutral-1', containerClass)}>
       <table class={cx(tableStyles(), className)} {...rest} />
     </div>
   );

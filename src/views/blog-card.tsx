@@ -26,7 +26,7 @@ export function BlogCard(props: Readonly<BlogCardProps>): JSX.Element {
           title={post.data.title}
           src={post.data.image.src}
           alt={post.data.image.alt}
-          class="w-full rounded-xl aspect-3/4 object-cover"
+          class="aspect-3/4 w-full rounded-xl object-cover"
         />
         <Typography.Paragraph variant={'subdued'} class="mt-3">
           <time dateTime={post.data.date.toISOString()}>

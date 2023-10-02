@@ -41,8 +41,8 @@ const props = Astro.props as Props;
     <meta property="og:type" content={props.type} />
     <meta property="og:url" content={constants.site + Astro.url.pathname} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:creator" content={`@${profile.username}`} />
-    <meta name="twitter:site" content={`@${profile.username}`} />
+    <meta name="twitter:creator" content={profile.twitter.handle} />
+    <meta name="twitter:site" content={profile.twitter.handle} />
     <meta name="twitter:title" content={props.title} />
     <meta name="twitter:description" content={props.description} />
     <meta name="twitter:url" content={constants.site + Astro.url.pathname} />
@@ -68,7 +68,7 @@ const props = Astro.props as Props;
     <title>{props.title}</title>
     <!-- TODO: add og image -->
   </head>
-  <body class="bg-content-neutral-primary overflow-y-scroll overflow-x-hidden">
+  <body class="overflow-x-hidden overflow-y-scroll bg-content-neutral-primary">
     <a href="#main-content" class="skip-link"> Skip to content</a>
     <FullLayout client:only>
       <slot />

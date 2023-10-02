@@ -28,7 +28,7 @@ const TWITTER_URL = 'https://twitter.com';
   title={`${post.data.title} - ${constants.profile.name}`}
   description={post.data.description}
   keywords={`blog, post, ${tags.join(', ')}`}
-  image={post.data.image ?? constants.blog.fallbackImage}
+  image={post.data.image.src}
   type="article"
   date={post.data.date.toDateString()}
 >

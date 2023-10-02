@@ -1,7 +1,7 @@
 import { CollectionEntry } from 'astro:content';
 import { JSX, Match, Show, splitProps, Switch } from 'solid-js';
 
-import { abbreviations } from '@/config';
+import { ABBREVIATIONS } from '@/config';
 import { Anchor, Badge, Card, Typography } from '@/lib/components';
 
 import { hyphenate } from '../lib/utils';
@@ -37,7 +37,7 @@ export function ProjectCard(props: Readonly<ProjectCardProps>): JSX.Element {
             <Switch fallback={null}>
               <Match when={project.data.status === 'wip'}>
                 <Badge intent={'warning'} size={'sm'}>
-                  <abbr title={abbreviations.WIP}>{project.data.status.toUpperCase()}</abbr>
+                  <abbr title={ABBREVIATIONS.WIP}>{project.data.status.toUpperCase()}</abbr>
                 </Badge>
               </Match>
             </Switch>

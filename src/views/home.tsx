@@ -4,34 +4,8 @@ import { cx } from 'class-variance-authority';
 
 import { constants } from '@/config';
 import { Anchor, buttonStyles, Card, Divider, Typography } from '@/lib/components';
-import { Github, Instagram, Twitter } from '@/lib/icons';
 
 import { ProjectCard } from './project-card';
-
-interface SocialLink {
-  title: string;
-  href: string;
-  icon: JSX.Element;
-}
-
-// TODO: try to move most of this to an astro page. Also add social links to config file
-const SOCIAL_LINKS: SocialLink[] = [
-  {
-    title: 'Twitter',
-    href: 'https://twitter.com/bardenha',
-    icon: <Twitter />,
-  },
-  {
-    title: 'Instagram',
-    href: 'https://instagram.com/harry-barden',
-    icon: <Instagram />,
-  },
-  {
-    title: 'Github',
-    href: 'https://github.com/bardenha',
-    icon: <Github />,
-  },
-];
 
 interface HomeProps {
   projects: CollectionEntry<'projects'>[];
@@ -52,10 +26,10 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
         </Typography.Paragraph>
         <div class="mt-16 flex gap-6">
           <nav class="flex gap-2" aria-label="A list of my social links" id="contact">
-            <For each={SOCIAL_LINKS}>
+            <For each={constants.links.external}>
               {link => (
                 <Anchor
-                  aria-label={link.title}
+                  aria-label={link.name}
                   href={link.href}
                   class={cx(buttonStyles({ variant: 'tertiary' }))}
                   noStyle

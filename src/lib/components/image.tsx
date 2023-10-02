@@ -38,7 +38,7 @@ export function Image(props: Readonly<ImageProps>): JSX.Element {
         <img class={cx(imageStyles({ center }), className)} alt={alt} {...rest}>
           {props.children}
         </img>
-        <figcaption class="text-center italic mt-2">
+        <figcaption class="mt-2 text-center italic">
           <small>
             <Typography.Text variant="subdued">{caption ?? alt}</Typography.Text>
           </small>
