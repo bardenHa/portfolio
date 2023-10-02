@@ -1,0 +1,30 @@
+---
+import { constants } from '@/config';
+import { Anchor, Divider, MdxComponents, Typography } from '@/lib/components';
+import Page from '@/lib/layouts/page.astro';
+import { getEntry } from 'astro:content';
+
+const page = await getEntry('pages', 'accessibility-statement');
+const { Content } = await page.render();
+---
+
+<Page
+  title="Accessibility statement - Harry Barden"
+  description={`Conformance, testing practices, and contact information for accessibility across ${constants.site}`}
+  keywords={'accessibility, a11y,'}
+  image="/images/og.png"
+  type="website"
+>
+  <section class="mt-12">
+    <Typography.Display>Accessibility statement</Typography.Display>
+    <Typography.Paragraph size="large" variant="subdued" class="mt-8">
+      Conformance, testing practices, and contact information for accessibility across <Anchor href={constants.site}>
+        {new URL(constants.site).host}
+      </Anchor>
+    </Typography.Paragraph>
+  </section>
+  <Divider size="large" />
+  <article>
+    <Content components={MdxComponents} />
+  </article>
+</Page>

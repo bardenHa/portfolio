@@ -5,7 +5,7 @@ import { getEntry } from 'astro:content';
 
 // TODO: implement og image for all pages
 
-const uses = await getEntry('uses', 'uses');
+const uses = await getEntry('pages', 'uses');
 const { Content } = await uses.render();
 ---
 

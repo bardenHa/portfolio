@@ -1,11 +1,12 @@
 import { For, JSX, ParentProps, Show } from 'solid-js';
+import { cx } from 'class-variance-authority';
+
+import { constants } from '@/config';
 
 import { Anchor, Divider, Typography } from '../components';
 import { IconButton } from '../components/button';
 import { useTheme } from '../hooks';
 import { Moon, Sun } from '../icons';
-import { cx } from 'class-variance-authority';
-import { constants } from '@/config';
 
 // TODO: keep progressive enhancement in mind - https://www.smashingmagazine.com/2009/04/progressive-enhancement-what-it-is-and-how-to-use-it/
 // TODO: move to page.astro once ready
@@ -22,11 +23,11 @@ export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
           </div>
           <div class="flex items-center gap-6 sm:justify-center">
             <ul class="flex items-center gap-4">
-              <For each={constants.links.external}>
+              <For each={constants.links.internal}>
                 {link => (
                   <Typography.Text as="li">
                     <Anchor href={link.href} variant="subtle" aria-current="page">
-                      {link.name}
+                      {link.title}
                     </Anchor>
                   </Typography.Text>
                 )}
