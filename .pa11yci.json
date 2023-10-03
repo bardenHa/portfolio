@@ -1,4 +1,4 @@
 {
-  "standard": "WCAG2AAA",
+  "standard": "WCAG2AA",
   "runners": ["axe", "htmlcs"]
 }

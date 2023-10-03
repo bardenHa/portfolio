@@ -23,7 +23,6 @@ html {
 }
 
 @layer base {
-  /* TODO: apple ring outline for focus styles globally */
   /* TODO: add outline transition for this */
   :focus-visible,
   [role='button']:focus-visible,
