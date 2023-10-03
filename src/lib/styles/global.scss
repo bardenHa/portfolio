@@ -34,6 +34,10 @@ html {
     border-radius: 0.15rem;
   }
 
+  abbr[title] {
+    cursor: help;
+  }
+
   .underline-link {
     position: relative;
     text-decoration: none;
