@@ -15,13 +15,13 @@ const tags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
 >
   <section class="mt-12">
     <Typography.Display>My blog 📚</Typography.Display>
-    <Typography.Paragraph size="large" variant="subdued" class="mt-8">
+    <Typography.Paragraph size="lg" variant="subdued" class="mt-8">
       Writing about web development, tooling, linux and developer productivity.
     </Typography.Paragraph>
   </section>
-  <Divider size="large" />
+  <Divider size="lg" />
   <section class="mt-12" aria-labelledby="latest-posts">
-    <Typography.Heading size={'xlarge'} id="latest-posts">Latest posts</Typography.Heading>
+    <Typography.Heading size={'xl'} id="latest-posts">Latest posts</Typography.Heading>
   </section>
   {
     posts.length > 0 ? (

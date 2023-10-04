@@ -10,15 +10,15 @@ import { Typography } from '.';
 type DisplayBaseProps = VariantProps<typeof displayStyles>;
 export const displayStyles = cva(['Display', 'font-semibold leading-tight tracking-tighter'], {
   defaultVariants: {
-    size: 'medium',
+    size: 'md',
     variant: 'default',
   },
   variants: {
     size: {
-      large: ['text-5xl sm:text-8xl'],
-      medium: ['text-4xl sm:text-6xl'],
-      small: ['text-3xl sm:text-5xl'],
-      xsmall: ['text-2xl sm:text-4xl'],
+      lg: ['text-5xl sm:text-8xl'],
+      md: ['text-4xl sm:text-6xl'],
+      sm: ['text-3xl sm:text-5xl'],
+      xs: ['text-2xl sm:text-4xl'],
     },
     variant: {
       default: ['text-inherit'],

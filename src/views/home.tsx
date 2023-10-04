@@ -15,10 +15,10 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
   return (
     <>
       <section class="mt-12" aria-labelledby="intro" aria-describedby="intro-description">
-        <Typography.Display id="intro" size="medium">
+        <Typography.Display id="intro" size="md">
           Software Engineer creating thoughtful, accessible & intuitive interfaces 🤟🏼
         </Typography.Display>
-        <Typography.Paragraph id="intro-description" size="large" variant="subdued" class="mt-16">
+        <Typography.Paragraph id="intro-description" size="lg" variant="subdued" class="mt-16">
           I’m Harry Barden, a UK based Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas explicabo,
           expedita sed pariatur aliquam <Anchor href="#test">inventore</Anchor> voluptas. Dolor facilis quam quia sit
           amet consectetur adipisicing elit. Praesentium.
@@ -46,9 +46,9 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
           </Anchor>
         </div>
       </section>
-      <Divider size="large" />
+      <Divider size="lg" />
       <section class="flex w-full flex-col gap-5" aria-labelledby="about">
-        <Typography.Heading size={'xlarge'} id="about">
+        <Typography.Heading size={'xl'} id="about">
           A little bit about me
         </Typography.Heading>
         <div class="flex w-full flex-col items-stretch gap-5 lg:flex-row-reverse">
@@ -59,25 +59,25 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
             class="overflow-hidden rounded-xl object-cover"
           />
           <Card as="section" aria-labelledby="about" class="h-c flex-initial">
-            <Typography.Heading as="h3" size="xsmall" class="mb-2">
+            <Typography.Heading as="h3" size="xs" class="mb-2">
               Where I'm from
             </Typography.Heading>
-            <Typography.Paragraph variant="subdued" size="large">
+            <Typography.Paragraph variant="subdued" size="lg">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas explicabo, expedita sed pariatur aliquam
               inventore voluptas facilis quam quia tempora ut, minima corrupti! Tenetur doloribus reiciendis dicta,
               quasi sunt temporibus neque explicabo quis quia cum impedit perferendis voluptas debitis maxime dolor?
             </Typography.Paragraph>
-            <Typography.Heading as="h3" size="xsmall" class="mb-2 mt-5">
+            <Typography.Heading as="h3" size="xs" class="mb-2 mt-5">
               What I used to do
             </Typography.Heading>
-            <Typography.Paragraph variant="subdued" size="large">
+            <Typography.Paragraph variant="subdued" size="lg">
               I'm a software engineer with a passion for building beautiful, functional, and accessible user interfaces.
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
             </Typography.Paragraph>
-            <Typography.Heading as="h3" size="xsmall" class="mb-2 mt-5">
+            <Typography.Heading as="h3" size="xs" class="mb-2 mt-5">
               What I do now
             </Typography.Heading>
-            <Typography.Paragraph variant="subdued" size="large">
+            <Typography.Paragraph variant="subdued" size="lg">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium, aspernatur{' '}
               <Anchor href="https://example.com" external>
                 Pledge
@@ -88,9 +88,9 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
         </div>
       </section>
       <Show when={props.projects.length > 0}>
-        <Divider size="large" />
+        <Divider size="lg" />
         <section aria-labelledby="featured-projects" aria-describedby="featured-projects-description">
-          <Typography.Heading size={'xlarge'} id="featured-projects">
+          <Typography.Heading size={'xl'} id="featured-projects">
             Featured projects
           </Typography.Heading>
           <Typography.Paragraph variant="subdued" id="featured-projects-description" class="mt-1">

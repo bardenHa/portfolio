@@ -38,12 +38,12 @@ export function BlogCard(props: Readonly<BlogCardProps>): JSX.Element {
           </time>
         </Typography.Paragraph>
         <div class="mt-1">
-          <Typography.Heading size={'large'} id={`${hyphenatedSlug}-title`} hideAnchor>
+          <Typography.Heading size={'lg'} id={`${hyphenatedSlug}-title`} hideAnchor>
             {post.data.title}
           </Typography.Heading>
           {/* TODO: show max lines 1/2? and truncate */}
           {FLAGS.showDescription && (
-            <Typography.Paragraph variant={'subdued'} size={'small'} class="mt-2 truncate">
+            <Typography.Paragraph variant={'subdued'} size={'sm'} class="mt-2 truncate">
               {post.data.description}
             </Typography.Paragraph>
           )}

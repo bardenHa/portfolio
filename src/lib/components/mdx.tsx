@@ -12,12 +12,12 @@ function isExternalLink(href: string): boolean {
 
 export const MdxComponents = {
   a: (props: Readonly<AnchorProps>) => <Anchor external={isExternalLink(props.href)} {...props} />,
-  h1: (props: Readonly<HeadingProps>) => <Typography.Heading size={'xxlarge'} class="mb-4 mt-0" {...props} />,
-  h2: (props: Readonly<HeadingProps>) => <Typography.Heading size={'xlarge'} class="mb-4 mt-10" {...props} />,
-  h3: (props: Readonly<HeadingProps>) => <Typography.Heading size={'large'} class="mb-4 mt-10" {...props} />,
-  h4: (props: Readonly<HeadingProps>) => <Typography.Heading size={'medium'} class="mb-4 mt-10" {...props} />,
-  h5: (props: Readonly<HeadingProps>) => <Typography.Heading size={'small'} class="mb-2 mt-8" {...props} />,
-  h6: (props: Readonly<HeadingProps>) => <Typography.Heading size={'xsmall'} class="mb-2 mt-6" {...props} />,
+  h1: (props: Readonly<HeadingProps>) => <Typography.Heading size={'xxl'} class="mb-4 mt-0" {...props} />,
+  h2: (props: Readonly<HeadingProps>) => <Typography.Heading size={'xl'} class="mb-4 mt-10" {...props} />,
+  h3: (props: Readonly<HeadingProps>) => <Typography.Heading size={'lg'} class="mb-4 mt-10" {...props} />,
+  h4: (props: Readonly<HeadingProps>) => <Typography.Heading size={'md'} class="mb-4 mt-10" {...props} />,
+  h5: (props: Readonly<HeadingProps>) => <Typography.Heading size={'sm'} class="mb-2 mt-8" {...props} />,
+  h6: (props: Readonly<HeadingProps>) => <Typography.Heading size={'xs'} class="mb-2 mt-6" {...props} />,
   hr: Divider,
   li: Typography.ListItem,
   p: (props: Readonly<ParagraphProps>) => <Typography.Paragraph class="mb-5" {...props} />,

@@ -8,15 +8,15 @@ import { PolymorphicComponent } from '../types';
 type ParagraphBaseProps = VariantProps<typeof paragraphStyles>;
 const paragraphStyles = cva('Paragraph', {
   defaultVariants: {
-    size: 'medium',
+    size: 'md',
     variant: 'default',
   },
   variants: {
     size: {
-      large: ['text-lg', 'leading-tight'],
-      medium: ['text-base', 'leading-tight'],
-      small: ['text-sm', 'leading-tight'],
-      xsmall: ['text-xs', 'leading-tight'],
+      lg: ['text-lg', 'leading-tight'],
+      md: ['text-base', 'leading-tight'],
+      sm: ['text-sm', 'leading-tight'],
+      xs: ['text-xs', 'leading-tight'],
     },
     variant: {
       default: ['text-inherit'],

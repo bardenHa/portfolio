@@ -31,7 +31,7 @@ export function ProjectCard(props: Readonly<ProjectCardProps>): JSX.Element {
         </Show>
         <div>
           <div class="flex items-center gap-[1.5ch]">
-            <Typography.Heading as="h3" id={`${hyphenatedSlug}-title`} size="small" hideAnchor>
+            <Typography.Heading as="h3" id={`${hyphenatedSlug}-title`} size="sm" hideAnchor>
               {project.data.title}
             </Typography.Heading>
             <Switch fallback={null}>
@@ -42,7 +42,7 @@ export function ProjectCard(props: Readonly<ProjectCardProps>): JSX.Element {
               </Match>
             </Switch>
           </div>
-          <Typography.Paragraph size="medium" variant="subdued" class="mt-2">
+          <Typography.Paragraph size="md" variant="subdued" class="mt-2">
             {project.data.description}
           </Typography.Paragraph>
         </div>

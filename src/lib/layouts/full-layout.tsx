@@ -46,7 +46,7 @@ export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
         {props.children}
       </main>
       <footer class="container mx-auto p-5 pb-12 pt-0 transition-[max-width] duration-200 ease-in-out">
-        <Divider size="large" />
+        <Divider size="lg" />
         <div class="flex items-center justify-between">
           <Typography.Paragraph>
             <span translate="no">Harry Barden</span> © 2023

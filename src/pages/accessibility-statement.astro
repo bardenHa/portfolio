@@ -17,13 +17,13 @@ const { Content } = await page.render();
 >
   <section class="mt-12">
     <Typography.Display>Accessibility statement</Typography.Display>
-    <Typography.Paragraph size="large" variant="subdued" class="mt-8">
+    <Typography.Paragraph size="lg" variant="subdued" class="mt-8">
       Conformance, testing practices, and contact information for accessibility across <Anchor href={constants.site}>
         {new URL(constants.site).host}
       </Anchor>.
     </Typography.Paragraph>
   </section>
-  <Divider size="large" />
+  <Divider size="lg" />
   <article>
     <Content components={MdxComponents} />
   </article>

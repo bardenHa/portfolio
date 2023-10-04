@@ -3,14 +3,14 @@ import { cva, cx, type VariantProps } from 'class-variance-authority';
 
 const dividerStyles = cva(['Divider', 'border-content-neutral-secondary'], {
   defaultVariants: {
-    size: 'medium',
+    size: 'md',
   },
   // TODO: change size naming to lg, md, sm
   variants: {
     size: {
-      large: ['my-12'],
-      medium: ['my-8'],
-      small: ['my-4'],
+      lg: ['my-12'],
+      md: ['my-8'],
+      sm: ['my-4'],
     },
   },
 });
