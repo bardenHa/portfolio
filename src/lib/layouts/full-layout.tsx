@@ -23,7 +23,7 @@ export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
           </div>
           <div class="flex items-center gap-6 sm:justify-center">
             <ul class="flex items-center gap-4">
-              <For each={constants.links.internal}>
+              <For each={constants.links.internal.main}>
                 {link => (
                   <Typography.Text as="li">
                     <Anchor href={link.href} variant="subtle" aria-current="page">
@@ -47,13 +47,28 @@ export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
       </main>
       <footer class="container mx-auto p-5 pb-12 pt-0 transition-[max-width] duration-200 ease-in-out">
         <Divider size="lg" />
-        <div class="flex items-center justify-between">
-          <Typography.Paragraph>
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <Typography.Paragraph variant={'subdued'}>
             <span translate="no">Harry Barden</span> © 2023
           </Typography.Paragraph>
-          <Anchor href={'#header'} variant="distinguished">
-            Back to top
-          </Anchor>
+          <div class="flex sm:items-center justify-between gap-6 md:gap-10">
+            <nav id="footer-nav" aria-label="Footer">
+              <ul class="sm:flex items-center gap-3 flex-wrap">
+                <For each={constants.links.internal.footer}>
+                  {link => (
+                    <Typography.Text as="li" variant={'subdued'}>
+                      <Anchor href={link.href} variant="subtle">
+                        {link.title}
+                      </Anchor>
+                    </Typography.Text>
+                  )}
+                </For>
+              </ul>
+            </nav>
+            <Anchor href={'#header'} variant="distinguished">
+              Back to top
+            </Anchor>
+          </div>
         </div>
       </footer>
     </section>

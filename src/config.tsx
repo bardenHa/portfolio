@@ -20,24 +20,27 @@ export const constants = {
   profile,
   site: import.meta.env.SITE,
   links: {
-    internal: [
-      {
-        title: 'Home',
-        href: '/',
-      },
-      {
-        title: 'Projects',
-        href: '/#featured-projects',
-      },
-      {
-        title: 'Blog',
-        href: '/blog',
-      },
-      {
-        title: 'Uses',
-        href: '/uses',
-      },
-    ],
+    internal: {
+      main: [
+        {
+          title: 'Home',
+          href: '/',
+        },
+        {
+          title: 'Projects',
+          href: '/#featured-projects',
+        },
+        {
+          title: 'Blog',
+          href: '/blog',
+        },
+        {
+          title: 'Uses',
+          href: '/uses',
+        },
+      ],
+      footer: [{ title: 'Accessibility statement', href: '/accessibility-statement' }],
+    },
     external: [
       { name: 'Twitter', href: profile.links.twitter, icon: <Twitter /> },
       { name: 'LinkedIn', href: profile.links.linkedin, icon: <LinkedIn /> },
