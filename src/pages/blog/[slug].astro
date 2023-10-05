@@ -22,6 +22,7 @@ const next = posts?.[index - 1];
 const titleId = hyphenate(post.data.title);
 const BLOG_PATH = '/blog';
 const TWITTER_URL = 'https://twitter.com';
+const coAuthors = post.data.coAuthors ?? [];
 ---
 
 <Page
@@ -34,9 +35,28 @@ const TWITTER_URL = 'https://twitter.com';
 >
   <section class="mt-12" aria-labelledby={titleId}>
     <Typography.Display id={titleId}>{post.data.title}</Typography.Display>
-    <Typography.Paragraph variant={'subdued'} size={'lg'} class="mt-8">{post.data.description}</Typography.Paragraph>
+    <Typography.Paragraph size={'lg'} class="mt-8">{post.data.description}</Typography.Paragraph>
     <Typography.Paragraph variant={'subdued'} size={'sm'} class="mt-5">
       {
+        coAuthors.length ? (
+          <>
+            Cowritten with{' '}
+            {coAuthors.map(({ name, url }, index) => (
+              <>
+                <Anchor href={url} external>
+                  {name}
+                </Anchor>
+                {index < coAuthors.length - 1 ? ', ' : ''}
+              </>
+            ))}
+          </>
+        ) : (
+          <>
+            Written by <Anchor href={constants.site}>{constants.profile.name}</Anchor>
+          </>
+        )
+      }
+       — {
         post.data.date.toLocaleDateString('en-EN', {
           year: 'numeric',
           month: 'long',

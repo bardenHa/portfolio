@@ -10,7 +10,7 @@ const POST_SCHEMA = z.object({
     alt: z.string(),
   }),
   footnote: z.string().optional(),
-  cowritten: z.boolean().optional(),
+  coAuthors: z.array(z.object({ name: z.string(), url: z.string() })).optional(),
 });
 
 const PROJECTS_SCHEMA = z.object({
