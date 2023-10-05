@@ -3,8 +3,7 @@ import { cx } from 'class-variance-authority';
 
 import { constants } from '@/config';
 
-import { Anchor, Divider, Typography } from '../components';
-import { IconButton } from '../components/button';
+import { Anchor, Divider, IconButton, Image, Typography } from '../components';
 import { useTheme } from '../hooks';
 import { Moon, Sun } from '../icons';
 
@@ -17,7 +16,7 @@ export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
         <nav id="main-nav" aria-label="Main" class="flex flex-col justify-between gap-6 sm:flex-row sm:items-center">
           <div class="flex items-center justify-between">
             <a href="/" title="Home">
-              <img src="/h_avatar.svg" alt="Harry Barden's avatar" class="h-12 w-12" />
+              <Image src="/h_avatar.svg" alt="Harry Barden's avatar" class="h-12 w-12" />
             </a>
             <ColorModeSwitcher class="sm:hidden" />
           </div>

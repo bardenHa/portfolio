@@ -3,7 +3,7 @@ import { For, JSX, Show } from 'solid-js';
 import { cx } from 'class-variance-authority';
 
 import { constants } from '@/config';
-import { Anchor, buttonStyles, Card, Divider, Typography } from '@/lib/components';
+import { Anchor, buttonStyles, Card, Divider, Image, Typography } from '@/lib/components';
 
 import { ProjectCard } from './project-card';
 
@@ -52,7 +52,7 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
           A little bit about me
         </Typography.Heading>
         <div class="flex w-full flex-col items-stretch gap-5 lg:flex-row-reverse">
-          <img
+          <Image
             src="/me.jpeg"
             alt="Harry Barden smiling"
             title="It's me!"

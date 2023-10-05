@@ -2,7 +2,7 @@ import { CollectionEntry } from 'astro:content';
 import { JSX, Match, Show, splitProps, Switch } from 'solid-js';
 
 import { ABBREVIATIONS } from '@/config';
-import { Anchor, Badge, Card, Typography } from '@/lib/components';
+import { Anchor, Badge, Card, Image, Typography } from '@/lib/components';
 
 import { hyphenate } from '../lib/utils';
 
@@ -27,7 +27,7 @@ export function ProjectCard(props: Readonly<ProjectCardProps>): JSX.Element {
         {...rest}
       >
         <Show when={project.data.logo}>
-          {logo => <img src={logo()} alt={`${project.data.title} logo`} class="h-16 w-16 rounded-lg" />}
+          {logo => <Image src={logo()} alt={`${project.data.title} logo`} class="h-16 w-16 rounded-lg" />}
         </Show>
         <div>
           <div class="flex items-center gap-[1.5ch]">

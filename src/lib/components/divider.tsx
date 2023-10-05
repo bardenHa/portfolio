@@ -5,7 +5,6 @@ const dividerStyles = cva(['Divider', 'border-content-neutral-secondary'], {
   defaultVariants: {
     size: 'md',
   },
-  // TODO: change size naming to lg, md, sm
   variants: {
     size: {
       lg: ['my-12'],
