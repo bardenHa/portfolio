@@ -4,7 +4,6 @@ import { cx } from 'class-variance-authority';
 import { IconButton } from '@/lib/components';
 import { Moon } from '@/lib/icons';
 
-// TODO: fix flashing on page load
 export function ColorModeSwitcher(props: Readonly<{ class?: string }>): JSX.Element {
   return (
     <IconButton
