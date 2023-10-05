@@ -36,7 +36,7 @@ export function Image(props: Readonly<ImageProps>): JSX.Element {
   return (
     <Show when={showCaption} fallback={image}>
       <figure class={cx(center ? 'block' : 'inline-block', containerClass)}>
-        <image />
+        <img class={cx(imageStyles({ center }), className)} alt={alt} decoding="async" loading="lazy" {...rest} />
         <figcaption class="mt-2 text-center italic">
           <small>
             <Typography.Text variant="subdued">{caption ?? alt}</Typography.Text>

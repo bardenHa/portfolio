@@ -4,7 +4,8 @@ import '@/lib/styles/global.scss';
 import '@/lib/styles/syntax.scss';
 
 import { constants } from '@/config';
-import { FullLayout } from './full-layout';
+
+import Full from './full.astro';
 
 type Props = {
   title: string;
@@ -70,9 +71,9 @@ const props = Astro.props as Props;
   </head>
   <body class="overflow-x-hidden overflow-y-scroll bg-content-neutral-primary">
     <a href="#main-content" class="skip-link"> Skip to content</a>
-    <FullLayout>
+    <Full>
       <slot />
-    </FullLayout>
+    </Full>
     <script is:inline>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
