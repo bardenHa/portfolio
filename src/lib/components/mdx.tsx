@@ -30,7 +30,3 @@ export const MdxComponents = {
   ),
   table: (props: Readonly<TableProps>) => <Table {...props} containerClass="mb-5" />,
 } as const;
-
-// TODO: add table components
-// TODO: add blockquote components
-// TODO: go through third blog post and check we have all the components we need

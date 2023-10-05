@@ -21,7 +21,6 @@ export interface ImageProps extends JSX.ImgHTMLAttributes<HTMLImageElement>, Ima
   center?: boolean;
 }
 
-// TODO: replace usages of img with this component
 export function Image(props: Readonly<ImageProps>): JSX.Element {
   const [{ alt, class: className, containerClass, showCaption, caption, center }, rest] = splitProps(props, [
     'alt',

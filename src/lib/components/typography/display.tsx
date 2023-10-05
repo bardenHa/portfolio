@@ -51,8 +51,7 @@ export function Display(props: Readonly<DisplayProps>): JSX.Element {
           <Anchor
             href={`#${id()}`}
             rel="bookmark"
-            // TODO: fix aria reference label, lookup how this works
-            aria-label="Permalink to “aria-labelledby”"
+            aria-label={'Permalink to this heading'}
             class={cx(styles, 'ml-[0.5ch] inline text-text-secondary', className)}
             variant={'distinguished'}
           >
