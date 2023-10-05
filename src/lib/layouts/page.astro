@@ -70,7 +70,8 @@ const props = Astro.props as Props;
   </head>
   <body class="overflow-x-hidden overflow-y-scroll bg-content-neutral-primary">
     <a href="#main-content" class="skip-link"> Skip to content</a>
-    <FullLayout client:only>
+    <!-- TODO: causing no js not to work -->
+    <FullLayout>
       <slot />
     </FullLayout>
     <script is:inline>
