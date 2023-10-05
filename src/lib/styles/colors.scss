@@ -189,7 +189,8 @@
 [color-scheme='light'],
 [color-scheme='no-preference'],
 [color-scheme='normal'],
-[color-scheme='auto'] {
+[color-scheme='auto'],
+html:not([color-scheme]) {
   color: black;
   color-scheme: light;
   --default: var(--light-default);
