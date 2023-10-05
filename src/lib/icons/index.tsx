@@ -1,6 +1,11 @@
 import { JSX, JSXElement } from 'solid-js';
 
-// TODO: where are icons from?
+/**
+ *  The following icons are from the Lucide icon set.
+ * @url https://lucide.dev/
+ * @instructions Make sure to use 1em as the width and height.
+ */
+
 export function Instagram(props: Readonly<JSX.HTMLAttributes<SVGSVGElement>>): JSXElement {
   return (
     <svg

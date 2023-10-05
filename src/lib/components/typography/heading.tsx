@@ -7,8 +7,6 @@ import { Anchor } from '../anchor';
 import { PolymorphicComponent } from '../types';
 import { Typography } from '.';
 
-// TODO: enforce ID prop for headers
-
 type HeadingLevels = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 type HeadingBaseProps = VariantProps<typeof headingStyles>;
 export const headingStyles = cva(['Heading', 'font-semibold leading-tight'], {
@@ -48,7 +46,6 @@ const HEADING_SIZE_TAG: Record<NonNullable<HeadingBaseProps['size']>, HeadingLev
   xs: 'h4',
 };
 
-// TODO: include prop to add default margins?
 export function Heading(props: Readonly<HeadingProps>): JSX.Element {
   const [{ variant, size, as, class: className, hideAnchor }, rest] = splitProps(props, [
     'size',
@@ -77,7 +74,6 @@ export function Heading(props: Readonly<HeadingProps>): JSX.Element {
 
   return (
     <Show when={props.id && !hideAnchor} fallback={heading}>
-      {/* TODO: maybe change so that anchor is within the heading */}
       <div class={className}>
         {heading}
         <Anchor
@@ -93,5 +89,3 @@ export function Heading(props: Readonly<HeadingProps>): JSX.Element {
     </Show>
   );
 }
-
-// TODO: add clickable tag to heading like used in these blogs - https://benmyers.dev/blog/clickable-divs/

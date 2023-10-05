@@ -20,7 +20,6 @@ const labelStyles = cva('Text', {
 
 export interface TextProps extends PolymorphicComponent<HTMLSpanElement>, TextBaseProps {}
 
-// TODO: rename to span if we change to Body for paragraph?
 export function Text(props: Readonly<TextProps>): JSX.Element {
   const [{ variant, as, class: className }, rest] = splitProps(props, ['variant', 'as', 'class']);
   return (
