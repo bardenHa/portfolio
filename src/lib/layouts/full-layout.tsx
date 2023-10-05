@@ -18,6 +18,7 @@ export function FullLayout(props: Readonly<ParentProps>): JSX.Element {
             <a href="/" title="Home">
               <Image src="/h_avatar.svg" alt="Harry Barden's avatar" class="h-12 w-12" />
             </a>
+            {/* TODO: once moved to astro file, this needs to be loaded on client */}
             <ColorModeSwitcher class="sm:hidden" />
           </div>
           <div class="flex items-center gap-6 sm:justify-center">
@@ -93,5 +94,3 @@ export function ColorModeSwitcher(props: Readonly<{ class?: string }>): JSX.Elem
     />
   );
 }
-
-// TODO: make an a11y statement https://benmyers.dev/accessibility-statement/

@@ -35,7 +35,7 @@ const coAuthors = post.data.coAuthors ?? [];
 >
   <section class="mt-12" aria-labelledby={titleId}>
     <Typography.Display id={titleId}>{post.data.title}</Typography.Display>
-    <Typography.Paragraph size={'lg'} class="mt-8">{post.data.description}</Typography.Paragraph>
+    <Typography.Paragraph variant={'subdued'} size={'lg'} class="mt-8">{post.data.description}</Typography.Paragraph>
     <Typography.Paragraph variant={'subdued'} size={'sm'} class="mt-5">
       {
         coAuthors.length ? (
