@@ -22,6 +22,15 @@ html {
   }
 }
 
+html,
+body {
+  @apply duration-150 ease-in-out transition-colors;
+
+  @media (prefers-reduced-motion) {
+    transition: none;
+  }
+}
+
 @layer base {
   /* TODO: add outline transition for this */
   :focus-visible,

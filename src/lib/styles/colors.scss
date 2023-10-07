@@ -1,5 +1,4 @@
 :root {
-  /* TODO: Syntax */
   --light-syntax-keywords: #d73a49;
   --light-syntax-selector: #22863a;
   --light-syntax-warnings: #e36209;
@@ -45,7 +44,6 @@
   --light-neutral-9: #889096;
   --light-neutral-10: #7e868c;
   --light-neutral-11: #687076;
-  /* TODO: could try using inverse palette instead */
   --light-neutral-12: #11181c;
 
   --light-success-1: #fbfefc;
@@ -441,33 +439,4 @@ html:not([color-scheme]) {
   --danger-10: var(--dark-danger-10);
   --danger-11: var(--dark-danger-11);
   --danger-12: var(--dark-danger-12);
-}
-
-// @media (prefers-color-scheme: light) {
-//   :root {
-//     color-scheme: light;
-//   }
-// }
-
-// @media (prefers-color-scheme: dark) {
-//   :root {
-//     color-scheme: dark;
-//   }
-// }
-
-// @media (prefers-color-scheme: auto) {
-//   :root {
-//     color-scheme: light;
-//   }
-// }
-
-html {
-  /* TODO: - tokenise transitions */
-  transition:
-    background-color 0.4s ease-in-out,
-    color 0.4s ease-in-out;
-
-  @media (prefers-reduced-motion) {
-    transition: none;
-  }
 }
