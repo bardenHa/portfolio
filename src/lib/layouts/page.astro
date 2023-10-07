@@ -1,0 +1,106 @@
+---
+import '@/lib/styles/colors.scss';
+import '@/lib/styles/global.scss';
+import '@/lib/styles/syntax.scss';
+
+import { constants } from '@/config';
+
+import Full from './full.astro';
+import { formatTitle } from '../utils';
+
+type Props = {
+  title: string;
+  description: string;
+  keywords: string;
+  image: string;
+  type: string;
+  date?: string;
+  reverseTitle?: boolean;
+};
+
+const { profile } = constants;
+const props = Astro.props as Props;
+
+const title = formatTitle({ title: props.title, name: profile.name, reverse: !!props.reverseTitle });
+console.log(title);
+---
+
+<html lang="en" color-scheme="auto" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="theme-color" content="#fcfcfc" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+    <meta name="googlebot" content="index,follow" />
+    <meta name="title" content={title} />
+    <meta name="description" content={props.description} />
+    <meta name="author" content={profile.name} />
+    <meta name="keywords" content={props.keywords} />
+    <meta property="og:locale" content="en" />
+    <meta property="og:site_name" content={profile.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={props.description} />
+    <meta property="og:image" content={constants.site + props.image} />
+    <meta property="og:image:alt" content={title} />
+    <meta property="og:type" content={props.type} />
+    <meta property="og:url" content={constants.site + Astro.url.pathname} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content={profile.twitter.handle} />
+    <meta name="twitter:site" content={profile.twitter.handle} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={props.description} />
+    <meta name="twitter:url" content={constants.site + Astro.url.pathname} />
+    <meta name="twitter:image" content={constants.site + props.image} />
+    <meta name="twitter:image:alt" content={title} />
+    <meta name="view-transition" content="same-origin" />
+    {props.date ? <meta property="article:published_time" content={new Date(props.date).toISOString()} /> : null}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Mono:wght@300;400;500;600;700;800&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Vollkorn:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#00a300" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="canonical" href={constants.site + Astro.url.pathname} />
+    <title>{title}</title>
+  </head>
+  <body class="overflow-x-hidden overflow-y-scroll bg-content-neutral-primary">
+    <a href="#main-content" class="skip-link"> Skip to content</a>
+    <Full>
+      <slot />
+    </Full>
+    <script is:inline>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js');
+        });
+      }
+
+      const theme = {
+        initial: () => {
+          if (localStorage.getItem('theme')) return localStorage.getItem('theme');
+          if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark';
+          return 'light';
+        },
+        current: () => document.documentElement.getAttribute('color-scheme'),
+        set: theme => {
+          document.documentElement.setAttribute('color-scheme', theme);
+          localStorage.setItem('theme', theme);
+        },
+      };
+
+      theme.set(theme.initial());
+      const toggle = () => theme.set(theme.current() === 'light' ? 'dark' : 'light');
+
+      document.getElementById('theme-toggle')?.addEventListener('click', toggle);
+    </script>
+  </body>
+</html>

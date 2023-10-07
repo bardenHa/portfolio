@@ -1,0 +1,22 @@
+---
+import { constants } from '@/config';
+import Page from '@/lib/layouts/page.astro';
+import Home from '@/views/home';
+
+import { getCollection } from 'astro:content';
+import { defaultTo } from 'rambda';
+const projects = (await getCollection('projects')).sort((a, b) =>
+  defaultTo(new Date(), a.data.startDate) > defaultTo(new Date(), b.data.startDate) ? -1 : 1
+);
+---
+
+<Page
+  title="Software Engineer"
+  reverseTitle
+  description={`{${constants.profile.name}'s personal website.`}
+  keywords="Software Engineer, Developer, Web Developer, Frontend Developer, Fullstack Developer, accessibility, a11y, web development, webdev, programming, productivity, WCAG, React, JavaScript, TypeScript, Node, Express, MongoDB, GraphQL, Apollo, Next.js, Astro, Go, Golang, Tailwind, CSS, HTML, Webpack, Babel, Git, GitHub, GitLab, Docker, AWS, Ubuntu, Linux, macOS, Windows, VS Code, Visual Studio Code, Vim, Terminal, Bash, Zsh, Oh My Zsh, Oh My Fish, iTerm, projects, portfolio, resume, blog"
+  image="/images/me.webp"
+  type="website"
+>
+  <Home projects={projects} />
+</Page>

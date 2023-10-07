@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://barden.dev/sitemap-index.xml

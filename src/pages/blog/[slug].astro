@@ -1,0 +1,111 @@
+---
+import { CollectionEntry, getCollection } from 'astro:content';
+import { constants } from '@/config';
+import Page from '@/lib/layouts/page.astro';
+import { Anchor, Divider, MdxComponents, Typography } from '@/lib/components';
+import { hyphenate } from '@/lib/utils';
+
+export const getStaticPaths = async () => {
+  const posts = await getCollection('posts');
+  return posts.map(post => ({ params: { slug: post.slug }, props: post }));
+};
+
+const posts = (await getCollection('posts')).sort((a, z) => +new Date(z.data.date) - +new Date(a.data.date));
+const post = Astro.props as CollectionEntry<'posts'>;
+const tags = [...new Set(post.data.tags)].sort();
+const { Content } = await post.render();
+
+const index = posts.findIndex(({ id }) => id === post.id);
+const prev = posts?.[index + 1];
+const next = posts?.[index - 1];
+
+const titleId = hyphenate(post.data.title);
+const BLOG_PATH = '/blog';
+const TWITTER_URL = 'https://twitter.com';
+const coAuthors = post.data.coAuthors ?? [];
+---
+
+<Page
+  title={post.data.title}
+  description={post.data.description}
+  keywords={`blog, post, ${tags.join(', ')}`}
+  image={post.data.image.src}
+  type="article"
+  date={post.data.date.toDateString()}
+>
+  <section class="mt-12" aria-labelledby={titleId}>
+    <Typography.Display id={titleId}>{post.data.title}</Typography.Display>
+    <Typography.Paragraph variant={'subdued'} size={'lg'} class="mt-8">{post.data.description}</Typography.Paragraph>
+    <Typography.Paragraph variant={'subdued'} size={'sm'} class="mt-5">
+      {
+        coAuthors.length ? (
+          <>
+            Cowritten with{' '}
+            {coAuthors.map(({ name, url }, index) => (
+              <>
+                <Anchor href={url} external>
+                  {name}
+                </Anchor>
+                {index < coAuthors.length - 1 ? ', ' : ''}
+              </>
+            ))}
+          </>
+        ) : (
+          <>
+            Written by <Anchor href={constants.site}>{constants.profile.name}</Anchor>
+          </>
+        )
+      }
+       — {
+        post.data.date.toLocaleDateString('en-EN', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        })
+      }
+    </Typography.Paragraph>
+  </section>
+  <Divider size={'lg'} />
+  <Content components={MdxComponents} />
+  <Divider size={'lg'} />
+  <section aria-label="Blog post next actions">
+    <div class="my-4 flex gap-4 sm:gap-6">
+      <Anchor
+        variant={'distinguished'}
+        external
+        href={`${TWITTER_URL}/intent/tweet` +
+          `?text=${post.data.title} — ${post.data.description}` +
+          `&url=${constants.site}${BLOG_PATH}/${post.slug}` +
+          `&via=bardenha` +
+          `&hashtags=${tags.join(',')}`}
+      >
+        Share on Twitter
+      </Anchor>
+      <Anchor
+        variant={'distinguished'}
+        external
+        href={`${TWITTER_URL}/search?q=${constants.site}${BLOG_PATH}/${post.slug}&src=typed_query`}
+      >
+        Discuss on Twitter
+      </Anchor>
+    </div>
+    <nav class="mt-4 flex justify-between gap-8">
+      {
+        prev && (
+          <Anchor class="flex truncate rounded-sm" href={`${BLOG_PATH}/${prev.slug}`}>
+            <span class="mr-2">←</span>
+            <span class="flex-1 truncate">{prev.data.title}</span>
+          </Anchor>
+        )
+      }
+      {
+        next && (
+          <Anchor class="flex truncate rounded-sm" href={`${BLOG_PATH}/${next.slug}`}>
+            <span class="flex-1 truncate">{next.data.title}</span>
+            <span class="ml-2">→</span>
+          </Anchor>
+        )
+      }
+    </nav>
+  </section>
+</Page>

@@ -1,0 +1,43 @@
+---
+import { Anchor, Typography } from '@/lib/components';
+import { headingStyles } from '@/lib/components/typography';
+import Page from '@/lib/layouts/page.astro';
+import { cx } from 'class-variance-authority';
+---
+
+<Page
+  title="Page not found"
+  description="The page you're looking for doesn't exist."
+  keywords={'404, not found, error, page not found, missing, lost'}
+  image="/images/stop.webp"
+  type="website"
+>
+  <section class="mt-12" aria-labelledby="404">
+    <div class="mx-auto max-w-md text-center">
+      <Typography.Heading
+        as="h1"
+        id="404"
+        hideAnchor
+        class="mt-8 block text-7xl font-extrabold sm:text-9xl"
+        size={'xl'}
+      >
+        404
+      </Typography.Heading>
+      <p
+        class={cx(
+          headingStyles({
+            size: 'xl',
+          }),
+          'text-xl sm:text-4xl'
+        )}
+      >
+        Something's missing.
+      </p>
+      <Typography.Paragraph size="lg" variant="subdued" class="mt-12">
+        Oh no! You're either lost or I've done something <Typography.Emphasis>terribly</Typography.Emphasis> wrong...
+        Anyway, let's get you back on track.
+      </Typography.Paragraph>
+      <Anchor href="/" variant={'distinguished'} class="inline-block pt-8">Go back Home</Anchor>
+    </div>
+  </section>
+</Page>

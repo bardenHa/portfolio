@@ -1,0 +1,44 @@
+---
+import { constants } from '@/config';
+import { BlogCard, Divider, Typography } from '@/lib/components';
+import Page from '@/lib/layouts/page.astro';
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('posts')).sort((a, z) => +z.data.date - +a.data.date);
+const tags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
+---
+
+<Page
+  title="Blog"
+  description={`The personal blog of ${constants.profile.name}, software engineer and PC enthusiast from London, UK.`}
+  keywords={`blog, webdev, tools, tooling, linux, productivity, web, software, development, environment, ${tags.join(
+    ', '
+  )}`}
+  image="/posts/library.webp"
+  type="website"
+>
+  <section class="mt-12">
+    <Typography.Display>My blog 📚</Typography.Display>
+    <Typography.Paragraph size="lg" variant="subdued" class="mt-8">
+      Writing about web development, tooling, linux and developer productivity.
+    </Typography.Paragraph>
+  </section>
+  <Divider size="lg" />
+  <section class="mt-12" aria-labelledby="latest-posts">
+    <Typography.Heading size={'xl'} id="latest-posts">Latest posts</Typography.Heading>
+  </section>
+  {
+    posts.length > 0 ? (
+      <ul class="mt-8 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 md:grid-cols-3">
+        {posts.map(post => (
+          <li>
+            <BlogCard post={post} />
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <Typography.Paragraph variant="subdued" class="mt-8">
+        No posts yet, check again soon!
+      </Typography.Paragraph>
+    )
+  }
+</Page>
