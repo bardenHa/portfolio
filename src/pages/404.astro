@@ -3,15 +3,12 @@ import { Anchor, Typography } from '@/lib/components';
 import { headingStyles } from '@/lib/components/typography';
 import Page from '@/lib/layouts/page.astro';
 import { cx } from 'class-variance-authority';
-// <!-- TODO: update all page descriptions -->
-// <!-- TODO: update all page keywords -->
 ---
 
-<!-- TODO: Don't hardcode keywords? -->
 <Page
-  title="Not found"
-  description="This is a test"
-  keywords={'uses, tools, web, software, development, environment'}
+  title="Page not found"
+  description="The page you're looking for doesn't exist."
+  keywords={'404, not found, error, page not found, missing, lost'}
   image="/images/stop.webp"
   type="website"
 >
@@ -21,7 +18,7 @@ import { cx } from 'class-variance-authority';
         as="h1"
         id="404"
         hideAnchor
-        class="mt-8 block font-mono text-7xl font-extrabold sm:text-9xl"
+        class="mt-8 block text-7xl font-extrabold sm:text-9xl"
         size={'xl'}
       >
         404

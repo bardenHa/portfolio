@@ -1,4 +1,5 @@
 ---
+import { constants } from '@/config';
 import { BlogCard, Divider, Typography } from '@/lib/components';
 import Page from '@/lib/layouts/page.astro';
 import { getCollection } from 'astro:content';
@@ -7,9 +8,11 @@ const tags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
 ---
 
 <Page
-  title="Blog posts"
-  description="This is a test"
-  keywords={`uses, tools, web, software, development, environment, ${tags.join(', ')}`}
+  title="Blog"
+  description={`The personal blog of ${constants.profile.name}, software engineer and PC enthusiast from London, UK.`}
+  keywords={`blog, webdev, tools, tooling, linux, productivity, web, software, development, environment, ${tags.join(
+    ', '
+  )}`}
   image="/posts/library.webp"
   type="website"
 >
