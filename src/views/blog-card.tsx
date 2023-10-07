@@ -41,7 +41,6 @@ export function BlogCard(props: Readonly<BlogCardProps>): JSX.Element {
           <Typography.Heading size={'lg'} id={`${hyphenatedSlug}-title`} hideAnchor>
             {post.data.title}
           </Typography.Heading>
-          {/* TODO: show max lines 1/2? and truncate */}
           {FLAGS.showDescription && (
             <Typography.Paragraph variant={'subdued'} size={'sm'} class="mt-2 truncate">
               {post.data.description}

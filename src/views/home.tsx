@@ -40,7 +40,6 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
               )}
             </For>
           </nav>
-          {/* TODO: add prop for anchor to use these styles (variant button?) & vice versa */}
           <Anchor noStyle href={`mailto:${constants.profile.links.email}`} class={buttonStyles()}>
             Email me
           </Anchor>
@@ -115,6 +114,3 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
     </>
   );
 }
-
-// TODO: a11y, see https://benmyers.dev/blog/aria-labels-and-descriptions/ html for example
-// TODO: see if we can enforce usage of aria-label for particular elements, maybe eslint rule?
