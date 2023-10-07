@@ -6,6 +6,7 @@ import '@/lib/styles/syntax.scss';
 import { constants } from '@/config';
 
 import Full from './full.astro';
+import { formatTitle } from '../utils';
 
 type Props = {
   title: string;
@@ -14,10 +15,14 @@ type Props = {
   image: string;
   type: string;
   date?: string;
+  reverseTitle?: boolean;
 };
 
 const { profile } = constants;
 const props = Astro.props as Props;
+
+const title = formatTitle({ title: props.title, name: profile.name, reverse: !!props.reverseTitle });
+console.log(title);
 ---
 
 <html lang="en" color-scheme="auto" dir="ltr">
@@ -28,26 +33,26 @@ const props = Astro.props as Props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index,follow" />
     <meta name="googlebot" content="index,follow" />
-    <meta name="title" content={props.title} />
+    <meta name="title" content={title} />
     <meta name="description" content={props.description} />
     <meta name="author" content={profile.name} />
     <meta name="keywords" content={props.keywords} />
     <meta property="og:locale" content="en" />
     <meta property="og:site_name" content={profile.name} />
-    <meta property="og:title" content={props.title} />
+    <meta property="og:title" content={title} />
     <meta property="og:description" content={props.description} />
     <meta property="og:image" content={constants.site + props.image} />
-    <meta property="og:image:alt" content={props.title} />
+    <meta property="og:image:alt" content={title} />
     <meta property="og:type" content={props.type} />
     <meta property="og:url" content={constants.site + Astro.url.pathname} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:creator" content={profile.twitter.handle} />
     <meta name="twitter:site" content={profile.twitter.handle} />
-    <meta name="twitter:title" content={props.title} />
+    <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={props.description} />
     <meta name="twitter:url" content={constants.site + Astro.url.pathname} />
     <meta name="twitter:image" content={constants.site + props.image} />
-    <meta name="twitter:image:alt" content={props.title} />
+    <meta name="twitter:image:alt" content={title} />
     <meta name="view-transition" content="same-origin" />
     {props.date ? <meta property="article:published_time" content={new Date(props.date).toISOString()} /> : null}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -65,7 +70,7 @@ const props = Astro.props as Props;
     <meta name="theme-color" content="#ffffff" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="canonical" href={constants.site + Astro.url.pathname} />
-    <title>{props.title}</title>
+    <title>{title}</title>
   </head>
   <body class="overflow-x-hidden overflow-y-scroll bg-content-neutral-primary">
     <a href="#main-content" class="skip-link"> Skip to content</a>

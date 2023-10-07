@@ -26,7 +26,7 @@ const coAuthors = post.data.coAuthors ?? [];
 ---
 
 <Page
-  title={`${post.data.title} - ${constants.profile.name}`}
+  title={post.data.title}
   description={post.data.description}
   keywords={`blog, post, ${tags.join(', ')}`}
   image={post.data.image.src}

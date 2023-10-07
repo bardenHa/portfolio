@@ -32,7 +32,6 @@ body {
 }
 
 @layer base {
-  /* TODO: add outline transition for this */
   :focus-visible,
   [role='button']:focus-visible,
   [role='button']:focus {
