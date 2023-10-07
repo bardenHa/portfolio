@@ -3,8 +3,6 @@ import { Divider, MdxComponents, Typography } from '@/lib/components';
 import Page from '@/lib/layouts/page.astro';
 import { getEntry } from 'astro:content';
 
-// TODO: implement og image for all pages
-
 const uses = await getEntry('pages', 'uses');
 const { Content } = await uses.render();
 ---
@@ -13,7 +11,7 @@ const { Content } = await uses.render();
   title="Uses - Harry Barden"
   description="These are the various tools I use that add notable value to me and make me more productive."
   keywords={`uses, tools, web, software, development`}
-  image="/images/og.png"
+  image="/images/gear.webp"
   type="website"
 >
   <section class="mt-12">

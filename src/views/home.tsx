@@ -53,7 +53,7 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
         </Typography.Heading>
         <div class="flex w-full flex-col items-stretch gap-5 lg:flex-row-reverse">
           <Image
-            src="/me.jpeg"
+            src="/images/me.webp"
             alt="Harry Barden smiling"
             title="It's me!"
             class="overflow-hidden rounded-xl object-cover"
