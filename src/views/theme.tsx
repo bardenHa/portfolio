@@ -8,7 +8,8 @@ export function ColorModeSwitcher(props: Readonly<{ class?: string }>): JSX.Elem
   return (
     <IconButton
       id="theme-toggle"
-      icon={<Moon aria-label="Switch to dark mode" />}
+      icon={<Moon aria-label="Toggle theme" />}
+      title="Toggle theme"
       aria-label="Theme toggle"
       role="switch"
       size={'md'}
