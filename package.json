@@ -15,10 +15,42 @@
     "format": "prettier --check \"src/**/*.{js,jsx,ts,tsx,astro,json,css,scss,md}\" --plugin=prettier-plugin-astro --plugin=prettier-plugin-tailwindcss",
     "format:fix": "prettier --write \"src/**/*.{js,jsx,ts,tsx,astro,json,css,scss,md}\" --plugin=prettier-plugin-astro --plugin=prettier-plugin-tailwindcss",
     "typecheck": "tsc --noEmit",
-    "test:a11y": "pa11y-ci --sitemap http://localhost:4321/sitemap-index.xml"
+    "test:a11y": "pa11y-ci --sitemap http://localhost:4321/sitemap-index.xml",
+    "prepare": "husky install",
+    "release": "release-it"
   },
   "type": "module",
   "license": "MIT",
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release v${version}"
+    },
+    "github": {
+      "release": true
+    },
+    "npm": {
+      "publish": false
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "infile": "CHANGELOG.md",
+        "preset": {
+          "name": "conventionalcommits",
+          "types": [
+            {
+              "type": "feat",
+              "section": "Features"
+            },
+            {
+              "type": "fix",
+              "section": "Bug Fixes"
+            },
+            {}
+          ]
+        }
+      }
+    }
+  },
   "devDependencies": {
     "@astrojs/check": "^0.2.0",
     "@astrojs/mdx": "^1.0.0",
@@ -26,6 +58,9 @@
     "@astrojs/sitemap": "^3.0.0",
     "@astrojs/solid-js": "^3.0.0",
     "@astrojs/tailwind": "^5.0.0",
+    "@commitlint/cli": "^17.7.2",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@release-it/conventional-changelog": "^7.0.2",
     "@stitches/core": "^1.2.8",
     "@thoughtbot/tailwindcss-aria-attributes": "^0.2.0",
     "@total-typescript/ts-reset": "^0.5.1",
@@ -43,12 +78,14 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-solid": "^0.12.1",
     "eslint-plugin-unused-imports": "^3.0.0",
+    "husky": "^8.0.3",
     "pa11y-ci": "^3.0.1",
     "prettier": "^3.0.2",
     "prettier-plugin-astro": "^0.11.1",
     "prettier-plugin-tailwindcss": "^0.5.3",
     "rambda": "^8.3.0",
     "rehype-prism-plus": "^1.6.3",
+    "release-it": "^16.2.1",
     "rollup-plugin-visualizer": "^5.9.2",
     "sass": "^1.66.1",
     "solid-js": "^1.7.11",
