@@ -23,7 +23,12 @@
   "license": "MIT",
   "release-it": {
     "git": {
-      "commitMessage": "chore: release v${version}"
+      "commitMessage": "chore: release v${version}",
+      "tagName": "v${version}",
+      "tagAnnotation": "Release v${version}",
+      "push": true,
+      "commit": true,
+      "tag": true
     },
     "github": {
       "release": true
@@ -77,6 +82,10 @@
           ]
         }
       }
+    },
+    "hooks": {
+      "before:init": "pnpm check",
+      "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
     }
   },
   "devDependencies": {
