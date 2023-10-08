@@ -94,13 +94,16 @@ console.log(title);
         set: theme => {
           document.documentElement.setAttribute('color-scheme', theme);
           localStorage.setItem('theme', theme);
+          return theme;
         },
       };
+
+      window.theme = theme;
 
       theme.set(theme.initial());
       const toggle = () => theme.set(theme.current() === 'light' ? 'dark' : 'light');
 
-      document.getElementById('theme-toggle')?.addEventListener('click', toggle);
+      // document.getElementById('theme-toggle')?.addEventListener('click', toggle);
     </script>
   </body>
 </html>
