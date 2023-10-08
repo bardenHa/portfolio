@@ -24,7 +24,7 @@ html {
 
 html,
 body {
-  @apply duration-150 ease-in-out transition-colors;
+  @apply transition-colors duration-150 ease-in-out;
 
   @media (prefers-reduced-motion) {
     transition: none;
