@@ -1,5 +1,12 @@
 
 
+## 0.1.4 (2023-10-09)
+
+
+### Bug Fixes
+
+* theme toggle for mobile ([c767c42](https://github.com/bardenha/portfolio/commit/c767c42e590816592e478aef5b8b3535142b4079))
+
 ## 0.1.3 (2023-10-09)
 
 
