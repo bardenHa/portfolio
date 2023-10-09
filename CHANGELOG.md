@@ -1,5 +1,12 @@
 
 
+## 0.1.3 (2023-10-09)
+
+
+### Bug Fixes
+
+* **(release):** use the same runner to complete release steps ([c809585](https://github.com/bardenha/portfolio/commit/c8095857ae903c8b3cc41878f3c75fbdb9545681))
+
 ## [0.1.2](https://github.com/bardenha/portfolio/compare/v0.1.1...v0.1.2) (2023-10-08)
 
 ## [0.1.1](https://github.com/bardenha/portfolio/compare/0.1.0...v0.1.1) (2023-10-08)
