@@ -1,5 +1,12 @@
 
 
+## 0.1.5 (2023-10-10)
+
+
+### Bug Fixes
+
+* lint issues ([526e344](https://github.com/bardenha/portfolio/commit/526e344b47da0438ae2160fce830da9cf1c08051))
+
 ## 0.1.4 (2023-10-09)
 
 
