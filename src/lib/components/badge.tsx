@@ -10,7 +10,7 @@ const badgeStyles = cva(['Badge', 'text-xs font-medium px-2 py-0.5 rounded overf
     intent: {
       success: 'bg-primary-9 text-primary-3',
       neutral: 'bg-neutral-12 text-neutral-3',
-      warning: 'bg-warning-10 text-warning-2 text-black',
+      warning: 'bg-warning-10 text-black',
       danger: 'bg-danger-11 text-danger-2',
     },
     size: {
