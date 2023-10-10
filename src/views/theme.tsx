@@ -24,9 +24,11 @@ function onThemeToggle(): Theme {
     const nextTheme = theme === 'dark' ? 'light' : 'dark';
     window.theme.set(nextTheme);
 
-    const toggleElements = document.querySelectorAll('#theme-toggle');
-    for (const element of toggleElements) {
-      element.setAttribute('aria-checked', nextTheme === 'dark' ? 'true' : 'false');
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+
+    for (const element of [themeToggle, themeToggleMobile]) {
+      element?.setAttribute('aria-checked', nextTheme === 'dark' ? 'true' : 'false');
     }
 
     return nextTheme;
@@ -35,10 +37,10 @@ function onThemeToggle(): Theme {
   return DEFAULT_THEME;
 }
 
-export function ColorModeSwitcher(props: Readonly<{ class?: string }>): JSX.Element {
+export function ColorModeSwitcher(props: Readonly<{ id: string; class?: string }>): JSX.Element {
   return (
     <IconButton
-      id="theme-toggle"
+      id={props.id}
       icon={<Moon aria-label="Toggle theme" />}
       title="Toggle theme"
       aria-label="Enable dark mode"
