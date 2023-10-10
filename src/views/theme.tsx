@@ -21,7 +21,15 @@ declare global {
 function onThemeToggle(): Theme {
   if (window.theme) {
     const theme = window.theme.current();
-    return window.theme.set(theme === 'dark' ? 'light' : 'dark');
+    const nextTheme = theme === 'dark' ? 'light' : 'dark';
+    window.theme.set(nextTheme);
+
+    const toggleElements = document.querySelectorAll('#theme-toggle');
+    for (const element of toggleElements) {
+      element.setAttribute('aria-checked', nextTheme === 'dark' ? 'true' : 'false');
+    }
+
+    return nextTheme;
   }
 
   return DEFAULT_THEME;
@@ -33,7 +41,8 @@ export function ColorModeSwitcher(props: Readonly<{ class?: string }>): JSX.Elem
       id="theme-toggle"
       icon={<Moon aria-label="Toggle theme" />}
       title="Toggle theme"
-      aria-label="Theme toggle"
+      aria-label="Enable dark mode"
+      aria-checked={window.theme?.current() === 'dark'}
       role="switch"
       size={'md'}
       variant={'tertiary'}

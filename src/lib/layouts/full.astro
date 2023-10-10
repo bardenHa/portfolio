@@ -11,7 +11,7 @@ import { constants } from '@/config';
         <a href="/" title="Home">
           <Image src="/h_avatar.svg" alt="Harry Barden's avatar" class="h-12 w-12" />
         </a>
-        <ColorModeSwitcher class="sm:hidden" client:idle />
+        <ColorModeSwitcher class="sm:hidden" client:only />
       </div>
       <div class="flex items-center gap-6 sm:justify-center">
         <ul class="flex items-center gap-4">
@@ -25,7 +25,7 @@ import { constants } from '@/config';
             ))
           }
         </ul>
-        <ColorModeSwitcher class="hidden sm:block" client:idle />
+        <ColorModeSwitcher class="hidden sm:block" client:only />
       </div>
     </nav>
   </header>
