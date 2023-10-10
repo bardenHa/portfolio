@@ -55,6 +55,8 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
             src="/images/me.webp"
             alt="Harry Barden smiling"
             title="It's me!"
+            width={800}
+            height={400}
             class="overflow-hidden rounded-xl object-cover"
           />
           <Card as="section" aria-labelledby="about" class="h-c flex-initial">
