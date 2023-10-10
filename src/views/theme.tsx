@@ -26,10 +26,9 @@ function onThemeToggle(): Theme {
 
     const themeToggle = document.getElementById('theme-toggle');
     const themeToggleMobile = document.getElementById('theme-toggle-mobile');
-
-    for (const element of [themeToggle, themeToggleMobile]) {
-      element?.setAttribute('aria-checked', nextTheme === 'dark' ? 'true' : 'false');
-    }
+    [themeToggle, themeToggleMobile].forEach(element => {
+      return element?.setAttribute('aria-checked', nextTheme === 'dark' ? 'true' : 'false');
+    });
 
     return nextTheme;
   }
