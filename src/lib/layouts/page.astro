@@ -100,9 +100,6 @@ const title = formatTitle({ title: props.title, name: profile.name, reverse: !!p
       window.theme = theme;
 
       theme.set(theme.initial());
-      const toggle = () => theme.set(theme.current() === 'light' ? 'dark' : 'light');
-
-      // document.getElementById('theme-toggle')?.addEventListener('click', toggle);
     </script>
   </body>
 </html>
