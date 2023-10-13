@@ -1,5 +1,9 @@
 {
   "defaults": {
-    "timeout": 5000
+    "timeout": 30000,
+    "chromeLaunchConfig": {
+      "executablePath": "/usr/bin/google-chrome-stable",
+      "ignoreHTTPSErrors": false
+    }
   }
 }
