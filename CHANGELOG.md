@@ -1,5 +1,12 @@
 
 
+## 0.1.9 (2023-10-13)
+
+
+### Bug Fixes
+
+* make pre-push hook executable ([c15d28b](https://github.com/bardenha/portfolio/commit/c15d28bd2f4faaad253b8dcbb187b3bb58bf554a))
+
 ## 0.1.8 (2023-10-13)
 
 ## 0.1.7 (2023-10-13)
