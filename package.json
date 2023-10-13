@@ -56,7 +56,7 @@
             },
             {
               "type": "docs",
-              "hidden": true
+              "section": "Documentation"
             },
             {
               "type": "style",
@@ -68,7 +68,7 @@
             },
             {
               "type": "perf",
-              "hidden": true
+              "section": "Performance Improvements"
             },
             {
               "type": "test",
