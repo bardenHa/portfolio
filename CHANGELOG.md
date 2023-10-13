@@ -1,5 +1,12 @@
 
 
+## 0.1.7 (2023-10-13)
+
+
+### Bug Fixes
+
+* **a11y:** address pa11y test errors ([1d671d8](https://github.com/bardenha/portfolio/commit/1d671d81ff2bf7167eeaffff54a27e9bec092376))
+
 ## 0.1.6 (2023-10-13)
 
 ## 0.1.5 (2023-10-10)
