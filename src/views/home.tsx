@@ -16,15 +16,23 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
     <>
       <section class="mt-12" aria-labelledby="intro" aria-describedby="intro-description">
         <Typography.Display id="intro" size="md">
-          Software Engineer creating thoughtful, accessible & intuitive interfaces 🤟🏼
+          Software Engineer building performant, accessible & intuitive products 👋🏻
         </Typography.Display>
         <Typography.Paragraph id="intro-description" size="lg" variant="subdued" class="mt-16">
-          I’m Harry Barden, a UK based Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas explicabo,
-          expedita sed pariatur aliquam <Anchor href="#header">inventore</Anchor> voluptas. Dolor facilis quam quia sit
-          amet consectetur adipisicing elit. Praesentium.
-          <br />I specialise in interface design for web-based applications with a focus on simplicity & usability.
+          Hey, I'm Harry, a product-focused software engineer at{' '}
+          <Anchor external href="https://pledge.io">
+            Pledge
+          </Anchor>
+          . I'm instrested in open source, keeping software simple, and building products that make a difference.
         </Typography.Paragraph>
-        <div class="mt-16 flex gap-6">
+        <Typography.Paragraph size="lg" variant="subdued" class="mt-5">
+          In my spare time I enjoy building my own projects, and experimenting with technologies. I'm currently working
+          on <Anchor href="/#prospect">Prospect</Anchor>, a high-level finance tracker.
+        </Typography.Paragraph>
+        <Typography.Heading as="h2" size="xs" class="mt-16" id="contact">
+          Get in touch
+        </Typography.Heading>
+        <div class="mt-5 flex gap-6">
           <nav class="flex gap-2" aria-label="A list of my social links" id="contact">
             <For each={constants.links.external}>
               {link => (

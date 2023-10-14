@@ -9,7 +9,7 @@ const profile = {
     handle: '@bardenha',
   },
   links: {
-    email: 'bardenha+portfolio@gmail.com',
+    email: 'portfolio@barden.dev',
     github: 'https://github.com/bardenha',
     twitter: 'https://twitter.com/bardenha',
     linkedin: 'https://linkedin.com/in/harry-barden',
