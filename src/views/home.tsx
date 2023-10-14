@@ -72,26 +72,31 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
               Where I'm from
             </Typography.Heading>
             <Typography.Paragraph variant="subdued" size="lg">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas explicabo, expedita sed pariatur aliquam
-              inventore voluptas facilis quam quia tempora ut, minima corrupti! Tenetur doloribus reiciendis dicta,
-              quasi sunt temporibus neque explicabo quis quia cum impedit perferendis voluptas debitis maxime dolor?
+              I was born and raised in the UK. I grew up in Kent and moved to London shortly after graduating from
+              university.
             </Typography.Paragraph>
             <Typography.Heading as="h3" size="xs" class="mb-2 mt-5">
               What I used to do
             </Typography.Heading>
             <Typography.Paragraph variant="subdued" size="lg">
-              I'm a software engineer with a passion for building beautiful, functional, and accessible user interfaces.
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              I studied engineering at the University of Greenwich and graduated with a first-class honours degree.
+              After that, I went on to work for a small startup called{' '}
+              <Anchor external href="https://www.firemind.com/">
+                Firemind
+              </Anchor>{' '}
+              as a full-stack developer, where I worked on a variety of projects.
             </Typography.Paragraph>
             <Typography.Heading as="h3" size="xs" class="mb-2 mt-5">
               What I do now
             </Typography.Heading>
             <Typography.Paragraph variant="subdued" size="lg">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium, aspernatur{' '}
-              <Anchor href="https://example.com" external>
-                Pledge
-              </Anchor>
-              . Ipsum facilis quam quia tempor temporibus.
+              I'm working at Pledge as a software engineer, where we're building a platform to help businesses take
+              climate action.
+            </Typography.Paragraph>
+            <Typography.Paragraph variant="subdued" size="lg" class="mt-5">
+              I also take a great interest in learning as much as I can about software engineering, entrepreneurship &
+              productivity. I take a paticularly active role in my own learning and try to invest in myself whenever
+              possible.
             </Typography.Paragraph>
           </Card>
         </div>
