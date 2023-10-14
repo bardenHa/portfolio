@@ -1,5 +1,12 @@
 
 
+## 0.3.0 (2023-10-14)
+
+
+### Features
+
+* update profile image ([5f04b6a](https://github.com/bardenha/portfolio/commit/5f04b6aa062c9ab857251d7a09e41ef4abc8e64d))
+
 ## 0.2.0 (2023-10-14)
 
 
