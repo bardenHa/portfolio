@@ -23,7 +23,7 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
           <Anchor external href="https://pledge.io">
             Pledge
           </Anchor>
-          . I'm instrested in open source, keeping software simple, and building products that make a difference.
+          . I'm intrested in open source, keeping software simple, and building products that make a difference.
         </Typography.Paragraph>
         <Typography.Paragraph size="lg" variant="subdued" class="mt-5">
           In my spare time I enjoy building my own projects, and experimenting with technologies. I'm currently working
@@ -95,7 +95,7 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
             </Typography.Paragraph>
             <Typography.Paragraph variant="subdued" size="lg" class="mt-5">
               I also take a great interest in learning as much as I can about software engineering, entrepreneurship &
-              productivity. I take a paticularly active role in my own learning and try to invest in myself whenever
+              productivity. I take a particularly active role in my own learning and try to invest in myself whenever
               possible.
             </Typography.Paragraph>
           </Card>
