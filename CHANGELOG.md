@@ -1,5 +1,12 @@
 
 
+## 0.2.0 (2023-10-14)
+
+
+### Features
+
+* update home og description ([4a2642e](https://github.com/bardenha/portfolio/commit/4a2642e8defd432215f5e19b54765cdab32457b6))
+
 ## 0.1.9 (2023-10-13)
 
 
