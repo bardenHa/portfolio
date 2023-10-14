@@ -22,7 +22,7 @@ const PROJECTS_SCHEMA = z.object({
   url: z.string().url(),
   image: z.string(),
   logo: z.string(),
-  startDate: z.date().optional(),
+  date: z.date(),
 });
 
 export const collections = {

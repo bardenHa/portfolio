@@ -33,7 +33,7 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
           Get in touch
         </Typography.Heading>
         <div class="mt-5 flex gap-6">
-          <nav class="flex gap-2" aria-label="A list of my social links" id="contact">
+          <nav class="flex gap-2" aria-label="A list of my social links">
             <For each={constants.links.external}>
               {link => (
                 <Anchor
@@ -116,7 +116,7 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
             aria-describedby="featured-projects-description"
           >
             {/* In future we'll want to filter by a featured property */}
-            <For each={props.projects.slice(0, 4)}>
+            <For each={props.projects.slice(0, 4).sort((a, b) => +a.data.date - +b.data.date)}>
               {project => (
                 <li>
                   <ProjectCard project={project} />
