@@ -4,7 +4,7 @@ const profile = {
   name: 'Harry Barden',
   title: 'Harry Barden - Software Engineer',
   description: 'Software engineer and creator of things. I write (sometimes) about software, productivity, and life.',
-  image: '/images/cover.png',
+  image: '/images/me.webp',
   twitter: {
     handle: '@bardenha',
   },
