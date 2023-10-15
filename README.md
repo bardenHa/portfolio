@@ -1,41 +1,27 @@
-## Usage
+# Personal portfolio website
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
+My [personal portfolio website](https://barden.dev) built with Astro & Solid JS.
 
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
+I wanted to build a multi-page application (MPA) rather than a single-page application (SPA) since the site doesn't really need much interactivity, and I believe the web will eventually move back to MPAs with the introduction of more native browser APIs such as the [View Transitions API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API).
 
-```bash
-$ npm install # or pnpm install or yarn install
+I also wanted to focus on creating an accessible and progressively enhanced website whilst maintaining the developer experience you get with other frameworks, and Astro seemed like a good choice for that.
+
+## Commands
+
+```shell
+# install dependencies
+pnpm install
+
+# start development server · http://localhost:4321
+pnpm dev
+
+# static client build for production
+pnpm build
+
+# preview production build · http://localhost:4321
+pnpm preview
 ```
 
-## Exploring the template
+## License
 
-This template's goal is to showcase the routing features of Solid.
-It also showcase how the router and Suspense work together to parallelize data fetching tied to a route via the `.data.ts` pattern.
-
-You can learn more about it on the [`@solidjs/router` repository](https://github.com/solidjs/solid-router)
-
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm run dev` or `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-
-### `npm run build`
-
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-## Deployment
-
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+[MIT](/LICENSE)
