@@ -1,5 +1,12 @@
 
 
+## 0.4.0 (2023-10-15)
+
+
+### Features
+
+* **analytics:** add plausible head script ([2e0471a](https://github.com/bardenha/portfolio/commit/2e0471a2004723895416115146dc95a135bce162))
+
 ## 0.3.0 (2023-10-14)
 
 
