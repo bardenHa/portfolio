@@ -1,5 +1,12 @@
 
 
+## [0.4.3](https://github.com/bardenha/portfolio/compare/0.4.2...0.4.3) (2023-10-15)
+
+
+### Bug Fixes
+
+* **analytics:** use hostname rather than full url for plausible script ([925f36a](https://github.com/bardenha/portfolio/commit/925f36a0ace3d359198efe51e71c8307f93506de))
+
 ## [0.4.2](https://github.com/bardenha/portfolio/compare/0.4.1...0.4.2) (2023-10-15)
 
 
