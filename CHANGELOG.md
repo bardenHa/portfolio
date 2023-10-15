@@ -1,5 +1,12 @@
 
 
+## [0.4.2](https://github.com/bardenha/portfolio/compare/0.4.1...0.4.2) (2023-10-15)
+
+
+### Bug Fixes
+
+* **release:** add fetch depth 0 ([a290b01](https://github.com/bardenha/portfolio/commit/a290b01e219f897f2731f8b52fe18513cb216521))
+
 ## 0.4.1 (2023-10-15)
 
 
