@@ -1,5 +1,12 @@
 
 
+## 0.4.1 (2023-10-15)
+
+
+### Documentation
+
+* **license:** add MIT license ([be44afc](https://github.com/bardenha/portfolio/commit/be44afcf80a20df0831971c1190329e4b15ba42d))
+
 ## 0.4.0 (2023-10-15)
 
 
