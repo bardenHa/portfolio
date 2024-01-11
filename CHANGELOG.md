@@ -1,5 +1,12 @@
 
 
+## [0.4.4](https://github.com/bardenha/portfolio/compare/0.4.3...0.4.4) (2024-01-11)
+
+
+### Bug Fixes
+
+* **copy:** remove typos throughout copy and improve grammar ([199551b](https://github.com/bardenha/portfolio/commit/199551ba68098cdc996f66828a35c18e6a224a26))
+
 ## [0.4.3](https://github.com/bardenha/portfolio/compare/0.4.2...0.4.3) (2023-10-15)
 
 
