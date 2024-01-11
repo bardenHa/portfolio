@@ -23,10 +23,10 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
           <Anchor external href="https://pledge.io">
             Pledge
           </Anchor>
-          . I'm intrested in open source, keeping software simple, and building products that make a difference.
+          . I'm interested in open source, keeping software simple, and building products that make a difference.
         </Typography.Paragraph>
         <Typography.Paragraph size="lg" variant="subdued" class="mt-5">
-          In my spare time I enjoy building my own projects, and experimenting with technologies. I'm currently working
+          In my spare time, I enjoy building my side projects and experimenting with technologies. I'm currently working
           on <Anchor href="/#prospect">Prospect</Anchor>, a high-level finance tracker.
         </Typography.Paragraph>
         <Typography.Heading as="h2" size="xs" class="mt-16" id="contact">
@@ -90,12 +90,15 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
               What I do now
             </Typography.Heading>
             <Typography.Paragraph variant="subdued" size="lg">
-              I'm working at Pledge as a software engineer, where we're building a platform to help businesses take
-              climate action.
+              I'm working at{' '}
+              <Anchor external href="https://www.pledge.io/">
+                Pledge
+              </Anchor>{' '}
+              as a software engineer, where we're building a platform to help businesses take climate action.
             </Typography.Paragraph>
             <Typography.Paragraph variant="subdued" size="lg" class="mt-5">
-              I also take a great interest in learning as much as I can about software engineering, entrepreneurship &
-              productivity. I take a particularly active role in my own learning and try to invest in myself whenever
+              I also take a great interest in learning as much as I can about software engineering, entrepreneurship,
+              and productivity. I aggressively pursue my educational goals, and I strive to invest in myself whenever
               possible.
             </Typography.Paragraph>
           </Card>
@@ -108,7 +111,7 @@ export default function Home(props: Readonly<HomeProps>): JSX.Element {
             Featured projects
           </Typography.Heading>
           <Typography.Paragraph variant="subdued" id="featured-projects-description" class="mt-1">
-            A collection of some side projects that have shipped recently.
+            A collection of some side projects that I have shipped recently.
           </Typography.Paragraph>
           <ul
             class="mt-8 grid w-full grid-cols-1 gap-5"
