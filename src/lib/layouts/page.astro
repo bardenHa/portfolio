@@ -82,7 +82,15 @@ const title = formatTitle({ title: props.title, name: profile.name, reverse: !!p
       /></noscript
     >
     <!-- Third party scripts -->
-    {import.meta.env.PROD && <script defer src="https://umami.bishop.barden.dev/script.js" data-website-id="2c3fb287-e1ee-4640-bd3e-7443fd4edbd8"/>}
+    {
+      import.meta.env.PROD && (
+        <script
+          defer
+          src="https://umami.bishop.barden.dev/script.js"
+          data-website-id="2c3fb287-e1ee-4640-bd3e-7443fd4edbd8"
+        />
+      )
+    }
   </head>
   <body class="overflow-x-hidden overflow-y-scroll bg-content-neutral-primary">
     <a href="#main-content" class="skip-link"> Skip to content</a>
