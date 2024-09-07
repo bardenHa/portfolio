@@ -1,5 +1,17 @@
 
 
+## [0.5.0](https://github.com/bardenha/portfolio/compare/0.4.4...0.5.0) (2024-09-07)
+
+
+### Features
+
+* switch to umami instance ([c2ec127](https://github.com/bardenha/portfolio/commit/c2ec12701f1c5cf8994f3c2f4cf3b93480524453))
+
+
+### Bug Fixes
+
+* formatting issues ([ca8729c](https://github.com/bardenha/portfolio/commit/ca8729c281a86e193c0108b6fb07496dc9c665d8))
+
 ## [0.4.4](https://github.com/bardenha/portfolio/compare/0.4.3...0.4.4) (2024-01-11)
 
 
