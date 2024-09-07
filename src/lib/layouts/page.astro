@@ -22,7 +22,6 @@ const { profile } = constants;
 const props = Astro.props as Props;
 
 const title = formatTitle({ title: props.title, name: profile.name, reverse: !!props.reverseTitle });
-const hostname = new URL(constants.site).hostname;
 ---
 
 <html lang="en" color-scheme="auto" dir="ltr">
@@ -83,7 +82,7 @@ const hostname = new URL(constants.site).hostname;
       /></noscript
     >
     <!-- Third party scripts -->
-    {import.meta.env.PROD && <script defer data-domain={hostname} src="https://plausible.io/js/script.js" />}
+    {import.meta.env.PROD && <script defer src="https://umami.bishop.barden.dev/script.js" data-website-id="2c3fb287-e1ee-4640-bd3e-7443fd4edbd8"/>}
   </head>
   <body class="overflow-x-hidden overflow-y-scroll bg-content-neutral-primary">
     <a href="#main-content" class="skip-link"> Skip to content</a>
